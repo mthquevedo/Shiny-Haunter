@@ -1,9 +1,23 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { MainLayout } from "./layouts/MainLayout"
+import PokemonList from "./pages/PokemonList"
+
 function App() {
 
   return (
-    <div>
-      <p className="text-center font-bold text-zinc-500 text-3xl">Hello World</p>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<PokemonList />} />
+
+            <Route path="pokemon" >
+              <Route path="list" element={<div>Conteudo</div>} />
+              
+              <Route path="*" element={<Navigate to="/pokemon/list" />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
   )
 }
 
