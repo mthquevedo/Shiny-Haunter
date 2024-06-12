@@ -1,18 +1,22 @@
 import { Link, Outlet } from "react-router-dom";
 
-type Props = {
- 
-}
-export const MainLayout = ({}: Props) => {
-    return ( 
-        <div className="w-screen min-h-screen flex">
-            <aside className="w-80 bg-slate-500 flex min-h-full flex-col p-5 gap-2">
-                <Link to="/">Home</Link>
-                <Link to="pokemon/list">List</Link>
+
+export const MainLayout = () => {
+    return (
+        <section className="w-screen min-h-screen flex">
+            <aside className="bg-zinc-100 w-15v min-w-44 h-100v p-5 border-r border-zinc-200">
+                <p>Logo</p>
+
+                <nav className="mt-10 flex flex-col gap-7">
+                    <Link to="/">Início</Link>
+                    <Link to="pokemon/list">Pokédex</Link>
+                    <Link to="pokemon/list">Lista de desejos</Link>
+                    <Link to="pokemon/list">Meus shinys</Link>
+                </nav>
             </aside>
             <main className="flex">
                 <Outlet />
             </main>
-        </div>
+        </section>
     );
 }
