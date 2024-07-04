@@ -2,7 +2,7 @@ import { IoMdMoon, IoLogoGithub } from "react-icons/io";
 
 export function HomePage() {
     return (
-        <section className="bg-zinc-300 w-85v h-100v py-5 pl-10 pr-10 flex flex-col justify-between">
+        <section className="bg-backcolor w-85v h-100v py-5 pl-10 pr-10 flex flex-col justify-between">
             <div className="flex gap-4 items-center justify-end">
                 <div className="bg-neutral-900 rounded-full px-3 h-8 flex items-center justify-center gap-2">
                     <p className="text-white text-xs font-medium">Sugestões? Envie aqui</p>
