@@ -12,7 +12,8 @@ export default {
 		backcolor:'#EAEDF6',
 		darkgray:'#323232',
 		menucyan:'#B2DCED',
-		cyan:'#73C6D9',
+		buttoncyan:'#66BACD',
+		buttoncyanhigh:'#73C6D9',
       },
 	fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
@@ -21,6 +22,7 @@ export default {
 				"10v": "10vh",
 				"20v": "20vh",
 				"30v": "30vh",
+				"35v": "35vh",
 				"40v": "40vh",
 				"50v": "50vh",
 				"60v": "60vh",
