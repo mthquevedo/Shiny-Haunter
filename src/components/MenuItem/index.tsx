@@ -9,8 +9,8 @@ interface MenuItemProps {
 
 export function MenuItem({ text, icon, altText, to }: MenuItemProps) {
     return (
-        <Link to={to} className="flex items-center gap-2">
-            <img src={icon} alt={altText} className="h-auto w-9" />
+        <Link to={to} className="flex items-center gap-2 focus:bg-black">
+            <img src={icon} alt={altText} className="h-auto w-9 " />
             <p className="pt-3">{text}</p>
         </Link>
     );
