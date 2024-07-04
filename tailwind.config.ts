@@ -13,6 +13,9 @@ export default {
 		darkgray:'#323232',
 		cyan:'#73C6D9',
       },
+	fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+      },
       height: {
 				"10v": "10vh",
 				"20v": "20vh",
