@@ -8,7 +8,10 @@ export default {
   theme: {
     extend: {
       colors:{
-		primary:'#4E436B'
+		primary:'#2D3073',
+		backcolor:'#EAEDF6',
+		darkgray:'#323232',
+		cyan:'#73C6D9',
       },
       height: {
 				"10v": "10vh",
