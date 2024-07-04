@@ -1,15 +1,16 @@
-import { IoMdMoon, IoLogoGithub } from "react-icons/io";
+import { IoLogoGithub } from "react-icons/io";
 
 export function HomePage() {
     return (
         <section className="bg-backcolor w-85v h-100v py-5 pl-10 pr-10 flex flex-col justify-between">
             <div className="flex gap-4 items-center justify-end">
+                <select name="idioma" className="text-primary">
+                    <option value="portugues" selected>Português</option>
+                </select>
+
                 <div className="bg-neutral-900 rounded-full px-3 h-8 flex items-center justify-center gap-2">
-                    <p className="text-white text-xs font-medium">Sugestões? Envie aqui</p>
+                    <p className="text-white text-xs font-medium">Envie seus feedbacks!</p>
                     <IoLogoGithub className="fill-white w-6 h-6" />
-                </div>
-                <div className="bg-primary w-8 h-8 flex items-center justify-center rounded-full">
-                    <IoMdMoon className="fill-yellow-400 w-5 h-5" />
                 </div>
             </div>
 
