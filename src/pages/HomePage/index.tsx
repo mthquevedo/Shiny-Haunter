@@ -2,16 +2,16 @@ import { IoLogoGithub } from "react-icons/io";
 
 export function HomePage() {
     return (
-        <section className="bg-backcolor w-85v h-100v py-5 pl-10 pr-10 flex flex-col justify-between">
+        <section className="bg-backcolor w-85v h-100v pt-7 pb-9 pl-10 pr-10 flex flex-col justify-between">
             <div className="flex gap-4 items-center justify-end">
-                <select name="idioma" className="text-primary">
+                <select name="idioma" className="text-primary text-xs font-medium pl-2 pr-4 py-1 w-32 h-9 rounded-lg border-primary border shadow focus:outline-none cursor-pointer">
                     <option value="portugues" selected>Português</option>
                 </select>
 
-                <div className="bg-neutral-900 rounded-full px-3 h-8 flex items-center justify-center gap-2">
+                <a href="https://github.com/mthquevedo/Shiny-Haunter" target="_blank" className="bg-neutral-900 rounded-lg px-4 py-1 h-9 flex items-center justify-center gap-2 shadow">
                     <p className="text-white text-xs font-medium">Envie seus feedbacks!</p>
                     <IoLogoGithub className="fill-white w-6 h-6" />
-                </div>
+                </a>
             </div>
 
             <div className="flex items-center justify-between">
