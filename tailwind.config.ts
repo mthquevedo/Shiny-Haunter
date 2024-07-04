@@ -11,6 +11,7 @@ export default {
 		primary:'#2D3073',
 		backcolor:'#EAEDF6',
 		darkgray:'#323232',
+		menucyan:'#B2DCED',
 		cyan:'#73C6D9',
       },
 	fontFamily: {
