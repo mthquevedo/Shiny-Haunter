@@ -25,7 +25,7 @@ export function HomePage() {
                         <p className="text-xl text-zinc-100 mt-3 pl-6">Registre seus shinys e escolha os</p>
                         <p className="text-xl text-zinc-100 mb-4 pl-6">próximos para caçar em um só lugar!</p>
 
-                        <Link to="pokemon/list" className="text-lg bg-buttoncyan px-4 py-1 text-white ml-6 rounded-lg shadow
+                        <Link to="pokedex" className="text-lg bg-buttoncyan px-4 py-1 text-white ml-6 rounded-lg shadow
                         hover:bg-buttoncyanhigh">
                             Comece agora!
                         </Link>
@@ -60,7 +60,9 @@ export function HomePage() {
 
                         <p>01/07/2024</p>
                     </div>
-                    <p className="text-xs font-bold text-primary text-right pt-1">Ver lis ta completa</p>
+                    <Link to="listadedesejos" className="text-xs font-bold text-primary text-right pt-1">
+                        <p>Ver lista completa</p>
+                    </Link>
                 </div>
 
                 <div className="bg-white w-40v h-fit min-h-52 px-5 py-3 rounded-lg shadow">
@@ -89,7 +91,9 @@ export function HomePage() {
 
                         <p>01/07/2024</p>
                     </div>
-                    <p className="text-xs font-bold text-primary text-right pt-1">Ver lista completa</p>
+                    <Link to="shinys" className="text-xs font-bold text-primary text-right pt-1">
+                        <p>Ver lista completa</p>
+                    </Link>
                 </div>
             </div>
 
