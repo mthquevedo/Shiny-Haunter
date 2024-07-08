@@ -1,6 +1,7 @@
 import { HiSun } from "react-icons/hi";
 import { Outlet } from "react-router-dom";
 import { MenuItem } from "../components/MenuItem";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 export const MainLayout = () => {
     return (
@@ -26,9 +27,12 @@ export const MainLayout = () => {
                 <div className="flex flex-col gap-4 text-gray-50 pl-6 pr-6 ">
                     <hr className="border-stone-300" />
 
-                    <div className="flex items-center gap-2">
-                        <HiSun className="h-auto w-9" />
-                        <p>Modo claro</p>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                            <HiSun className="h-auto w-9" />
+                            <p>Modo claro</p>
+                        </div>
+                        <ThemeToggle />
                     </div>
                 </div>
             </aside>
