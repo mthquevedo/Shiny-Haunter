@@ -22,7 +22,7 @@ export function HomePage() {
                     <div>
                         <p className="text-5xl text-zinc-100 font-bold pl-6">Uma ferramenta para</p>
                         <p className="text-5xl text-zinc-100 font-bold pl-6">todos os treinadores!</p>
-                        <p className="text-xl text-zinc-100 mt-3 pl-6">Registre seus shinys e escolha os</p>
+                        <p className="text-xl text-zinc-100 mt-3 pl-6">Registre seus shinies e escolha os</p>
                         <p className="text-xl text-zinc-100 mb-4 pl-6">próximos para caçar em um só lugar!</p>
 
                         <Link to="pokedex" className="group text-lg bg-gradient-to-r from-buttoncyan to-indigo-500 from-30% px-4 py-1
