@@ -5,6 +5,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode:'class',
   theme: {
     extend: {
       colors:{
@@ -45,6 +46,16 @@ export default {
 				"85v": "85vw",
 				"90v": "90vw",
 				"100v": "100vw",
+			},
+			animation: {
+				fade: 'fadeIn .5s ease-in-out',
+			},
+
+			keyframes: {
+				fadeIn: {
+					from: { opacity: "0" },
+					to: { opacity: "1" },
+				},
 			},
     },
   },
