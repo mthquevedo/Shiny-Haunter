@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { MenuItem } from "../components/MenuItem";
-import { ThemeToggle } from "../components/ThemeToggle";
+import { MenuItem } from "../components/Menu/MenuItem";
+import { ThemeToggle } from "../components/Menu/ThemeToggle";
 
 export const MainLayout = () => {
 
