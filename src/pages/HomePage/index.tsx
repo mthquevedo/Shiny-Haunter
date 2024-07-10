@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { HeaderPage } from "../../components/HeaderPage";
+import { FooterPage } from "../../components/FooterPage";
 
 export function HomePage() {
     return (
@@ -102,11 +103,7 @@ export function HomePage() {
                 <p className="text-xs mt-2">*Esse é um projeto brasileiro e sem fins lucratrivos.</p>
             </div>
 
-            <div className="text-xs flex items-center justify-between text-darkgray">
-
-                <p className="font-bold">2024 @Todos os direitos reservados - <a href="https://github.com/mthquevedo" target="_blank" className="text-blue-900">Matheus Quevedo</a></p>
-                <p className="font-medium">Versão 1.0</p>
-            </div>
+            <FooterPage />
         </section>
     );
 }
