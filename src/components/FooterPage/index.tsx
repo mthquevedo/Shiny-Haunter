@@ -1,0 +1,8 @@
+export function FooterPage() {
+    return (
+        <div className="text-xs flex items-center justify-between text-darkgray">
+            <p className="font-bold">Criador: <a href="https://github.com/mthquevedo" target="_blank" className="text-primary">Matheus Quevedo</a></p>
+            <p className="font-medium">Versão 1.0</p>
+        </div>
+    );
+}
