@@ -10,7 +10,7 @@ export function HomePage() {
                     <option value="portugues" selected>Português</option>
                 </select>
 
-                <a href="https://github.com/mthquevedo/Shiny-Haunter" target="_blank" className="bg-darkgray rounded-lg px-4 py-1 h-9 flex items-center justify-center gap-2 shadow">
+                <a href="https://github.com/mthquevedo/Shiny-Haunter" target="_blank" className="bg-darkgray hover:bg-stone-700 rounded-lg px-4 py-1 h-9 flex items-center justify-center gap-2 shadow">
                     <p className="text-white text-xs font-medium">Envie seus feedbacks!</p>
                     <IoLogoGithub className="fill-white w-6 h-6" />
                 </a>
@@ -60,7 +60,7 @@ export function HomePage() {
 
                         <p>01/07/2024</p>
                     </div>
-                    <Link to="listadedesejos" className="text-xs font-bold text-primary text-right pt-1">
+                    <Link to="listadedesejos" className="text-xs font-bold text-primary text-right pt-1 hover:underline">
                         <p>Ver lista completa</p>
                     </Link>
                 </div>
@@ -91,7 +91,7 @@ export function HomePage() {
 
                         <p>01/07/2024</p>
                     </div>
-                    <Link to="shinys" className="text-xs font-bold text-primary text-right pt-1">
+                    <Link to="shinys" className="text-xs font-bold text-primary text-right pt-1 hover:underline">
                         <p>Ver lista completa</p>
                     </Link>
                 </div>
