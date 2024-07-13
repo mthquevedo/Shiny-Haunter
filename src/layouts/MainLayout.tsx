@@ -2,8 +2,10 @@ import { Outlet } from "react-router-dom";
 import { MenuItem } from "../components/Menu/MenuItem";
 import { ThemeToggle } from "../components/Menu/ThemeToggle";
 import { Logo } from "../components/Menu/Logo";
+import { useTranslation } from "react-i18next";
 
 export const MainLayout = () => {
+    const { t } = useTranslation()
 
     return (
         <section className="w-screen min-h-screen flex font-poppins">
@@ -12,7 +14,7 @@ export const MainLayout = () => {
                     <Logo />
 
                     <nav className="mt-11 flex flex-col gap-7 text-gray-50">
-                        <MenuItem icon={"src/assets/pokeball.png"} altText={"Ícone do Início"} text={"Início"} to={"/"} />
+                        <MenuItem icon={"src/assets/pokeball.png"} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
                         <MenuItem icon={"src/assets/greatball.png"} altText={"Ícone da Pokédex"} text={"Pokédex"} to={"pokedex"} />
                         <MenuItem icon={"src/assets/ultraball.png"} altText={"Ícone da Lista de desejos"} text={"Lista de desejos"} to={"listadedesejos"} />
                         <MenuItem icon={"src/assets/masterball.png"} altText={"Ícone dos Meus shinys"} text={"Meus shinys"} to={"shinys"} />
