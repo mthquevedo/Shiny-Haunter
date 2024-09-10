@@ -1,25 +1,61 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode:'class',
-  theme: {
-    extend: {
-      colors:{
-		primary:'#2D3073',
-		backcolor:'#EAEDF6',
-		darkgray:'#323232',
-		menucyan:'#B2DCED',
-		buttoncyan:'#66BACD',
-		buttoncyanhigh:'#73C6D9',
-      },
-	fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-      },
-      height: {
+	content: [
+		"./index.html",
+		"./src/**/*.{js,ts,jsx,tsx}",
+	],
+	darkMode: 'class',
+	theme: {
+		extend: {
+			colors: {
+				primary: '#2D3073',
+				backcolor: '#EAEDF6',
+				darkgray: '#323232',
+				menucyan: '#B2DCED',
+				buttoncyan: '#66BACD',
+				buttoncyanhigh: '#73C6D9',
+				bug: '#e8f033',
+				bugback: '#fcfde9',
+				dark: '#7B7171',
+				darkback: '#ebe0e0',
+				dragon: '#4558f7',
+				dragonback: '#e9ebfb',
+				electric: '#f4d242',
+				electricback: '#fcf8ea',
+				fairy: '#f872f8',
+				fairyback: '#f3e0f3',
+				fighting: '#f5b742',
+				fightingback: '#f9f3e8',
+				fire: '#f97443',
+				fireback: '#f4e6e1',
+				flying: '#8eccfd',
+				flyingback: '#e5f1fb',
+				ghost: '#A86DAC',
+				ghostback: '#e3cee4',
+				grass: '#5BDD3C',
+				grassback: '#e6f5e3',
+				ground: '#d59544',
+				groundback: '#f3eadf',
+				ice: '#41d2f0',
+				iceback: '#e0f1f5',
+				normal: '#c9c9c9',
+				normalback: '#f4f4f4',
+				poison: '#af4ef3',
+				poisonback: '#f1e6f9',
+				psychic: '#ff6885',
+				psychicback: '#f9e7eb',
+				rock: '#dcd798',
+				rockback: '#fbfae9',
+				steel: '#67b7e1',
+				steelback: '#e1eff6',
+				water: '#40a2fc',
+				waterback: '#ecf6ff',
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+			},
+			height: {
 				"10v": "10vh",
 				"20v": "20vh",
 				"30v": "30vh",
@@ -28,11 +64,12 @@ export default {
 				"50v": "50vh",
 				"60v": "60vh",
 				"70v": "70vh",
+				"75v": "75vh",
 				"80v": "80vh",
 				"90v": "90vh",
 				"100v": "100vh",
 			},
-      width: {
+			width: {
 				"10v": "10vw",
 				"15v": "15vw",
 				"20v": "20vw",
@@ -42,6 +79,7 @@ export default {
 				"50v": "50vw",
 				"60v": "60vw",
 				"70v": "70vw",
+				"75v": "75vw",
 				"80v": "80vw",
 				"85v": "85vw",
 				"90v": "90vw",
@@ -50,14 +88,13 @@ export default {
 			animation: {
 				fade: 'fadeIn .5s ease-in-out',
 			},
-
 			keyframes: {
 				fadeIn: {
 					from: { opacity: "0" },
 					to: { opacity: "1" },
 				},
 			},
-    },
-  },
-  plugins: [],
-} satisfies Config
+		},
+	},
+	plugins: [],
+} satisfies Config;
