@@ -5,7 +5,7 @@ import { FooterPage } from "../../components/FooterPage";
 
 export function HomePage() {
     return (
-        <section className="bg-backcolor w-85v h-100v pt-7 pb-9 pl-10 pr-10 flex flex-col justify-between">
+        <section className="bg-backcolor w-85v h-100v pt-7 pb-9 pl-10 pr-10 flex flex-1 flex-col justify-between">
             <HeaderPage />
 
             <div>
@@ -17,8 +17,10 @@ export function HomePage() {
                         <p className="text-xl text-zinc-100 mt-3 pl-6">Registre seus shinies e escolha os</p>
                         <p className="text-xl text-zinc-100 mb-4 pl-6">próximos para caçar em um só lugar!</p>
 
-                        <Link to="pokedex" className="group text-lg bg-gradient-to-r from-buttoncyan to-indigo-500 from-30% px-4 py-1
-                         text-white ml-6 rounded-lg shadow-lg transition-all ease-in-out hover:brightness-110">
+                        <Link
+                            to="pokedex"
+                            className="group text-lg bg-gradient-to-r from-buttoncyan to-indigo-500 from-30% px-4 py-2
+                         text-white ml-6 mt-1 rounded-lg shadow-lg transition-all ease-in-out hover:brightness-110">
                             Comece agora!
                         </Link>
                     </div>
