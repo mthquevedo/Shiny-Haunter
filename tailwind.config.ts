@@ -72,6 +72,7 @@ export default {
 			width: {
 				"10v": "10vw",
 				"12v": "12vw",
+				"14v": "14vw",
 				"15v": "15vw",
 				"20v": "20vw",
 				"30v": "30vw",

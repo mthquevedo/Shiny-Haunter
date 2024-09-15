@@ -1,5 +1,5 @@
-import { NamedAPIResourceList, PokemonClient } from "pokenode-ts";
-import { useEffect, useState } from "react";
+// import { NamedAPIResourceList, PokemonClient } from "pokenode-ts";
+// import { useEffect, useState } from "react";
 import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
 import { PokedexFrame } from "../../components/PokedexFrame/inde";
