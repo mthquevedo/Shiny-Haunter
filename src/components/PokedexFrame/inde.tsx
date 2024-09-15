@@ -6,7 +6,7 @@ export function PokedexFrame() {
             <div>
                 <p className="bg-slate-500 text-white p-1">regiões...</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 pl-1">
                 <PokeCard
                     id={999}
                     name="Miraidon"
