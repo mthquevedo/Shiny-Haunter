@@ -6,9 +6,16 @@ export function PokedexFrame() {
             <div>
                 <p className="bg-slate-500 text-white p-1">regiões...</p>
             </div>
-
-            <PokeCard />
-
+            <div className="flex gap-4">
+                <PokeCard
+                    id={999}
+                    name="Miraidon"
+                    region="Paldea"
+                    thumbnail="./src/assets/1008.png"
+                    firstType="electric"
+                    secondType="dragon"
+                />
+            </div>
         </section>
     );
 }
