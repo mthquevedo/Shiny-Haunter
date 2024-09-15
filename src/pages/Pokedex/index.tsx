@@ -2,7 +2,7 @@
 // import { useEffect, useState } from "react";
 import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
-import { PokedexFrame } from "../../components/PokedexFrame/inde";
+import { PokedexFrame } from "../../components/PokedexFrame";
 import { SearchForm } from "../../components/SearchForm";
 
 export function Pokedex() {
