@@ -1,6 +1,7 @@
 import { MdBookmarkAdd, MdCatchingPokemon } from "react-icons/md";
 import { upperFirstLetter } from "../../utils/pokemon.utils";
 import { TypeFlag } from "../TypeFlag";
+import { twMerge } from "tailwind-merge";
 
 interface PokeCardProps {
     id: number;
@@ -13,9 +14,13 @@ interface PokeCardProps {
 
 export function PokeCard({ id, name, region, thumbnail, firstType, secondType }: PokeCardProps) {
 
+    function colorBackground(firstType: string) {
+        return "bg-" + firstType + "back";
+    }
+
     return (
         <article className="flex flex-col item bg-white w-14v mt-3 p-3 rounded-2xl shadow-md">
-            <section className="flex flex-col justify-center items-center bg-electricback w-full h-44 p-2 relative overflow-hidden rounded-xl">
+            <section className={twMerge("flex flex-col justify-center items-center  w-full h-44 p-2 relative overflow-hidden rounded-xl", colorBackground(firstType))}>
                 <p className="absolute top-1 left-2 select-all font-bold text-xl text-neutral-600 mix-blend-multiply">
                     #{id}
                 </p>
