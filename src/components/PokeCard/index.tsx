@@ -1,7 +1,7 @@
 import { MdBookmarkAdd, MdCatchingPokemon } from "react-icons/md";
-import { upperFirstLetter } from "../../utils/pokemon.utils";
+import { cn } from "../../lib/cn";
 import { TypeFlag } from "../TypeFlag";
-import { twMerge } from "tailwind-merge";
+import { bannerTypeColor } from "../../utils/pokemon.utils";
 
 interface PokeCardProps {
     id: number;
@@ -13,14 +13,9 @@ interface PokeCardProps {
 }
 
 export function PokeCard({ id, name, region, thumbnail, firstType, secondType }: PokeCardProps) {
-
-    function colorBackground(firstType: string) {
-        return "bg-" + firstType + "back";
-    }
-
     return (
         <article className="flex flex-col item bg-white w-14v mt-3 p-3 rounded-2xl shadow-md">
-            <section className={twMerge("flex flex-col justify-center items-center  w-full h-44 p-2 relative overflow-hidden rounded-xl", colorBackground(firstType))}>
+            <section className={cn("flex flex-col justify-center items-center  w-full h-44 p-2 relative overflow-hidden rounded-xl", bannerTypeColor[firstType])}>
                 <p className="absolute top-1 left-2 select-all font-bold text-xl text-neutral-600 mix-blend-multiply">
                     #{id}
                 </p>
@@ -41,8 +36,8 @@ export function PokeCard({ id, name, region, thumbnail, firstType, secondType }:
 
             <footer className="flex flex-col justify-between items-start mt-3">
                 <div className="flex gap-2">
-                    <TypeFlag type={upperFirstLetter(firstType)} icon={firstType} flagColor={"bg-" + firstType} />
-                    <TypeFlag type={upperFirstLetter(secondType)} icon={secondType} flagColor={"bg-" + secondType} />
+                    <TypeFlag type={firstType} />
+                    <TypeFlag type={secondType} />
                 </div>
 
                 <div className="flex justify-between items-center mt-2 w-full">
