@@ -9,6 +9,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				menuback: '#222222',
 				primary: '#2D3073',
 				backcolor: '#EAEDF6',
 				darkgray: '#323232',
@@ -70,6 +71,8 @@ export default {
 				"100v": "100vh",
 			},
 			width: {
+				"4v": "4vw",
+				"5v": "5vw",
 				"10v": "10vw",
 				"12v": "12vw",
 				"14v": "14vw",
@@ -78,6 +81,7 @@ export default {
 				"30v": "30vw",
 				"35v": "35vw",
 				"40v": "40vw",
+				"43v": "43vw",
 				"50v": "50vw",
 				"60v": "60vw",
 				"70v": "70vw",
@@ -85,6 +89,7 @@ export default {
 				"80v": "80vw",
 				"85v": "85vw",
 				"90v": "90vw",
+				"95v": "95vw",
 				"100v": "100vw",
 			},
 			animation: {
