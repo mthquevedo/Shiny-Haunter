@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
     const [darkMode, setDarkMode] = useState(false)
-    const themeLabel = darkMode ? "Modo escuro" : "Modo claro";
 
     useEffect(() => {
         const theme = localStorage.getItem("theme");
@@ -20,10 +19,9 @@ export function ThemeToggle() {
     }, [darkMode])
 
     return (
-        <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-                <p>{themeLabel}</p>
-            </div>
+
+        <div className="flex flex-col justify-center gap-4">
+            <hr className="border-stone-400" />
 
             <div className="cursor-pointer relative animate-fade flex items-center dark:justify-end w-16 h-7 m-0.5 p-1 bg-sky-500 dark:bg-gray-800 rounded-full overflow-hidden border-2 border-white shadow-md" onClick={() => setDarkMode(!darkMode)}>
                 <div className="animate-fade delay-75 absolute -z-1 -top-2 left-1 dark:left-5 w-11 h-11 bg-sky-200/30 dark:bg-zinc-200/15 rounded-full">
