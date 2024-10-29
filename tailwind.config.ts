@@ -16,7 +16,7 @@ export default {
 				menucyan: '#B2DCED',
 				buttoncyan: '#66BACD',
 				buttoncyanhigh: '#73C6D9',
-				bug: '#e8f033',
+				bug: '#90C12D',
 				bugback: '#fcfde9',
 				dark: '#7B7171',
 				darkback: '#ebe0e0',
