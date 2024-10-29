@@ -17,34 +17,25 @@ export function Pokedex() {
                 formDescription="Procure por um pokémon específico ou explore a pokedex de cada região"
             />
 
-            <section className="flex flex-col  gap-1 w-full h-75v">
+            <section className="flex flex-col gap-5 w-full h-75v">
                 <div>
                     <p className="bg-slate-500 text-white rounded-md p-1 px-2 my-2">regiões...</p>
                 </div>
-                <div className="flex item-center justify-center flex-wrap gap-6 pl-1">
+                <div className="flex item-center justify-center flex-wrap gap-5">
                     {pokemons && pokemons.map(pokemon => {
                         return (
                             <PokeCard
                                 id={pokemon.id}
+                                key={pokemon.id}
                                 name={upperFirstLetter(pokemon.name)}
-                                thumbnail={pokemon.sprites.other?.["official-artwork"].front_shiny || ""}
+                                thumbnailDefault={pokemon.sprites.other?.["official-artwork"].front_default || ""}
+                                thumbnailShiny={pokemon.sprites.other?.["official-artwork"].front_shiny || ""}
                                 // thumbnail={pokemon.sprites.front_shiny || ""}
                                 firstType={pokemon.types[0].type.name}
                                 secondType={pokemon.types[1] ? pokemon.types[1].type.name : ""}
                             />
-
                         );
                     })}
-
-
-                    {/* <PokeCard
-                        id={999}
-                        name="Miraidon"
-                        region="Paldea"
-                        thumbnail="./src/assets/1008.png"
-                        firstType="electric"
-                        secondType="dragon"
-                    /> */}
                 </div>
             </section>
 
