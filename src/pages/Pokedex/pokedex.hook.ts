@@ -2,7 +2,7 @@ import { Pokemon } from "pokenode-ts";
 import { useEffect, useState } from "react";
 import { getPokemons } from "../../services/pokemon.service";
 
-const LIMIT = 12;
+const LIMIT = 14;
 
 export function usePokedex() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
