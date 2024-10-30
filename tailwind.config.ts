@@ -94,6 +94,7 @@ export default {
 			},
 			animation: {
 				fade: 'fadeIn .5s ease-in-out',
+				pulse: 'pulse 1.5s ease-in-out infinite'
 			},
 			keyframes: {
 				fadeIn: {
