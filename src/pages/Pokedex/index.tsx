@@ -1,5 +1,6 @@
 import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
+import { LoadingCards } from "../../components/LoadingCards";
 import { PokeCard } from "../../components/PokeCard";
 import { SearchForm } from "../../components/SearchForm";
 import { upperFirstLetter } from "../../utils/pokemon.utils";
@@ -21,22 +22,26 @@ export function Pokedex() {
                 <div>
                     <p className="bg-slate-500 text-white rounded-md p-1 px-2 my-2">regiões...</p>
                 </div>
-                <div className="flex item-center justify-center flex-wrap gap-5">
-                    {pokemons && pokemons.map(pokemon => {
-                        return (
-                            <PokeCard
-                                id={pokemon.id}
-                                key={pokemon.id}
-                                name={upperFirstLetter(pokemon.name)}
-                                thumbnailDefault={pokemon.sprites.other?.["official-artwork"].front_default || ""}
-                                thumbnailShiny={pokemon.sprites.other?.["official-artwork"].front_shiny || ""}
-                                // thumbnail={pokemon.sprites.front_shiny || ""}
-                                firstType={pokemon.types[0].type.name}
-                                secondType={pokemon.types[1] ? pokemon.types[1].type.name : ""}
-                            />
-                        );
-                    })}
-                </div>
+
+                {isLoading ?
+                    <LoadingCards />
+                    :
+                    <div className="flex item-center justify-center flex-wrap gap-5">
+                        {pokemons && pokemons.map(pokemon => {
+                            return (
+                                <PokeCard
+                                    id={pokemon.id}
+                                    key={pokemon.id}
+                                    name={upperFirstLetter(pokemon.name)}
+                                    thumbnailDefault={pokemon.sprites.other?.["official-artwork"].front_default || ""}
+                                    thumbnailShiny={pokemon.sprites.other?.["official-artwork"].front_shiny || ""}
+                                    firstType={pokemon.types[0].type.name}
+                                    secondType={pokemon.types[1] ? pokemon.types[1].type.name : ""}
+                                />
+                            );
+                        })}
+                    </div>
+                }
             </section>
 
             <div className="flex gap-2 items-center justify-center">
