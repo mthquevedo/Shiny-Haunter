@@ -39,5 +39,6 @@ export function usePokedex() {
         isLoading,
         next,
         previous,
+        LIMIT,
     };
 }
