@@ -42,18 +42,18 @@ export function Pokedex() {
                         })}
                     </div>
                 }
-                <div className="mt-2 flex gap-4 items-center justify-center">
+                <div className="mt-3 flex gap-4 items-center justify-center">
                     <button
                         onClick={handlePreviousPage}
                         disabled={!previous}
-                        className="bg-slate-300 rounded-md p-1 "
+                        className="bg-primary hover:bg-indigo-800 active:bg-indigo-900 disabled:bg-slate-400 disabled:cursor-not-allowed disabled:select-none text-white rounded-md py-2 px-4 disabled:active:scale-100 active:scale-95 font-medium text-sm shadow-md transition"
                     >
                         Anterior
                     </button>
                     <button
                         onClick={handleNextPage}
                         disabled={!next}
-                        className="bg-slate-300 rounded-md p-1"
+                        className="bg-primary hover:bg-indigo-800 active:bg-indigo-900 disabled:bg-slate-400 disabled:cursor-not-allowed disabled:select-none text-white rounded-md py-2 px-4 disabled:active:scale-100 active:scale-95 font-medium text-sm shadow-md transition"
                     >
                         Próximo
                     </button>
