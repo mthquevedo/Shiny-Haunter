@@ -42,12 +42,25 @@ export function Pokedex() {
                         })}
                     </div>
                 }
+                <div className="mt-2 flex gap-4 items-center justify-center">
+                    <button
+                        onClick={handlePreviousPage}
+                        disabled={!previous}
+                        className="bg-slate-300 rounded-md p-1 "
+                    >
+                        Anterior
+                    </button>
+                    <button
+                        onClick={handleNextPage}
+                        disabled={!next}
+                        className="bg-slate-300 rounded-md p-1"
+                    >
+                        Próximo
+                    </button>
+                </div>
             </section>
 
-            <div className="flex gap-2 items-center justify-center">
-                <button onClick={handlePreviousPage} disabled={!previous}>Anterior</button>
-                <button onClick={handleNextPage} disabled={!next}>Próximo</button>
-            </div>
+
             <FooterPage />
         </section>
     );
