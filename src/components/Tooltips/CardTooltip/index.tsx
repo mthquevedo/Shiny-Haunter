@@ -1,14 +1,19 @@
-import { Tooltip, TooltipRefProps } from "react-tooltip"
+import { Tooltip, TooltipRefProps } from "react-tooltip";
+import "./CardTooltip.css"
 
-interface TooltipProps extends TooltipRefProps {
+interface TooltipProps extends Partial<TooltipRefProps> {
     id: string;
 }
 
-export function CardTooltip({ id, place }: TooltipProps) {
+export function CardTooltip({ id, ...props }: TooltipProps) {
     return (
+
         <Tooltip
+            {...props}
             id={id}
-            place={place}
+            place={props.place}
+            className="card-tooltip"
+            noArrow
         />
     )
 }
