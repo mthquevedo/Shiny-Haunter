@@ -7,7 +7,7 @@ interface MenuItemProps extends LinkProps {
     altText: string;
 }
 
-const ACTIVE_BG = "transition ease-in-out bg-neutral-700 rounded-full shadow-lg";
+const ACTIVE_BG = "transition duration-100 bg-neutral-700 rounded-full shadow-lg";
 
 export function MenuItem({ text, icon: Icon, altText, to, ...props }: MenuItemProps) {
     const isActive = useMatch(to.toString())
