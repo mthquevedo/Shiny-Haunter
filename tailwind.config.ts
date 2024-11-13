@@ -52,9 +52,13 @@ export default {
 				steelback: '#e1eff6',
 				water: '#40a2fc',
 				waterback: '#ecf6ff',
+				cardTooltipBg: '#4d4d4d',
 			},
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
+			},
+			fontSize: {
+				xxs: '0.688rem',
 			},
 			height: {
 				"10v": "10vh",
