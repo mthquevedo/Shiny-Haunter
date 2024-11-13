@@ -32,15 +32,15 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, firstType
                         <TypeFlag type={firstType} />
                         {secondType ? <TypeFlag type={secondType} /> : ""}
                     </div>
-                    <button
-                        className="flex justify-center items-center text-xl bg-neutral-400 rounded-full shadow-sm p-1 hover:bg-red-500 active:bg-red-600 text-white transition"
-                        data-tooltip-id={"toolCaptured" + id}
-                        data-tooltip-content="Capturado"
-                        data-tooltip-delay-show={100}
-                        data-tooltip-offset={5}
-                    >
-                        <MdCatchingPokemon />
-                    </button>
+
+                    <CardTooltip content="Capturado" side="top">
+                        <button
+                            className="flex justify-center items-center text-xl bg-neutral-400 rounded-full shadow-sm p-1 hover:bg-red-500 active:bg-red-600 text-white transition"
+                        >
+                            <MdCatchingPokemon />
+                        </button>
+                    </CardTooltip>
+
                     {/* <CardTooltip
                         id={"toolCaptured" + id}
                         place={"left"}
@@ -63,20 +63,14 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, firstType
                     </p>
                 </div>
                 <div className="flex justify-between">
-                    <button
-                        onClick={handleImg}
-                        className="flex justify-center items-center text-lg w-12 border-2 border-neutral-400 text-neutral-700 rounded-lg p-1 hover:bg-neutral-200 hover:text-neutral-600 hover:shadow-sm active:bg-neutral-300 transition"
-                        data-tooltip-id={"toolCompare" + id}
-                        data-tooltip-content="Comparar"
-                        data-tooltip-delay-show={100}
-                        data-tooltip-offset={5}
-                    >
-                        <MdCompare />
-                    </button>
-                    {/* <CardTooltip
-                        id={"toolCompare" + id}
-                        place={"bottom"}
-                    /> */}
+                    <CardTooltip content="Comparar" side="top">
+                        <button
+                            onClick={handleImg}
+                            className="flex justify-center items-center text-lg w-12 border-2 border-neutral-400 text-neutral-700 rounded-lg p-1 hover:bg-neutral-200 hover:text-neutral-600 hover:shadow-sm active:bg-neutral-300 transition"
+                        >
+                            <MdCompare />
+                        </button>
+                    </CardTooltip>
                     <button
                         className="flex justify-center w-36 items-center text-xs text-white font-medium bg-blue-500 rounded-lg p-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 transition"
                     >
