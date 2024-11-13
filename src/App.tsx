@@ -4,8 +4,6 @@ import { HomePage } from "./pages/HomePage"
 import { Pokedex } from "./pages/Pokedex"
 import { Shinys } from "./pages/Shinys"
 import { Wishlist } from "./pages/Wishlist"
-import "react-tooltip/dist/react-tooltip.css"
-
 function App() {
 
   return (

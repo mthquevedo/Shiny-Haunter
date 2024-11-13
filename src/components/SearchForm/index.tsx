@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { LuSettings2 } from "react-icons/lu";
-import { Tooltip } from "react-tooltip"
 interface SearchForm {
     formTitle: string;
     formDescription: string;
@@ -51,11 +50,6 @@ export function SearchForm({ formTitle, formDescription }: SearchForm) {
                         X
                     </span>
                 </button>
-                <Tooltip
-                    id="toolApagar"
-                    style={{ padding: "0.3rem", fontSize: "0.8rem" }}
-                    opacity={0.8}
-                />
             </div>
         </form>
     );
