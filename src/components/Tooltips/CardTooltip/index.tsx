@@ -17,7 +17,7 @@ export function CardTooltip({ children, content, open, defaultOpen, onOpenChange
                 <TooltipPrimitive.Content
                     side={side}
                     align="center"
-                    className="py-1 px-1.5 bg-cardTooltipBg text-xs rounded text-white shadow-md "
+                    className="py-1 px-1.5 bg-cardTooltipBg text-xs rounded-md text-white shadow-md "
                     {...props}
                 >
                     {content}
