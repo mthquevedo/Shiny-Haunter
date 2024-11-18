@@ -40,11 +40,6 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, firstType
                             <MdCatchingPokemon />
                         </button>
                     </CardTooltip>
-
-                    {/* <CardTooltip
-                        id={"toolCaptured" + id}
-                        place={"left"}
-                    /> */}
                 </div>
 
                 <img
