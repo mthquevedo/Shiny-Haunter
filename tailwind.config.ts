@@ -75,7 +75,7 @@ export default {
 				"100v": "100vh",
 			},
 			width: {
-				"4v": "4vw",
+				"4v": "4.3vw",
 				"5v": "5vw",
 				"10v": "10vw",
 				"12v": "12vw",
@@ -93,7 +93,7 @@ export default {
 				"80v": "80vw",
 				"85v": "85vw",
 				"90v": "90vw",
-				"95v": "95vw",
+				"95v": "95.7vw",
 				"100v": "100vw",
 			},
 			animation: {
