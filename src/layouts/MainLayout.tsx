@@ -8,15 +8,15 @@ import { MenuItem } from "../components/Menu/MenuItem";
 import { ThemeToggle } from "../components/Menu/ThemeToggle";
 
 export const MainLayout = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     return (
         <section className="flex font-poppins">
-            <aside className="flex flex-col justify-between items-center bg-menuback w-5v h-100v pt-7 pb-8 ">
+            <aside className="flex flex-col justify-between items-center bg-menuback w-4v h-100v py-8">
                 <div className="flex flex-col items-center">
-                    <img className="h-auto w-16 rounded mb-2" src="src/assets/logo.jpg" alt="logotipo" />
+                    <img className="h-auto w-14 rounded-lg mb-2" src="src/assets/logo.jpg" alt="Logotipo" />
 
-                    <nav className="flex flex-col justify-center items-center px-5 mt-14 gap-10 text-gray-50">
+                    <nav className="flex flex-col justify-center items-center px-5 mt-12 gap-8 text-gray-50">
                         <MenuItem icon={HiOutlineHome} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
                         <MenuItem icon={MdCatchingPokemon} altText={"Ícone da Pokédex"} text={"Pokédex"} to={"pokedex"} />
                         <MenuItem icon={BsList} altText={"Ícone da Lista de desejos"} text={"Lista de desejos"} to={"listadedesejos"} />
@@ -27,7 +27,7 @@ export const MainLayout = () => {
                 <ThemeToggle />
             </aside>
 
-            <main >
+            <main>
                 <Outlet />
             </main>
         </section>
