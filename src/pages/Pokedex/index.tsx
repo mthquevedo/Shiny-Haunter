@@ -2,6 +2,7 @@ import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
 import { LoadingCards } from "../../components/LoadingCards";
 import { PokeCard } from "../../components/PokeCard";
+import { RegionsCards } from "../../components/Regions";
 import { SearchForm } from "../../components/SearchForm";
 import { upperFirstLetter } from "../../utils/pokemon.utils";
 import { usePokedex } from "./pokedex.hook";
@@ -19,9 +20,11 @@ export function Pokedex() {
             />
 
             <section className="flex flex-col gap-5 w-full h-75v">
-                <div>
+                {/* <div>
                     <p className="bg-slate-500 text-white rounded-md p-1 px-2 my-2">regiões...</p>
-                </div>
+                </div> */}
+
+                <RegionsCards />
 
                 {isLoading ?
                     <LoadingCards />
