@@ -4,7 +4,7 @@ interface MenuTooltiProps extends Partial<TooltipPrimitive.TooltipProps & Toolti
 
 export function MenuTooltip({ children, content, open, defaultOpen, onOpenChange, side, ...props }: MenuTooltiProps) {
     return (
-        <TooltipPrimitive.Provider delayDuration={0}>
+        <TooltipPrimitive.Provider delayDuration={400}>
             <TooltipPrimitive.Root
                 open={open}
                 defaultOpen={defaultOpen}
