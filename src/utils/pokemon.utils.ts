@@ -31,7 +31,6 @@ export const typeColor: Record<string, ClassValue> = {
     water: "bg-water",
 };
 
-
 export const bannerTypeColor: Record<string, ClassValue> = {
     bug: "bg-bugback",
     dark: "bg-darkback",
