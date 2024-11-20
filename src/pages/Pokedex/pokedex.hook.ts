@@ -1,8 +1,7 @@
 import { Pokemon } from "pokenode-ts";
 import { useEffect, useState } from "react";
 import { getPokemons } from "../../services/pokemon.service";
-
-const LIMIT = 14;
+import { LIMIT_CARDS } from "../../constants/pokemon.constants"
 
 export function usePokedex() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -13,7 +12,7 @@ export function usePokedex() {
 
     useEffect(() => {
         setIsLoading(true);
-        getPokemons(offset, LIMIT)
+        getPokemons(offset, LIMIT_CARDS)
             .then(({ pokemons, previous, next }) => {
                 setPokemons(pokemons);
                 setPrevious(!!previous);
@@ -23,13 +22,13 @@ export function usePokedex() {
     }, [offset])
 
     const handleNextPage = () => {
-        setOffset(offset + LIMIT);
+        setOffset(offset + LIMIT_CARDS);
     };
 
     const handlePreviousPage = () => {
         if (offset === 0) return
 
-        setOffset(offset - LIMIT);
+        setOffset(offset - LIMIT_CARDS);
     };
 
     return {
@@ -39,6 +38,5 @@ export function usePokedex() {
         isLoading,
         next,
         previous,
-        LIMIT,
     };
 }
