@@ -20,16 +20,12 @@ export function Pokedex() {
             />
 
             <section className="flex flex-col gap-5 w-full h-75v">
-                {/* <div>
-                    <p className="bg-slate-500 text-white rounded-md p-1 px-2 my-2">regiões...</p>
-                </div> */}
-
                 <RegionsCards />
 
                 {isLoading ?
                     <LoadingCards />
                     :
-                    <div className="flex item-center justify-center flex-wrap gap-5">
+                    <div className="flex item-center justify-between flex-wrap gap-5">
                         {pokemons && pokemons.map(pokemon => {
                             return (
                                 <PokeCard
@@ -38,13 +34,13 @@ export function Pokedex() {
                                     name={upperFirstLetter(pokemon.name)}
                                     thumbnailDefault={pokemon.sprites.other?.["official-artwork"].front_default || ""}
                                     thumbnailShiny={pokemon.sprites.other?.["official-artwork"].front_shiny || ""}
-                                    firstType={pokemon.types[0].type.name}
-                                    secondType={pokemon.types[1] ? pokemon.types[1].type.name : ""}
+                                    types={pokemon.types}
                                 />
                             );
                         })}
                     </div>
                 }
+
                 <div className="mt-3 flex gap-4 items-center justify-center">
                     <button
                         onClick={handlePreviousPage}
@@ -62,7 +58,6 @@ export function Pokedex() {
                     </button>
                 </div>
             </section>
-
 
             <FooterPage />
         </section>
