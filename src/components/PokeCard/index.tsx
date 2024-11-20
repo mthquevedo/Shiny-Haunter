@@ -1,20 +1,20 @@
+import { PokemonType } from "pokenode-ts";
 import { useState } from "react";
 import { MdCatchingPokemon, MdCompare } from "react-icons/md";
 import { cn } from "../../lib/cn";
 import { bannerTypeColor } from "../../utils/pokemon.utils";
 import { CardTooltip } from "../Tooltips/CardTooltip";
-import { TypeFlag } from "../TypeFlag";
+import { TypeShelf } from "./typeShelf";
 
 interface PokeCardProps {
     id: number;
     name: string;
     thumbnailDefault: string;
     thumbnailShiny: string;
-    firstType: string;
-    secondType: string;
+    types: PokemonType[];
 }
 
-export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, firstType, secondType }: PokeCardProps) {
+export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeCardProps) {
     const [pokeImg, setPokeImg] = useState(thumbnailShiny);
     const [showDefault, setShowDefault] = useState(false);
 
@@ -25,13 +25,11 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, firstType
 
     return (
         <article className="flex flex-col bg-white w-12v mt-2 rounded-2xl shadow-md overflow-hidden">
-            <section className={cn("flex flex-col justify-center items-center w-full h-44 relative overflow-hidden rounded-xl", bannerTypeColor[firstType])}>
+            <section className={cn("flex flex-col justify-center items-center w-full h-44 relative overflow-hidden rounded-xl", bannerTypeColor[types[0].type.name])}>
 
                 <div className="absolute top-1 w-full px-2 flex items-center justify-between">
-                    <div className="bg-white rounded-full p-1 flex items-center justify-center gap-1 shadow-md">
-                        <TypeFlag type={firstType} />
-                        {secondType ? <TypeFlag type={secondType} /> : ""}
-                    </div>
+
+                    <TypeShelf types={types} />
 
                     <CardTooltip content="Capturado" side="top">
                         <button
@@ -61,7 +59,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, firstType
                     <CardTooltip content="Comparar" side="top">
                         <button
                             onClick={handleImg}
-                            className="flex justify-center items-center text-lg w-12 border-2 border-neutral-400 text-neutral-700 rounded-lg p-1 hover:bg-neutral-200 hover:text-neutral-600 hover:shadow-sm active:bg-neutral-300 transition"
+                            className="flex justify-center items-center text-lg w-12 border-2 border-neutral-400 text-neutral-700 rounded-lg p-1 hover:bg-neutral-200 hover:text-neutral-800 hover:border-neutral-500 hover:shadow-sm active:bg-neutral-300 transition"
                         >
                             <MdCompare />
                         </button>
