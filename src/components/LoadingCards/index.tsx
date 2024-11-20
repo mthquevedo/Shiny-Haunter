@@ -1,8 +1,7 @@
-import { usePokedex } from "../../pages/Pokedex/pokedex.hook";
+import { LIMIT_CARDS } from "../../constants/pokemon.constants"
 
 export function LoadingCards() {
-    const { LIMIT } = usePokedex();
-    const cards = Array(LIMIT).fill(null);
+    const cards = Array(LIMIT_CARDS).fill(null);
 
     return (
         <div className="flex item-center justify-center flex-wrap gap-5">
