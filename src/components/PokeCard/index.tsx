@@ -1,10 +1,11 @@
 import { PokemonType } from "pokenode-ts";
 import { useState } from "react";
-import { MdCatchingPokemon, MdCompare } from "react-icons/md";
+import { MdCompare } from "react-icons/md";
 import { cn } from "../../lib/cn";
 import { bannerTypeColor } from "../../utils/pokemon.utils";
 import { CardTooltip } from "../Tooltips/CardTooltip";
 import { TypeShelf } from "./typeShelf";
+import { WishButton } from "./wishButton";
 
 interface PokeCardProps {
     id: number;
@@ -31,13 +32,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
 
                     <TypeShelf types={types} />
 
-                    <CardTooltip content="Capturado" side="top">
-                        <button
-                            className="flex justify-center items-center text-xl bg-neutral-400 rounded-full shadow-sm p-1 hover:bg-red-500 active:bg-red-600 text-white transition"
-                        >
-                            <MdCatchingPokemon />
-                        </button>
-                    </CardTooltip>
+                    <WishButton />
                 </div>
 
                 <img
