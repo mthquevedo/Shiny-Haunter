@@ -5,6 +5,7 @@ import { cn } from "../../lib/cn";
 import { bannerTypeColor } from "../../utils/pokemon.utils";
 import { CardTooltip } from "../Tooltips/CardTooltip";
 import { TypeShelf } from "./typeShelf";
+import { CatchButton } from "./catchButton";
 import { WishButton } from "./wishButton";
 
 interface PokeCardProps {
@@ -32,7 +33,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
 
                     <TypeShelf types={types} />
 
-                    <WishButton pokeName={name} />
+                    <CatchButton pokeName={name} />
                 </div>
 
                 <img
@@ -59,11 +60,8 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                             <MdCompare />
                         </button>
                     </CardTooltip>
-                    <button
-                        className="flex justify-center w-36 items-center text-xs text-white font-medium bg-blue-500 rounded-lg p-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 transition"
-                    >
-                        Adicionar
-                    </button>
+
+                    <WishButton pokeName={name} />
                 </div>
             </footer>
         </article>
