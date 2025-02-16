@@ -18,7 +18,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
     }
 
     return (
-        <article key={id} className="flex flex-col bg-white w-12v mt-2 rounded-2xl shadow-md overflow-hidden">
+        <article key={id} className="flex flex-col bg-white w-12v mt-5 rounded-2xl shadow-md overflow-hidden">
             <section className={cn("flex flex-col justify-center items-center w-full h-44 relative overflow-hidden rounded-xl", bannerTypeColor[types[0].type.name])}>
 
                 <div className="absolute top-1 w-full px-2 flex items-center justify-between">
