@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import { HeaderPage } from "../../components/HeaderPage";
 import { FooterPage } from "../../components/FooterPage";
+import { LastCatched } from "../../components/LastCatched";
+import { LastWished } from "../../components/LastWished";
 
 export function HomePage() {
     return (
@@ -28,67 +30,9 @@ export function HomePage() {
             </div>
 
             <div className="flex gap-10 justify-between">
-                <div className="bg-white w-43v h-fit min-h-52 px-5 py-3 rounded-lg shadow">
-                    <p className="font-medium text-darkgray">Adicionados recentemente a lista de desejos</p>
-                    <div className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
-                        <div className="flex gap-4 items-center">
-                            <img src="src/assets/rayquaza.jpg" alt="Foto de pokémon" className="w-12 h-12" />
-                            <p>Rayquaza</p>
-                        </div>
+                <LastWished />
 
-                        <p>01/07/2024</p>
-                    </div>
-                    <div className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
-                        <div className="flex gap-4 items-center">
-                            <img src="src/assets/rayquaza.jpg" alt="Foto de pokémon" className="w-12 h-12" />
-                            <p>Rayquaza</p>
-                        </div>
-
-                        <p>01/07/2024</p>
-                    </div>
-                    <div className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
-                        <div className="flex gap-4 items-center">
-                            <img src="src/assets/rayquaza.jpg" alt="Foto de pokémon" className="w-12 h-12" />
-                            <p>Rayquaza</p>
-                        </div>
-
-                        <p>01/07/2024</p>
-                    </div>
-                    <Link to="listadedesejos" className="text-xs font-bold text-primary text-right pt-1 hover:underline">
-                        <p>Ver lista completa</p>
-                    </Link>
-                </div>
-
-                <div className="bg-white w-43v h-fit min-h-52 px-5 py-3 rounded-lg shadow">
-                    <p className="font-medium text-darkgray">Últimos pokémon capturados</p>
-                    <div className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
-                        <div className="flex gap-4 items-center">
-                            <img src="src/assets/rayquaza.jpg" alt="Foto de pokémon" className="w-12 h-12" />
-                            <p>Rayquaza</p>
-                        </div>
-
-                        <p>01/07/2024</p>
-                    </div>
-                    <div className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
-                        <div className="flex gap-4 items-center">
-                            <img src="src/assets/rayquaza.jpg" alt="Foto de pokémon" className="w-12 h-12" />
-                            <p>Rayquaza</p>
-                        </div>
-
-                        <p>01/07/2024</p>
-                    </div>
-                    <div className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
-                        <div className="flex gap-4 items-center">
-                            <img src="src/assets/rayquaza.jpg" alt="Foto de pokémon" className="w-12 h-12" />
-                            <p>Rayquaza</p>
-                        </div>
-
-                        <p>01/07/2024</p>
-                    </div>
-                    <Link to="shinys" className="text-xs font-bold text-primary text-right pt-1 hover:underline">
-                        <p>Ver lista completa</p>
-                    </Link>
-                </div>
+                <LastCatched />
             </div>
 
             <div>
