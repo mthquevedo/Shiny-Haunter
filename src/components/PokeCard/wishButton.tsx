@@ -2,21 +2,23 @@ import { useDispatch, useSelector, } from "react-redux";
 import { cn } from "../../lib/cn";
 import { RootState } from "../../store";
 import { toggleWishlist } from "../../store/reducers/wishlist";
+import { PokeCardProps } from "../../constants/pokemon.constants";
 
-const ACTIVE_BUTTON = "bg-neutral-400 hover:bg-red-500 hover:text-white";
+const ACTIVE_BUTTON = "bg-neutral-400 active:bg-neutral-400 hover:bg-neutral-500 hover:text-white";
 
-interface WishButtonProps {
-    pokeName: string;
-}
+// interface WishButtonProps {
+//     pokeName: string;
+// }
 
-export function WishButton({ pokeName }: WishButtonProps) {
+export function WishButton({ name, thumbnailShiny }: PokeCardProps) {
+    const pokeName = name ?? "";
     const dispatch = useDispatch();
     const wishlist = useSelector((state: RootState) => state.wishlist.wishlist);
 
-    const isWished = wishlist.includes(pokeName);
+    const isWished = wishlist.some(item => item.name === pokeName);
 
     const handleToggle = () => {
-        dispatch(toggleWishlist(pokeName));
+        dispatch(toggleWishlist({ name: pokeName, image: thumbnailShiny ?? "" }));
     };
 
     return (
