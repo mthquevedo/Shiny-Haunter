@@ -4,22 +4,26 @@ import { cn } from "../../lib/cn";
 import { RootState } from "../../store";
 import { toggleCatchlist } from "../../store/reducers/catchlist";
 import { CardTooltip } from "../Tooltips/CardTooltip";
+import { PokeCardProps } from "../../constants/pokemon.constants";
 
 const ACTIVE_BUTTON = "bg-red-500";
 
-interface CatchButtonProps {
-    pokeName: string;
-}
+// interface CatchButtonProps {
+//     pokeName: string;
 
-export function CatchButton({ pokeName }: CatchButtonProps) {
+// }
+
+export function CatchButton({ name, thumbnailShiny }: PokeCardProps) {
+    const pokeName = name ?? "";
     const dispatch = useDispatch();
     const catchlist = useSelector((state: RootState) => state.catchlist.catchlist);
 
-    const isCatched = catchlist.includes(pokeName);
+    const isCatched = catchlist.some(item => item.name === pokeName);
 
     const handleToggle = () => {
-        dispatch(toggleCatchlist(pokeName));
+        dispatch(toggleCatchlist({ name: pokeName, image: thumbnailShiny ?? "" }));
     };
+
     return (
         <>
             <CardTooltip content="Capturado" side="top">
