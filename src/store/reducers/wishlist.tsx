@@ -1,10 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface WishlistItem {
+    name: string;
+    image: string;
+    date?: string;
+}
 interface WishlistStateProps {
-    wishlist: string[];
+    wishlist: WishlistItem[];
 }
 
-const loadWishlist = (): string[] => {
+const loadWishlist = (): WishlistItem[] => {
     try {
         const storedWishlist = localStorage.getItem("wishlist");
 
@@ -28,13 +33,19 @@ const wishlistSlice = createSlice({
     name: "wishlist",
     initialState,
     reducers: {
-        toggleWishlist: (state, action: PayloadAction<string>) => {
-            const pokeName = action.payload;
+        toggleWishlist: (state, action: PayloadAction<WishlistItem>) => {
+            const { name, image } = action.payload;
 
-            if (state.wishlist.includes(pokeName)) {
-                state.wishlist = state.wishlist.filter(name => name !== pokeName);
+            if (state.wishlist.some(item => item.name === name)) {
+                state.wishlist = state.wishlist.filter(item => item.name !== name);
             } else {
-                state.wishlist.push(pokeName);
+                const today = new Date().toLocaleDateString('pt-BR');
+
+                state.wishlist.push({
+                    name,
+                    image,
+                    date: today
+                });
             }
 
             localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
