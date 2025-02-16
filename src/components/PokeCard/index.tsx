@@ -1,20 +1,12 @@
-import { PokemonType } from "pokenode-ts";
 import { useState } from "react";
 import { MdCompare } from "react-icons/md";
+import { PokeCardProps } from "../../constants/pokemon.constants";
 import { cn } from "../../lib/cn";
 import { bannerTypeColor } from "../../utils/pokemon.utils";
 import { CardTooltip } from "../Tooltips/CardTooltip";
-import { TypeShelf } from "./typeShelf";
 import { CatchButton } from "./catchButton";
+import { TypeShelf } from "./typeShelf";
 import { WishButton } from "./wishButton";
-
-interface PokeCardProps {
-    id: number;
-    name: string;
-    thumbnailDefault: string;
-    thumbnailShiny: string;
-    types: PokemonType[];
-}
 
 export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeCardProps) {
     const [pokeImg, setPokeImg] = useState(thumbnailShiny);
@@ -33,7 +25,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
 
                     <TypeShelf types={types} />
 
-                    <CatchButton pokeName={name} />
+                    <CatchButton name={name} thumbnailShiny={thumbnailShiny} />
                 </div>
 
                 <img
@@ -61,7 +53,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                         </button>
                     </CardTooltip>
 
-                    <WishButton pokeName={name} />
+                    <WishButton name={name} thumbnailShiny={thumbnailShiny} />
                 </div>
             </footer>
         </article>
