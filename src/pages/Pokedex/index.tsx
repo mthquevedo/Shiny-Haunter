@@ -2,7 +2,6 @@ import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
 import { LoadingCards } from "../../components/LoadingCards";
 import { PokeCard } from "../../components/PokeCard";
-import { RegionsCards } from "../../components/Regions";
 import { SearchForm } from "../../components/SearchForm";
 import { upperFirstLetter } from "../../utils/pokemon.utils";
 import { usePokedex } from "./pokedex.hook";
@@ -19,9 +18,7 @@ export function Pokedex() {
                 formDescription="Procure por um pokémon específico ou explore a pokedex de cada região"
             />
 
-            <section className="flex flex-col gap-5 w-full h-75v">
-                <RegionsCards />
-
+            <section className="flex flex-col justify-around gap-5 w-full pt-5 h-75v">
                 {isLoading ?
                     <LoadingCards />
                     :
@@ -41,7 +38,7 @@ export function Pokedex() {
                     </div>
                 }
 
-                <div className="mt-3 flex gap-4 items-center justify-center">
+                <div className="flex gap-4 items-center justify-center">
                     <button
                         onClick={handlePreviousPage}
                         disabled={!previous}
