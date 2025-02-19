@@ -10,15 +10,15 @@ export function Pokedex() {
     const { pokemons, handleNextPage, handlePreviousPage, isLoading, next, previous } = usePokedex();
 
     return (
-        <section className="bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-9 px-10 flex flex-1 flex-col justify-between">
+        <section className="bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-9 px-10 flex gap-4 flex-col justify-between">
             <HeaderPage />
 
             <SearchForm
                 formTitle="Pokédex"
-                formDescription="Procure por um pokémon específico ou explore a pokedex de cada região"
+                formDescription="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
             />
 
-            <section className="flex flex-col justify-around gap-5 w-full pt-5 h-75v">
+            <section className="flex flex-col justify-around gap-5 w-full h-75v">
                 {isLoading ?
                     <LoadingCards />
                     :
