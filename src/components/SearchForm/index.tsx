@@ -16,7 +16,7 @@ export function SearchForm({ formTitle, formDescription }: SearchForm) {
 
     return (
         <form
-            className="flex items-end justify-between"
+            className="flex items-end mt-3 justify-between"
             onSubmit={clearSearch}
         >
             <div>
@@ -39,16 +39,10 @@ export function SearchForm({ formTitle, formDescription }: SearchForm) {
                 </div>
                 <LuSettings2 className="w-5 h-5" />
                 <button
-
                     type="submit"
                     className="font-medium text-lg pl-3 border-l text-neutral-500"
                 >
-                    <span
-                        data-tooltip-id="toolApagar"
-                        data-tooltip-content="Apagar"
-                    >
-                        X
-                    </span>
+                    X
                 </button>
             </div>
         </form>
