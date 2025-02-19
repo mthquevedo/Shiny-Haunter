@@ -47,7 +47,7 @@ export function HomePage() {
                     <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
                     <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
                 </div>
-                <p className="text-xs font-medium mt-3">*Esse é um projeto brasileiro e sem fins lucratrivos.</p>
+                <p className="text-xs font-medium mt-3">*Projeto sem fins lucratrivos.</p>
             </div>
 
             <FooterPage />
