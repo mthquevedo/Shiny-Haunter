@@ -19,10 +19,8 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
 
     return (
         <article key={id} className="flex flex-col bg-white w-12v mt-5 rounded-2xl shadow-md overflow-hidden">
-            <section className={cn("flex flex-col justify-center items-center w-full h-44 relative overflow-hidden rounded-xl", bannerTypeColor[types[0].type.name])}>
-
+            <section className={cn("flex flex-col justify-center items-center w-full h-48 relative overflow-hidden rounded-xl", bannerTypeColor[types[0].type.name])}>
                 <div className="absolute top-1 w-full px-2 flex items-center justify-between">
-
                     <TypeShelf types={types} />
 
                     <CatchButton name={name} thumbnailShiny={thumbnailShiny} />
@@ -31,14 +29,13 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                 <img
                     src={pokeImg}
                     alt=""
-                    className="h-auto w-40 mt-1 ml-2 select-none"
+                    className="h-auto w-44 mt-1 ml-2 select-none"
                 />
-
             </section>
 
             <footer className="flex flex-col justify-between gap-2 px-3 pb-3">
                 <div className="flex justify-between items-center text-lg mt-2 w-full">
-                    <p className="text-neutral-800 font-bold leading-6">{name}</p>
+                    <p className="text-neutral-800 text-nowrap font-bold leading-6">{name}</p>
                     <p className="select-all font-semibold text-neutral-500">
                         #{id}
                     </p>
