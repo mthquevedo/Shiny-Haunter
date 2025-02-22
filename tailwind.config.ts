@@ -11,7 +11,7 @@ export default {
 			colors: {
 				menuback: '#222222',
 				primary: '#2D3073',
-				backcolor: '#EAEDF6',
+				backcolor: '#e3e6ed',
 				darkgray: '#323232',
 				menucyan: '#B2DCED',
 				buttoncyan: '#66BACD',
@@ -63,6 +63,7 @@ export default {
 			height: {
 				"10v": "10vh",
 				"20v": "20vh",
+				"28v": "28vh",
 				"30v": "30vh",
 				"35v": "35vh",
 				"40v": "40vh",
