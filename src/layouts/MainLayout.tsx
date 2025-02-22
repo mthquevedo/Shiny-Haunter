@@ -12,11 +12,11 @@ export const MainLayout = () => {
 
     return (
         <section className="flex font-poppins">
-            <aside className="flex flex-col justify-between items-center bg-menuback w-4v h-100v py-8">
+            <aside className="flex flex-col justify-between items-center bg-menuback w-4v h-100v py-8 border-r border-neutral-500">
                 <div className="flex flex-col items-center">
                     <img className="h-auto w-14 rounded-lg mb-2" src="src/assets/logo.jpg" alt="Logotipo" />
 
-                    <nav className="flex flex-col justify-center items-center px-5 mt-12 gap-8 text-gray-50">
+                    <nav className="flex flex-col justify-center items-center px-5 mt-12 gap-10 text-gray-50">
                         <MenuItem icon={HiOutlineHome} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
                         <MenuItem icon={MdCatchingPokemon} altText={"Ícone da Pokédex"} text={"Pokédex"} to={"pokedex"} />
                         <MenuItem icon={BsList} altText={"Ícone da Lista de desejos"} text={"Lista de desejos"} to={"listadedesejos"} />
