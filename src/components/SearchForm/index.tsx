@@ -20,7 +20,7 @@ export function SearchForm({ formTitle, formDescription }: SearchForm) {
             onSubmit={clearSearch}
         >
             <div>
-                <p className="text-xl font-bold text-primary">{formTitle}</p>
+                <p className="text-xl font-bold text-primary mb-1">{formTitle}</p>
                 <p className="text-darkgray">{formDescription}</p>
             </div>
 
