@@ -22,7 +22,7 @@ export function HomePage() {
                         <Link
                             to="pokedex"
                             className="group text-lg bg-gradient-to-r from-buttoncyan to-indigo-500 from-30% px-4 py-2
-                         text-white ml-6 rounded-lg shadow-lg transition-all ease-in-out hover:brightness-110">
+                         text-white ml-6 rounded-lg shadow-lg transition-all ease-in-out hover:brightness-110 active:scale-95">
                             Comece agora!
                         </Link>
                     </div>
