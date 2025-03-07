@@ -4,7 +4,7 @@ interface CardTooltipProps extends Partial<TooltipPrimitive.TooltipProps & Toolt
 
 export function CardTooltip({ children, content, open, defaultOpen, onOpenChange, side, ...props }: CardTooltipProps) {
     return (
-        <TooltipPrimitive.Provider delayDuration={400}>
+        <TooltipPrimitive.Provider delayDuration={0}>
             <TooltipPrimitive.Root
                 open={open}
                 defaultOpen={defaultOpen}
