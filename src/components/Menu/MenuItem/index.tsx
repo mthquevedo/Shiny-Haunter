@@ -8,7 +8,7 @@ interface MenuItemProps extends LinkProps {
     altText: string;
 }
 
-const ACTIVE_BG = "hover:bg-neutral-400/50 bg-neutral-400/50 border-2 border-neutral-500 shadow-lg";
+const ACTIVE_BG = "hover:bg-neutral-400/30 bg-neutral-400/30 border-2 border-neutral-600 shadow-lg";
 const ACTIVE_ICON = "text-neutral-50";
 
 export function MenuItem({ text, icon: Icon, altText, to, ...props }: MenuItemProps) {
@@ -16,11 +16,11 @@ export function MenuItem({ text, icon: Icon, altText, to, ...props }: MenuItemPr
 
     return (
         <MenuTooltip content={text} side="right">
-            <div className={cn("transition rounded-lg flex item-center justify-center p-3 border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg", { [ACTIVE_BG]: isActive })}>
-                <Link {...props} to={to} className="">
+            <Link {...props} to={to}>
+                <div className={cn("transition rounded-lg flex item-center justify-center p-2.5 border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95", { [ACTIVE_BG]: isActive })}>
                     <Icon aria-label={altText} className={cn("h-auto w-6 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
-                </Link>
-            </div>
+                </div>
+            </Link>
         </MenuTooltip>
     );
 }   

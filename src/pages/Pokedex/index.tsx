@@ -42,7 +42,7 @@ export function Pokedex() {
                     <button
                         onClick={handlePreviousPage}
                         disabled={!previous}
-                        className="bg-primary hover:bg-indigo-800 active:bg-indigo-900 disabled:bg-slate-400 disabled:cursor-not-allowed disabled:select-none text-white rounded-md py-2 px-4 disabled:active:scale-100 active:scale-95 font-medium text-sm shadow-md transition"
+                        className="bg-primary hover:bg-indigo-800 active:bg-indigo-900 disabled:bg-slate-400 disabled:cursor-not-allowed disabled:select-none text-white rounded-md py-2 px-5 disabled:active:scale-100 active:scale-95 font-medium text-sm shadow-md transition"
                     >
                         Anterior
                     </button>
