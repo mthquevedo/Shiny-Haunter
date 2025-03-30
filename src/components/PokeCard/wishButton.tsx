@@ -24,7 +24,7 @@ export function WishButton({ name, thumbnailShiny }: PokeCardProps) {
     return (
         <>
             <button
-                className={cn("flex justify-center w-36 items-center text-xs text-white font-medium bg-blue-500 rounded-lg p-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 transition", { [ACTIVE_BUTTON]: isWished })}
+                className={cn("flex justify-center w-36 items-center text-xs text-white font-medium bg-blue-500 rounded-lg p-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 active:scale-[0.98] transition", { [ACTIVE_BUTTON]: isWished })}
                 onClick={handleToggle}
             >
                 {(isWished) ?

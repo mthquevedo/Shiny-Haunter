@@ -28,7 +28,7 @@ export function CatchButton({ name, thumbnailShiny }: PokeCardProps) {
         <>
             <CardTooltip content="Capturado" side="top">
                 <button
-                    className={cn("flex justify-center items-center text-xl bg-neutral-400 rounded-full shadow-sm p-1 hover:bg-red-500 active:bg-red-600 text-white transition", { [ACTIVE_BUTTON]: isCatched })}
+                    className={cn("flex justify-center items-center text-xl bg-neutral-400 rounded-full shadow-sm p-1 hover:bg-red-500 active:bg-red-600 active:scale-95 text-white transition", { [ACTIVE_BUTTON]: isCatched })}
                     onClick={handleToggle}
                 >
                     <MdCatchingPokemon />
