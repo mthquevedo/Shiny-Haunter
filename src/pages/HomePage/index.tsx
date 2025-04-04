@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
-import { HeaderPage } from "../../components/HeaderPage";
 import { FooterPage } from "../../components/FooterPage";
+import { HeaderPage } from "../../components/HeaderPage";
 import { LastCatched } from "../../components/LastCatched";
 import { LastWished } from "../../components/LastWished";
 
