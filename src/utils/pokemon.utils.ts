@@ -6,8 +6,8 @@ export function getPokemonTypeSVG(type: string) {
     return SVG_PATH + type + ".svg";
 }
 
-export function upperFirstLetter(type: string) {
-    return type.charAt(0).toLocaleUpperCase() + type.slice(1);
+export function upperFirstLetter(word: string) {
+    return word.charAt(0).toLocaleUpperCase() + word.slice(1);
 }
 
 export const typeColor: Record<string, ClassValue> = {
