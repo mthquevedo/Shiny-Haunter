@@ -25,7 +25,7 @@ export function HeaderPage() {
                     <Select.Portal>
                         <Select.Content
                             position="popper"
-                            className="overflow-hidden w-32 bg-white shadow rounded-lg text-sm"
+                            className="overflow-hidden w-32 bg-white shadow rounded-lg text-sm mt-1"
                         >
                             <Select.Viewport className="p-2">
                                 <Select.Group>
