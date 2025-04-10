@@ -1,7 +1,7 @@
 import { Pokemon } from "pokenode-ts";
 import { useEffect, useState } from "react";
-import { LIMIT_CARDS } from "../../constants/pokemon.constants";
-import { pokemonServices } from "../../services/pokemon.service";
+import { LIMIT_CARDS } from "../constants/pokemon.constants";
+import { pokemonServices } from "../services/pokemon.service";
 
 export function usePokedex() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
