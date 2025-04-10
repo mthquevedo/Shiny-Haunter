@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
 import { HomePage } from "./pages/HomePage";
-import { usePokeList } from "./pages/HomePage/home.hook";
+import { usePokeList } from "./hooks/usePokeList";
 import { Pokedex } from "./pages/Pokedex";
 import { Shinys } from "./pages/Shinys";
 import { Wishlist } from "./pages/Wishlist";
