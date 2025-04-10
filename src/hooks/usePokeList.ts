@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { pokemonServices } from "../../services/pokemon.service";
-import { createList, setLoading } from "../../store/reducers/allPokemonList";
+import { pokemonServices } from "../services/pokemon.service";
+import { createList, setLoading } from "../store/reducers/allPokemonList";
 
 export function usePokeList() {
     const dispatch = useDispatch();
