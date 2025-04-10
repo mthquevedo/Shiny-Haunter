@@ -4,7 +4,7 @@ import { LoadingCards } from "../../components/LoadingCards";
 import { PokeCard } from "../../components/PokeCard";
 import { SearchForm } from "../../components/SearchForm";
 import { upperFirstLetter } from "../../utils/pokemon.utils";
-import { usePokedex } from "./pokedex.hook";
+import { usePokedex } from "../../hooks/usePokedex";
 
 export function Pokedex() {
     const { pokemons, handleNextPage, handlePreviousPage, isLoading, next, previous } = usePokedex();
