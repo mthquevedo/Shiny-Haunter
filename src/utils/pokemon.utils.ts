@@ -6,6 +6,10 @@ export function getPokemonTypeSVG(type: string) {
     return SVG_PATH + type + ".svg";
 }
 
+export function formatIdBelowTen(id: number | undefined) {
+    return id?.toString().padStart(2, "0");
+}
+
 export function upperFirstLetter(word: string) {
     return word.charAt(0).toLocaleUpperCase() + word.slice(1);
 }
