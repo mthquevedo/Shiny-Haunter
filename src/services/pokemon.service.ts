@@ -1,5 +1,5 @@
-import { pokemonClient } from "./pokemon.client";
 import { upperFirstLetter } from "../utils/pokemon.utils";
+import { pokemonClient } from "./pokemon.client";
 
 const LIMIT = 10;
 class PokemonServices {
@@ -13,9 +13,25 @@ class PokemonServices {
         return { pokemons, ...pagination };
     }
 
-    async getAllPokemons(offset = 0, limit = 1302): Promise<string[]> {
+    async getAllPokemons(offset = 0, limit = 1302) {
         const { results } = await pokemonClient.listPokemons(offset, limit);
-        return results.map(pokemon => upperFirstLetter(pokemon.name));
+
+        const pokemonData = await Promise.all(
+            results.map(({ name }) => pokemonClient.getPokemonByName(name))
+        );
+
+        const allPokemonList = pokemonData.map((pokemon) => ({
+            id: pokemon.id,
+            name: upperFirstLetter(pokemon.name)
+        }))
+
+        return allPokemonList;
+    }
+
+    async getJustOnePokemon(name: string) {
+        const pokemon = await pokemonClient.getPokemonByName(name);
+
+        return pokemon;
     }
 }
 
