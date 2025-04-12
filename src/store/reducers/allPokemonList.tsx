@@ -1,11 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface PokemonProps {
+    id: number;
+    name: string;
+}
+
 interface pokemonListProps {
-    list: string[];
+    list: PokemonProps[];
     loading: boolean;
 }
 
-const loadPokemonList = (): string[] => {
+const loadPokemonList = (): PokemonProps[] => {
     try {
         const storedList = localStorage.getItem("pokelist");
 
