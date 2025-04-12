@@ -28,8 +28,11 @@ class PokemonServices {
         return allPokemonList;
     }
 
-    async getJustOnePokemon(name: string) {
-        const pokemon = await pokemonClient.getPokemonByName(name);
+    async getSinglePokemon(name: string) {
+        const pokemon = [];
+        const profile = await pokemonClient.getPokemonByName(name);
+
+        pokemon.push(profile);
 
         return pokemon;
     }
