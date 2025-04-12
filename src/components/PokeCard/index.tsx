@@ -7,6 +7,7 @@ import { CardTooltip } from "../Tooltips/CardTooltip";
 import { CatchButton } from "./catchButton";
 import { TypeShelf } from "./typeShelf";
 import { WishButton } from "./wishButton";
+import { formatIdBelowTen } from "../../utils/pokemon.utils";
 
 export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeCardProps) {
     const [pokeImg, setPokeImg] = useState(thumbnailShiny);
@@ -37,7 +38,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                 <div className="flex justify-between items-center text-lg mt-2 w-full">
                     <p className="text-neutral-800 text-nowrap font-bold leading-6">{name}</p>
                     <p className="select-all font-semibold text-neutral-500">
-                        #{id}
+                        #{formatIdBelowTen(id)}
                     </p>
                 </div>
                 <div className="flex justify-between">
