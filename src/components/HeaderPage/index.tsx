@@ -13,7 +13,7 @@ export function HeaderPage() {
             </div>
             <div className="flex gap-4 items-center justify-between">
                 <Select.Root value={value} onValueChange={setValue}>
-                    <Select.Trigger className="flex items-center justify-between gap-2 text-primary bg-white text-xs font-medium px-4 py-1 w-32 h-9 rounded-lg border-primary border shadow focus:outline-none cursor-pointer">
+                    <Select.Trigger className="flex items-center justify-between gap-2 text-primary bg-white text-xs font-medium px-4 py-1 w-32 h-9 rounded-lg border-neutral-400 border focus:outline-none cursor-pointer">
                         <Select.Value>
                             {value}
                         </Select.Value>
@@ -25,11 +25,11 @@ export function HeaderPage() {
                     <Select.Portal>
                         <Select.Content
                             position="popper"
-                            className="overflow-hidden w-32 bg-white shadow rounded-lg text-sm mt-1"
+                            className="overflow-hidden w-32 bg-white shadow-md rounded-lg text-sm mt-1"
                         >
                             <Select.Viewport className="p-2">
                                 <Select.Group>
-                                    <Select.Item value="Português" className="cursor-pointer text-menuback focus:outline-none p-px rounded-sm hover:bg-neutral-100">
+                                    <Select.Item value="Português" className="cursor-pointer text-neutral-700 focus:outline-none p-px rounded-sm hover:bg-neutral-100">
                                         <Select.ItemText>
                                             Português
                                         </Select.ItemText>
