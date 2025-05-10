@@ -13,11 +13,12 @@ function App() {
   const { fetchAllPokemons } = usePokeList();
   const pokemonList = useSelector((state: RootState) => state.allPokemonList.list);
 
+  //Hook RunOnce
   useEffect(() => {
     if (pokemonList.length === 0) {
       fetchAllPokemons();
     }
-  }, [])
+  }, [pokemonList, fetchAllPokemons])
 
   return (
     <BrowserRouter>
