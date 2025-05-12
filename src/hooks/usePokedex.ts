@@ -1,25 +1,46 @@
 import { Pokemon } from "pokenode-ts";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LIMIT_CARDS } from "../constants/pokemon.constants";
 import { pokemonServices } from "../services/pokemon.service";
+import { useDispatch } from "react-redux";
+import { setList, setLoading } from "../store/reducers/pokedexList";
 
 export function usePokedex() {
-    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    const dispatch = useDispatch();
     const [offset, setOffset] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
     const [next, setNext] = useState(false);
     const [previous, setPrevious] = useState(false);
 
-    useEffect(() => {
-        setIsLoading(true);
+    const getPokemonPage = () => {
+        dispatch(setLoading(true));
         pokemonServices.getLimitedPokemons(offset, LIMIT_CARDS)
             .then(({ pokemons, previous, next }) => {
-                setPokemons(pokemons);
+                console.log(pokemons);
+
+                dispatch(setList(pokemons));
                 setPrevious(!!previous);
                 setNext(!!next);
             })
-            .finally(() => setIsLoading(false));
-    }, [offset])
+            .finally(() => {
+                dispatch(setLoading(false));
+            })
+    }
+
+    const getSearchedPokemon = async (names: string[]) => {
+        dispatch(setLoading(true));
+
+        try {
+            const profiles: Pokemon[] = await Promise.all(
+                names.map(name => pokemonServices.getSinglePokemon(name))
+            );
+
+            dispatch(setList(profiles));
+        } catch (error) {
+            console.error("Erro ao buscar pokemon: ", error);
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
 
     const handleNextPage = () => {
         setOffset(offset + LIMIT_CARDS);
@@ -32,10 +53,10 @@ export function usePokedex() {
     };
 
     return {
-        pokemons,
+        getPokemonPage,
+        getSearchedPokemon,
         handleNextPage,
         handlePreviousPage,
-        isLoading,
         next,
         previous,
     };
