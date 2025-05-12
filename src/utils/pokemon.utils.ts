@@ -1,4 +1,5 @@
 import { ClassValue } from "clsx";
+import { PokemonType } from "pokenode-ts";
 
 const SVG_PATH = "./src/assets/typesIcons/";
 
@@ -11,7 +12,9 @@ export function formatIdBelowTen(id: number | undefined) {
 }
 
 export function upperFirstLetter(word: string) {
-    return word.charAt(0).toLocaleUpperCase() + word.slice(1);
+    if (word !== undefined) {
+        return word.charAt(0).toLocaleUpperCase() + word.slice(1);
+    }
 }
 
 export const typeColor: Record<string, ClassValue> = {
@@ -55,3 +58,11 @@ export const bannerTypeColor: Record<string, ClassValue> = {
     steel: "bg-steelback",
     water: "bg-waterback",
 };
+
+export const defaultType: PokemonType[] = [{
+    slot: 1,
+    type: {
+        name: "normal",
+        url: "https://pokeapi.co/api/v2/type/1/"
+    }
+}]
