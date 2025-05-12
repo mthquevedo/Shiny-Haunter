@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import wishlistSlice from "./reducers/wishlist";
-import catchlistSlice from "./reducers/catchlist";
 import allPokemonListSlice from "./reducers/allPokemonList";
+import catchlistSlice from "./reducers/catchlist";
+import pokedexListSlice from "./reducers/pokedexList";
 import searchSugestionsSlice from "./reducers/searchSugetions";
+import wishlistSlice from "./reducers/wishlist";
 
 const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
         catchlist: catchlistSlice,
         allPokemonList: allPokemonListSlice,
         searchSugestions: searchSugestionsSlice,
+        pokedexList: pokedexListSlice
     }
 });
 
