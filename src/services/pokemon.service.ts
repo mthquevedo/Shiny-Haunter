@@ -1,3 +1,4 @@
+import { Pokemon } from "pokenode-ts";
 import { upperFirstLetter } from "../utils/pokemon.utils";
 import { pokemonClient } from "./pokemon.client";
 
@@ -6,7 +7,7 @@ class PokemonServices {
     async getLimitedPokemons(offset = 0, limit = LIMIT) {
         const { results, ...pagination } = await pokemonClient.listPokemons(offset, limit);
 
-        const pokemons = await Promise.all(
+        const pokemons: Pokemon[] = await Promise.all(
             results.map(({ name }) => pokemonClient.getPokemonByName(name))
         );
 
@@ -21,20 +22,17 @@ class PokemonServices {
         );
 
         const allPokemonList = pokemonData.map((pokemon) => ({
-            id: pokemon.id,
-            name: upperFirstLetter(pokemon.name)
+            value: pokemon.id,
+            label: upperFirstLetter(pokemon.name)
         }))
 
         return allPokemonList;
     }
 
     async getSinglePokemon(name: string) {
-        const pokemon = [];
         const profile = await pokemonClient.getPokemonByName(name);
 
-        pokemon.push(profile);
-
-        return pokemon;
+        return profile;
     }
 }
 
