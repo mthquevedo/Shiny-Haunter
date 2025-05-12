@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { usePokedex } from "../src/hooks/usePokedex";
+import { usePokeList } from "./hooks/usePokeList";
 import { MainLayout } from "./layouts/MainLayout";
 import { HomePage } from "./pages/HomePage";
-import { usePokeList } from "./hooks/usePokeList";
 import { Pokedex } from "./pages/Pokedex";
 import { Shinys } from "./pages/Shinys";
 import { Wishlist } from "./pages/Wishlist";
@@ -11,14 +12,24 @@ import { RootState } from "./store";
 
 function App() {
   const { fetchAllPokemons } = usePokeList();
-  const pokemonList = useSelector((state: RootState) => state.allPokemonList.list);
+  const { getPokemonPage } = usePokedex();
+  const allPokemonList = useSelector((state: RootState) => state.allPokemonList.list);
+  const pokemonPageList = useSelector((state: RootState) => state.pokedexList.list);
 
   //Hook RunOnce
   useEffect(() => {
-    if (pokemonList.length === 0) {
-      fetchAllPokemons();
-    }
-  }, [pokemonList, fetchAllPokemons])
+    const initializeData = () => {
+      if (allPokemonList.length === 0) {
+        fetchAllPokemons();
+      }
+
+      if (pokemonPageList.length === 0) {
+        getPokemonPage();
+      }
+    };
+
+    initializeData();
+  }, [])
 
   return (
     <BrowserRouter>
