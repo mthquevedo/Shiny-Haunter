@@ -1,39 +1,43 @@
+import { useSelector } from "react-redux";
 import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
 import { LoadingCards } from "../../components/LoadingCards";
 import { PokeCard } from "../../components/PokeCard";
-import { SearchForm } from "../../components/SearchForm";
-import { upperFirstLetter } from "../../utils/pokemon.utils";
+import { SearchArea } from "../../components/SearchArea";
 import { usePokedex } from "../../hooks/usePokedex";
+import { RootState } from "../../store";
+import { idValidation, imageValidation, nameValidation, typeValidation } from "../../utils/cardValidation";
 
 export function Pokedex() {
-    const { pokemons, handleNextPage, handlePreviousPage, isLoading, next, previous } = usePokedex();
+    const pokemonList = useSelector((state: RootState) => state.pokedexList.list);
+    const isPageLoading = useSelector((state: RootState) => state.pokedexList.loading);
+    const { handleNextPage, handlePreviousPage, next, previous } = usePokedex();
 
     return (
         <section className="bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-9 px-10 flex gap-4 flex-col justify-between">
             <HeaderPage />
 
-            <SearchForm
-                formTitle="Pokédex"
-                formDescription="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
+            <SearchArea
+                title="Pokédex"
+                description="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
             />
 
             <section className="flex flex-col justify-around gap-5 w-full h-75v">
-                {isLoading ?
+                {isPageLoading || pokemonList.length === 0 ?
                     <LoadingCards />
                     :
                     <div className="flex item-center justify-between flex-wrap gap-5">
-                        {pokemons && pokemons.map(pokemon => {
+                        {pokemonList.map(pokemon => {
                             return (
                                 <PokeCard
-                                    id={pokemon.id}
-                                    key={pokemon.id}
-                                    name={upperFirstLetter(pokemon.name)}
-                                    thumbnailDefault={pokemon.sprites.other?.["official-artwork"].front_default || ""}
-                                    thumbnailShiny={pokemon.sprites.other?.["official-artwork"].front_shiny || ""}
-                                    types={pokemon.types}
+                                    id={idValidation(pokemon.id)}
+                                    key={pokemon.id + pokemon.name}
+                                    name={nameValidation(pokemon.name)}
+                                    thumbnailDefault={imageValidation(pokemon.sprites?.other?.["official-artwork"]?.front_default)}
+                                    thumbnailShiny={imageValidation(pokemon.sprites?.other?.["official-artwork"]?.front_shiny)}
+                                    types={typeValidation(pokemon.types)}
                                 />
-                            );
+                            )
                         })}
                     </div>
                 }
