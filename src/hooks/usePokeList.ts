@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { pokemonServices } from "../services/pokemon.service";
-import { createList, setLoading } from "../store/reducers/allPokemonList";
+import { setList, setLoading } from "../store/reducers/allPokemonList";
 
 export function usePokeList() {
     const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export function usePokeList() {
 
         pokemonServices.getAllPokemons()
             .then((res) => {
-                dispatch(createList(res));
+                dispatch(setList(res));
             });
 
         setTimeout(() => {
