@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface PokemonProps {
-    id: number;
-    name: string;
+    value: number;
+    label: string;
 }
 
 interface pokemonListProps {
@@ -31,12 +31,11 @@ const initialState: pokemonListProps = {
     loading: false,
 };
 
-
 const allPokemonListSlice = createSlice({
     name: "allPokemonList",
     initialState,
     reducers: {
-        createList: (state, { payload }) => {
+        setList: (state, { payload }) => {
             state.list.push(payload);
             localStorage.setItem("pokelist", JSON.stringify(payload));
         },
@@ -46,5 +45,5 @@ const allPokemonListSlice = createSlice({
     }
 });
 
-export const { createList, setLoading } = allPokemonListSlice.actions;
+export const { setList, setLoading } = allPokemonListSlice.actions;
 export default allPokemonListSlice.reducer;
