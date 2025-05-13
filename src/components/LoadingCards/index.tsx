@@ -1,10 +1,12 @@
-import { LIMIT_CARDS } from "../../constants/pokemon.constants"
+interface LoadingCardsProps {
+    quantity: number;
+}
 
-export function LoadingCards() {
-    const cards = Array(LIMIT_CARDS).fill(null);
+export function LoadingCards({ quantity }: LoadingCardsProps) {
+    const cards = Array(quantity).fill(null);
 
     return (
-        <div className="flex item-center justify-center flex-wrap gap-5">
+        <>
             {cards.map((_, i) => (
                 <div key={i} className="bg-slate-200 w-12v h-[17rem] mt-6 mb-0.5 rounded-2xl shadow-md overflow-hidden">
                     <div className="animate-pulse">
@@ -13,6 +15,6 @@ export function LoadingCards() {
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     );
 }
