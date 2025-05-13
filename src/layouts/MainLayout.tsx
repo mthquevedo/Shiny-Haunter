@@ -9,6 +9,8 @@ import { LoadingScreen } from "../components/LoadingScreen";
 import { MenuItem } from "../components/Menu/MenuItem";
 import { ThemeToggle } from "../components/Menu/ThemeToggle";
 import { RootState } from "../store";
+import { FooterPage } from "../components/FooterPage";
+import { HeaderPage } from "../components/HeaderPage";
 
 export const MainLayout = () => {
     const isLoading = useSelector((state: RootState) => state.allPokemonList.loading);
@@ -36,7 +38,13 @@ export const MainLayout = () => {
                     </aside>
 
                     <main>
-                        <Outlet />
+                        <section className="bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-9 px-10 flex flex-1 flex-col justify-between">
+                            <HeaderPage />
+
+                            <Outlet />
+
+                            <FooterPage />
+                        </section>
                     </main>
                 </>
             }
