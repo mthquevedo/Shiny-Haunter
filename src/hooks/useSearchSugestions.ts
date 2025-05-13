@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { setSugestionsList } from "../store/reducers/searchSugetions";
+import { setSugestionsList } from "../store/reducers/searchPokedex";
 
 export function useSearchSugestions() {
     const dispatch = useDispatch();
