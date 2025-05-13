@@ -1,8 +1,9 @@
 import { Pokemon } from "pokenode-ts";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { LIMIT_CARDS } from "../constants/pokemon.constants";
 import { pokemonServices } from "../services/pokemon.service";
-import { useDispatch } from "react-redux";
+import { RootState } from "../store";
 import { setList, setLoading } from "../store/reducers/pokedexList";
 
 export function usePokedex() {
@@ -10,6 +11,7 @@ export function usePokedex() {
     const [offset, setOffset] = useState(0);
     const [next, setNext] = useState(false);
     const [previous, setPrevious] = useState(false);
+    const namesSearched = useSelector((state: RootState) => state.searchPokedex.searchList);
 
     const getPokemonPage = () => {
         dispatch(setLoading(true));
@@ -24,12 +26,12 @@ export function usePokedex() {
             })
     }
 
-    const getSearchedPokemon = async (names: string[]) => {
+    const getSearchedPokemon = async () => {
         dispatch(setLoading(true));
 
         try {
             const profiles: Pokemon[] = await Promise.all(
-                names.map(name => pokemonServices.getSinglePokemon(name))
+                namesSearched.map(name => pokemonServices.getSinglePokemon(name))
             );
 
             dispatch(setList(profiles));
