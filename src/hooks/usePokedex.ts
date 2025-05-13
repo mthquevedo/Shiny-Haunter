@@ -15,8 +15,6 @@ export function usePokedex() {
         dispatch(setLoading(true));
         pokemonServices.getLimitedPokemons(offset, LIMIT_CARDS)
             .then(({ pokemons, previous, next }) => {
-                console.log(pokemons);
-
                 dispatch(setList(pokemons));
                 setPrevious(!!previous);
                 setNext(!!next);
