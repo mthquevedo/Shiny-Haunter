@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import allPokemonListSlice from "./reducers/allPokemonList";
 import catchlistSlice from "./reducers/catchlist";
 import pokedexListSlice from "./reducers/pokedexList";
-import searchSugestionsSlice from "./reducers/searchSugetions";
+import searchPokedexSlice from "./reducers/searchPokedex";
 import wishlistSlice from "./reducers/wishlist";
 
 const store = configureStore({
@@ -10,7 +10,7 @@ const store = configureStore({
         wishlist: wishlistSlice,
         catchlist: catchlistSlice,
         allPokemonList: allPokemonListSlice,
-        searchSugestions: searchSugestionsSlice,
+        searchPokedex: searchPokedexSlice,
         pokedexList: pokedexListSlice
     }
 });
