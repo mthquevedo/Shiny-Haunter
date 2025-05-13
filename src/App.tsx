@@ -29,7 +29,7 @@ function App() {
     };
 
     initializeData();
-  }, [])
+  }, []);
 
   return (
     <BrowserRouter>
