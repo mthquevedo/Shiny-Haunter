@@ -26,7 +26,7 @@ export function Pokedex() {
                 {isPageLoading || pokemonList.length === 0 ?
                     <LoadingCards />
                     :
-                    <div className="flex item-center justify-between flex-wrap gap-5">
+                    <div className="w-full h-full flex items-start justify-start flex-wrap gap-5">
                         {pokemonList.map(pokemon => {
                             return (
                                 <PokeCard
