@@ -8,25 +8,24 @@ import { useEffect } from "react";
 import { usePokedex } from "../../hooks/usePokedex";
 
 export function PokeCardsArea() {
-    const isPageLoading = useSelector((state: RootState) => state.pokedexList.loading);
-    const pokemonList = useSelector((state: RootState) => state.pokedexList.list);
+    const { loading, list } = useSelector((state: RootState) => state.pokedexList);
     const searchList = useSelector((state: RootState) => state.searchPokedex.searchList);
     const cardsQuantity = searchList.length === 0 ? LIMIT_CARDS : searchList.length;
     const { getPokemonPage } = usePokedex();
 
     useEffect(() => {
-        if (pokemonList.length !== LIMIT_CARDS) {
+        if (list.length !== LIMIT_CARDS) {
             getPokemonPage();
         }
     }, []);
 
     return (
-        <div className="w-full h-full flex items-start justify-start flex-wrap gap-5">
-            {isPageLoading ?
+        <div className="w-full h-full flex items-start justify-start flex-wrap gap-6">
+            {loading ?
                 <LoadingCards quantity={cardsQuantity} />
                 :
                 <>
-                    {pokemonList.map(pokemon => {
+                    {list.map(pokemon => {
                         return (
                             <PokeCard
                                 id={idValidation(pokemon.id)}
