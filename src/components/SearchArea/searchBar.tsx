@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
-import { IoMdSearch } from "react-icons/io";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Select, { components, MenuListProps, OnChangeValue } from 'react-select';
+import Select, { OnChangeValue } from 'react-select';
+import { CustomMenuList } from "../../constants/searchBar.constants";
 import { useDebouncedValue } from "../../hooks/useDebouncedValue";
 import { usePokedex } from "../../hooks/usePokedex";
 import { useSearchSugestions } from "../../hooks/useSearchSugestions";
 import { RootState } from "../../store";
-import { resetSearchSugestionsState, setValue, sugestionsItemProps } from "../../store/reducers/searchSugetions";
+import { resetSearchSugestionsState, setSearchList, setValue, sugestionsItemProps } from "../../store/reducers/searchPokedex";
+import { SearchButton } from "./searchButton";
 
 export function SearchBar() {
     const dispatch = useDispatch();
-    const searchValue = useSelector((state: RootState) => state.searchSugestions.searchValue);
-    const sugestionsList = useSelector((state: RootState) => state.searchSugestions.list);
+    const searchValue = useSelector((state: RootState) => state.searchPokedex.searchInputValue);
+    const sugestionsList = useSelector((state: RootState) => state.searchPokedex.sugestionsList);
     const debouncedSearchValue = useDebouncedValue(searchValue, 400);
     const { handleSugestionsList } = useSearchSugestions();
-    const [searchList, setSearchList] = useState<string[]>([]);
-    const { getSearchedPokemon, getPokemonPage } = usePokedex();
+    const { getPokemonPage } = usePokedex();
 
     const handleSearchList = (targets: OnChangeValue<sugestionsItemProps, true>) => {
         const labels = targets.map(target => target.label);
@@ -23,19 +23,9 @@ export function SearchBar() {
         if (labels.length === 0) {
             getPokemonPage();
         } else {
-            setSearchList(labels);
+            dispatch(setSearchList(labels));
             dispatch(resetSearchSugestionsState());
         }
-    };
-
-    const CustomMenuList = (props: MenuListProps<sugestionsItemProps, true>) => {
-        return (
-            <components.MenuList {...props}>
-                <div className="px-2">
-                    {props.children}
-                </div>
-            </components.MenuList>
-        );
     };
 
     useEffect(() => {
@@ -84,12 +74,7 @@ export function SearchBar() {
 
             />
 
-            <button
-                className="flex items-center justify-center w-10 h-10 bg-primary shadow-sm rounded-lg"
-                onClick={() => getSearchedPokemon(searchList)}
-            >
-                <IoMdSearch className="text-white text-2xl" />
-            </button>
+            <SearchButton />
         </div>
     )
 }
