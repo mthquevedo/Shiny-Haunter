@@ -1,16 +1,10 @@
-import { useSelector } from "react-redux";
 import { FooterPage } from "../../components/FooterPage";
 import { HeaderPage } from "../../components/HeaderPage";
-import { LoadingCards } from "../../components/LoadingCards";
-import { PokeCard } from "../../components/PokeCard";
+import { PokeCardsArea } from "../../components/PokeCardsArea";
 import { SearchArea } from "../../components/SearchArea";
 import { usePokedex } from "../../hooks/usePokedex";
-import { RootState } from "../../store";
-import { idValidation, imageValidation, nameValidation, typeValidation } from "../../utils/cardValidation";
 
 export function Pokedex() {
-    const pokemonList = useSelector((state: RootState) => state.pokedexList.list);
-    const isPageLoading = useSelector((state: RootState) => state.pokedexList.loading);
     const { handleNextPage, handlePreviousPage, next, previous } = usePokedex();
 
     return (
@@ -23,24 +17,7 @@ export function Pokedex() {
             />
 
             <section className="flex flex-col justify-around gap-5 w-full h-75v">
-                {isPageLoading || pokemonList.length === 0 ?
-                    <LoadingCards />
-                    :
-                    <div className="w-full h-full flex items-start justify-start flex-wrap gap-5">
-                        {pokemonList.map(pokemon => {
-                            return (
-                                <PokeCard
-                                    id={idValidation(pokemon.id)}
-                                    key={pokemon.id + pokemon.name}
-                                    name={nameValidation(pokemon.name)}
-                                    thumbnailDefault={imageValidation(pokemon.sprites?.other?.["official-artwork"]?.front_default)}
-                                    thumbnailShiny={imageValidation(pokemon.sprites?.other?.["official-artwork"]?.front_shiny)}
-                                    types={typeValidation(pokemon.types)}
-                                />
-                            )
-                        })}
-                    </div>
-                }
+                <PokeCardsArea />
 
                 <div className="flex gap-4 items-center justify-center">
                     <button
