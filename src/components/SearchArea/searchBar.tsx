@@ -15,12 +15,17 @@ export function SearchBar() {
     const debouncedSearchValue = useDebouncedValue(searchValue, 400);
     const { handleSugestionsList } = useSearchSugestions();
     const [searchList, setSearchList] = useState<string[]>([]);
-    const { getSearchedPokemon } = usePokedex();
+    const { getSearchedPokemon, getPokemonPage } = usePokedex();
 
     const handleSearchList = (targets: OnChangeValue<sugestionsItemProps, true>) => {
         const labels = targets.map(target => target.label);
-        setSearchList(labels);
-        dispatch(resetSearchSugestionsState());
+
+        if (labels.length === 0) {
+            getPokemonPage();
+        } else {
+            setSearchList(labels);
+            dispatch(resetSearchSugestionsState());
+        }
     };
 
     const CustomMenuList = (props: MenuListProps<sugestionsItemProps, true>) => {
@@ -47,6 +52,7 @@ export function SearchBar() {
                 placeholder="Busque pelo nome do pokémon"
                 onInputChange={(e) => { dispatch(setValue(e)) }}
                 onChange={handleSearchList}
+                delimiter="3"
                 components={{ MenuList: CustomMenuList }}
                 noOptionsMessage={() => null}
                 className="text-sm w-25v h-full overflow-y-hidden"
