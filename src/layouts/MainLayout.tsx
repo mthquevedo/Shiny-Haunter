@@ -38,7 +38,7 @@ export const MainLayout = () => {
                     </aside>
 
                     <main>
-                        <section className="bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-9 px-10 flex flex-1 flex-col justify-between">
+                        <section className="flex flex-col justify-between bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-9 px-10 ">
                             <HeaderPage />
 
                             <Outlet />
