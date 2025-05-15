@@ -25,10 +25,10 @@ const pokedexListSlice = createSlice({
         setList: (state, { payload }) => {
             state.list = payload;
         },
-        handleNextPage: (state) => {
+        increaseOffset: (state) => {
             state.offset = state.offset + LIMIT_CARDS;
         },
-        handlePreviousPage: (state) => {
+        decreaseOffset: (state) => {
             if (state.offset === 0) {
                 return;
             }
@@ -49,8 +49,8 @@ const pokedexListSlice = createSlice({
 
 export const {
     setList,
-    handleNextPage,
-    handlePreviousPage,
+    increaseOffset,
+    decreaseOffset,
     setLoading,
     setPrevious,
     setNext
