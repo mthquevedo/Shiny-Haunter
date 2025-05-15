@@ -24,6 +24,10 @@ export function usePokedex() {
     }
 
     const getSearchedPokemon = async () => {
+        if (namesSearched.length === 0){
+            return;
+        }
+        
         dispatch(setLoading(true));
 
         try {
