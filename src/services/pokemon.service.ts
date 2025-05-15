@@ -2,9 +2,8 @@ import { Pokemon } from "pokenode-ts";
 import { upperFirstLetter } from "../utils/pokemon.utils";
 import { pokemonClient } from "./pokemon.client";
 
-const LIMIT = 10;
 class PokemonServices {
-    async getLimitedPokemons(offset = 0, limit = LIMIT) {
+    async getLimitedPokemons(offset: number, limit: number) {
         const { results, ...pagination } = await pokemonClient.listPokemons(offset, limit);
 
         const pokemons: Pokemon[] = await Promise.all(
