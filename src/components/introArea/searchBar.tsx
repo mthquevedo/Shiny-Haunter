@@ -21,6 +21,7 @@ export function SearchBar() {
         const labels = targets.map(target => target.label);
 
         if (labels.length === 0) {
+            dispatch(setSearchList([]));
             getPokemonPage();
         } else {
             dispatch(setSearchList(labels));
