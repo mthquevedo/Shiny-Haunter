@@ -1,9 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { Pokemon } from "pokenode-ts";
-import { LIMIT_CARDS } from "../../constants/pokemon.constants";
+import { createSlice } from "@reduxjs/toolkit";
+import { LIMIT_CARDS, PokemonWithImages } from "../../constants/pokemon.constants";
 
 interface pokedexStateProps {
-    list: Pokemon[],
+    list: PokemonWithImages[],
     loading: boolean,
     offset: number,
     next: boolean,

@@ -1,6 +1,5 @@
-import { Pokemon } from "pokenode-ts";
 import { useDispatch, useSelector } from "react-redux";
-import { LIMIT_CARDS } from "../constants/pokemon.constants";
+import { LIMIT_CARDS, PokemonWithImages } from "../constants/pokemon.constants";
 import { pokemonServices } from "../services/pokemon.service";
 import { RootState } from "../store";
 import { setList, setLoading, setNext, setPrevious } from "../store/reducers/pokedexList";
@@ -31,7 +30,7 @@ export function usePokedex() {
         dispatch(setLoading(true));
 
         try {
-            const profiles: Pokemon[] = await Promise.all(
+            const profiles: PokemonWithImages[] = await Promise.all(
                 namesSearched.map(name => pokemonServices.getSinglePokemon(name))
             );
 
