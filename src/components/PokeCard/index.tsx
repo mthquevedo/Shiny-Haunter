@@ -10,13 +10,7 @@ import { WishButton } from "./wishButton";
 import { formatIdBelowTen } from "../../utils/pokemon.utils";
 
 export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeCardProps) {
-    const [pokeImg, setPokeImg] = useState(thumbnailShiny);
     const [showDefault, setShowDefault] = useState(false);
-
-    function handleImg() {
-        setShowDefault(!showDefault)
-        showDefault ? setPokeImg(thumbnailShiny) : setPokeImg(thumbnailDefault);
-    }
 
     return (
         <article key={id} className="flex flex-col bg-white w-12v mt-5 rounded-2xl shadow-md overflow-hidden">
@@ -28,9 +22,10 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                 </div>
 
                 <img
-                    src={pokeImg}
+                    src={showDefault ? thumbnailDefault : thumbnailShiny}
                     alt=""
-                    className="h-auto w-44 mt-1 ml-2 select-none"
+                    loading="lazy"
+                    className="h-auto w-44 mt-1 ml-2 select-none transition-opacity duration-300"
                 />
             </section>
 
@@ -44,7 +39,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                 <div className="flex justify-between">
                     <CardTooltip content="Comparar" side="top">
                         <button
-                            onClick={handleImg}
+                            onClick={() => setShowDefault(!showDefault)}
                             className="flex justify-center items-center text-lg w-12 border-2 border-neutral-400 text-neutral-700 rounded-lg p-1 hover:bg-neutral-200 hover:text-neutral-800 hover:border-neutral-500 hover:shadow-sm active:bg-neutral-300 transition"
                         >
                             <MdCompare />
