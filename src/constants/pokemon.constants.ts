@@ -1,4 +1,4 @@
-import { PokemonType } from "pokenode-ts";
+import { Pokemon, PokemonType } from "pokenode-ts";
 
 export const LIMIT_CARDS = 14;
 
@@ -8,4 +8,9 @@ export interface PokeCardProps {
     thumbnailDefault?: string;
     thumbnailShiny?: string;
     types?: PokemonType[];
+}
+
+export interface PokemonWithImages extends Pokemon {
+    thumbnailDefault: string;
+    thumbnailShiny: string;
 }
