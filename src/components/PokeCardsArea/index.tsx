@@ -1,11 +1,11 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { LIMIT_CARDS } from "../../constants/pokemon.constants";
+import { usePokedex } from "../../hooks/usePokedex";
 import { RootState } from "../../store";
-import { idValidation, imageValidation, nameValidation, typeValidation } from "../../utils/cardValidation";
+import { idValidation, nameValidation, typeValidation } from "../../utils/cardValidation";
 import { LoadingCards } from "../LoadingCards";
 import { PokeCard } from "../PokeCard";
-import { useEffect } from "react";
-import { usePokedex } from "../../hooks/usePokedex";
 
 export function PokeCardsArea() {
     const { loading, list } = useSelector((state: RootState) => state.pokedexList);
@@ -31,8 +31,8 @@ export function PokeCardsArea() {
                                 id={idValidation(pokemon.id)}
                                 key={pokemon.id + pokemon.name}
                                 name={nameValidation(pokemon.name)}
-                                thumbnailDefault={imageValidation(pokemon.sprites?.other?.["official-artwork"]?.front_default)}
-                                thumbnailShiny={imageValidation(pokemon.sprites?.other?.["official-artwork"]?.front_shiny)}
+                                thumbnailDefault={pokemon.thumbnailDefault}
+                                thumbnailShiny={pokemon.thumbnailShiny}
                                 types={typeValidation(pokemon.types)}
                             />
                         )
