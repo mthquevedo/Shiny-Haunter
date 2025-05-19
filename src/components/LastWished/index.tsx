@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import warningImg from "../../assets/Opss.png";
 import { RootState } from "../../store";
-import { PiEmptyBold } from "react-icons/pi";
 
 export function LastWished() {
     const wishlist = useSelector((state: RootState) => state.wishlist.wishlist);
@@ -33,7 +33,8 @@ export function LastWished() {
                 </>
                 :
                 <div className="flex flex-col gap-4 items-center justify-center h-full">
-                    <PiEmptyBold className="text-primary text-5xl" />
+                    <img src={warningImg} alt="Ícone de aviso" className="w-28 pb-2 opacity-80" />
+                    <p className="text-primary font-medium text-lg">Opss!</p>
                     <p className="text-darkgray text-sm">Você ainda não adicionou nenhum pokémon na lista de desejos.</p>
                 </div>
             }
