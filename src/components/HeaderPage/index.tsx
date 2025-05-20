@@ -55,8 +55,8 @@ export function HeaderPage() {
                     </Select.Portal>
                 </Select.Root>
 
-                <a href="https://github.com/mthquevedo/Shiny-Haunter" target="_blank" className="bg-darkgray hover:bg-stone-700 rounded-lg px-4 py-1 h-9 flex items-center justify-center gap-2 shadow">
-                    <p className="text-white text-xs font-medium">Envie seus feedbacks!</p>
+                <a href="https://github.com/mthquevedo/Shiny-Haunter/issues" target="_blank" className="bg-darkgray hover:bg-stone-700 rounded-lg px-4 py-1 h-9 flex items-center justify-center gap-2 shadow">
+                    <p className="text-white text-xs font-medium">Sugestões?</p>
                     <IoLogoGithub className="fill-white w-6 h-6" />
                 </a>
             </div>
