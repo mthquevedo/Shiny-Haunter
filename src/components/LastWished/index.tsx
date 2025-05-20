@@ -4,32 +4,44 @@ import warningImg from "../../assets/Opss.png";
 import { RootState } from "../../store";
 
 export function LastWished() {
-    const wishlist = useSelector((state: RootState) => state.wishlist.wishlist);
-    const lastWished = wishlist.slice(-3);
+    const lastWished = useSelector((state: RootState) => state.wishlist.wishlist).slice(-3);
 
     return (
-        <div className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-3 rounded-lg shadow">
+        <section className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-lg shadow">
             {lastWished[0] ?
                 <>
-                    <p className="font-medium text-darkgray">Adicionados recentemente a lista de desejos</p>
-                    <div className="flex-1">
+                    <header className="flex items-center justify-between mb-1">
+                        <h2 className="font-medium text-darkgray">Adicionados recentemente a lista de desejos</h2>
+                        <Link to="listadedesejos" className="py-1 px-2 font-medium text-xs text-zinc-800 rounded-md border border-zinc-300  hover:bg-gray-200 transition hover:shadow-sm ">
+                            <p>Ver todos</p>
+                        </Link>
+                    </header>
+
+                    <ul className="flex-1">
                         {lastWished.map(item => {
                             return (
-                                <div key={item.name} className="flex items-center my-2 pl-4 pb-1 justify-between text-sm border-b-2 text-darkgray">
+                                <li
+                                    key={item.name}
+                                    className="flex items-center bg-indigo-50 my-3 px-4 justify-between text-sm rounded-md text-darkgray"
+                                >
                                     <div className="flex gap-4 items-center">
-                                        <img src={item.image} alt="Foto de pokémon" className="w-12 h-12" />
-                                        <p>{item.name}</p>
+                                        <img src={item.image} alt={`Imagem do pokémon ${item.name}`} className="w-12 h-12" />
+
+                                        <p className="font-medium">{item.name}</p>
                                     </div>
 
-                                    <p>{item.date}</p>
-                                </div>
+                                    <div className="flex flex-col gap-1 text-right">
+                                        <p className="text-xs font-medium">Adicionado em:</p>
+                                        <time className="text-sm">{item.date}</time>
+                                    </div>
+                                </li>
                             )
                         })}
-                    </div>
+                    </ul>
 
-                    <Link to="listadedesejos" className="text-xs font-bold text-primary text-right pt-1 hover:underline">
-                        <p>Ver lista completa</p>
-                    </Link>
+                    <footer>
+
+                    </footer>
                 </>
                 :
                 <div className="flex flex-col gap-1 items-center justify-center h-full">
@@ -38,6 +50,6 @@ export function LastWished() {
                     <p className="text-darkgray text-sm">Você ainda não adicionou nenhum pokémon na lista de desejos.</p>
                 </div>
             }
-        </div>
+        </section>
     )
 }
