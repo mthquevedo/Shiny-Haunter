@@ -1,4 +1,5 @@
 import { IntroArea } from "../../components/introArea";
+import { WishCardsArea } from "../../components/WishCardsArea";
 
 export function Wishlist() {
     return (
@@ -9,7 +10,7 @@ export function Wishlist() {
             />
 
             <section className="flex flex-col justify-around gap-5 w-full h-75v">
-             
+                <WishCardsArea />
             </section>
         </>
     )
