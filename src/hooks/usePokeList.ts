@@ -11,6 +11,7 @@ export function usePokeList() {
         pokemonServices.getAllPokemons()
             .then((res) => {
                 dispatch(setList(res));
+                localStorage.setItem("pokelist", JSON.stringify(res));
             });
 
         setTimeout(() => {
