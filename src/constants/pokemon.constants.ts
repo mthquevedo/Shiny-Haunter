@@ -10,3 +10,11 @@ export interface PokeProps {
     thumbnailShiny: string;
     types: PokemonType[];
 }
+
+export interface genericSubListItem {
+    key: number;
+    name: string;
+    image: string;
+    type: PokemonType[];
+    date?: string;
+}
