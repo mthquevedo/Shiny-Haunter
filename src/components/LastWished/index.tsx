@@ -32,7 +32,7 @@ export function LastWished() {
                     </Link>
                 </>
                 :
-                <div className="flex flex-col gap-4 items-center justify-center h-full">
+                <div className="flex flex-col gap-1 items-center justify-center h-full">
                     <img src={warningImg} alt="Ícone de aviso" className="w-28 pb-2 opacity-80" />
                     <p className="text-primary font-medium text-lg">Opss!</p>
                     <p className="text-darkgray text-sm">Você ainda não adicionou nenhum pokémon na lista de desejos.</p>
