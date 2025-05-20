@@ -45,7 +45,12 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                         </button>
                     </CardTooltip>
 
-                    <WishButton name={name} thumbnailShiny={thumbnailShiny} />
+                    <WishButton
+                        key={id}
+                        name={name}
+                        image={thumbnailShiny}
+                        type={types}
+                    />
                 </div>
             </footer>
         </article>
