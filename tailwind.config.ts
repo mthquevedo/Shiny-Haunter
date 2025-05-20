@@ -11,7 +11,7 @@ export default {
 			colors: {
 				menuback: '#222222',
 				primary: '#2D3073',
-				backcolor: '#e3e6ed',
+				backcolor: '#F2F2F2',
 				darkgray: '#323232',
 				menucyan: '#B2DCED',
 				buttoncyan: '#66BACD',
