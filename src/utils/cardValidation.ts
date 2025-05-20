@@ -6,7 +6,8 @@ export function idValidation(id: number) {
 }
 
 export function nameValidation(name: string) {
-    return name ? upperFirstLetter(name) : "???";
+    const pokeName = upperFirstLetter(name);
+    return pokeName ? pokeName : "???";
 }
 
 export function typeValidation(type: PokemonType[] = []) {
