@@ -1,24 +1,26 @@
-import { useDispatch, useSelector, } from "react-redux";
+import { useSelector } from "react-redux";
+import { genericSubListItem } from "../../constants/pokemon.constants";
+import { useWishList } from "../../hooks/useWishList";
 import { cn } from "../../lib/cn";
 import { RootState } from "../../store";
-import { toggleWishlist } from "../../store/reducers/wishlist";
-import { PokeCardProps } from "../../constants/pokemon.constants";
 
 const ACTIVE_BUTTON = "bg-neutral-400 active:bg-neutral-400 hover:bg-neutral-500 hover:text-white";
 
-// interface WishButtonProps {
-//     pokeName: string;
-// }
+export function WishButton({ key, name, image, type }: genericSubListItem) {
+    const { handleWishItem } = useWishList();
+    const isWished = useSelector((state: RootState) => state.wishlist.wishlist)
+        .some(item => item.name === name);
 
-export function WishButton({ name, thumbnailShiny }: PokeCardProps) {
-    const pokeName = name ?? "";
-    const dispatch = useDispatch();
-    const wishlist = useSelector((state: RootState) => state.wishlist.wishlist);
-
-    const isWished = wishlist.some(item => item.name === pokeName);
+    const pokemon: genericSubListItem = {
+        key,
+        name,
+        image,
+        type,
+        date: new Date().toLocaleDateString('pt-BR'),
+    }
 
     const handleToggle = () => {
-        dispatch(toggleWishlist({ name: pokeName, image: thumbnailShiny ?? "" }));
+        handleWishItem(pokemon)
     };
 
     return (
@@ -27,7 +29,7 @@ export function WishButton({ name, thumbnailShiny }: PokeCardProps) {
                 className={cn("flex justify-center w-36 items-center text-xs text-white font-medium bg-blue-500 rounded-lg p-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 active:scale-[0.98] transition", { [ACTIVE_BUTTON]: isWished })}
                 onClick={handleToggle}
             >
-                {(isWished) ?
+                {isWished ?
                     "Remover"
                     :
                     "Adicionar"
@@ -35,5 +37,5 @@ export function WishButton({ name, thumbnailShiny }: PokeCardProps) {
 
             </button>
         </>
-    )
+    );
 }
