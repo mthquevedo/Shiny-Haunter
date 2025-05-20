@@ -4,7 +4,6 @@ import { LIMIT_CARDS } from "../../constants/pokemon.constants";
 import { usePokedex } from "../../hooks/usePokedex";
 import { RootState } from "../../store";
 import { setSearchList } from "../../store/reducers/searchPokedex";
-import { idValidation, nameValidation, typeValidation } from "../../utils/cardValidation";
 import { LoadingCards } from "../LoadingCards";
 import { PokeCard } from "../PokeCard";
 
@@ -31,12 +30,12 @@ export function PokeCardsArea() {
                     {list.map(pokemon => {
                         return (
                             <PokeCard
-                                id={idValidation(pokemon.id)}
-                                key={pokemon.id + pokemon.name}
-                                name={nameValidation(pokemon.name)}
+                                id={pokemon.id}
+                                key={pokemon.key}
+                                name={pokemon.name}
                                 thumbnailDefault={pokemon.thumbnailDefault}
                                 thumbnailShiny={pokemon.thumbnailShiny}
-                                types={typeValidation(pokemon.types)}
+                                types={pokemon.types}
                             />
                         )
                     })}
