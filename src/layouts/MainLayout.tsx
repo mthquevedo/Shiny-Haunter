@@ -33,7 +33,7 @@ export const MainLayout = () => {
                         </div>
 
                         <div className="flex flex-col justify-center gap-4">
-                            <hr className="border-stone-400 mx-1" />
+                            <hr className="border-stone-400 mx-px" />
 
                             <p className="bg-neutral-700 p-1 font-medium text-xs text-stone-300 border border-neutral-600 rounded-md">Versão 1.0</p>
                         </div>
