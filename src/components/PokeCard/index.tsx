@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { MdCompare } from "react-icons/md";
-import { PokeCardProps } from "../../constants/pokemon.constants";
+import { PokeProps } from "../../constants/pokemon.constants";
 import { cn } from "../../lib/cn";
-import { bannerTypeColor } from "../../utils/pokemon.utils";
+import { bannerTypeColor, formatIdBelowTen } from "../../utils/pokemon.utils";
 import { CardTooltip } from "../Tooltips/CardTooltip";
 import { CatchButton } from "./catchButton";
 import { TypeShelf } from "./typeShelf";
 import { WishButton } from "./wishButton";
-import { formatIdBelowTen } from "../../utils/pokemon.utils";
 
-export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeCardProps) {
+export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeProps) {
     const [showDefault, setShowDefault] = useState(false);
 
     return (
