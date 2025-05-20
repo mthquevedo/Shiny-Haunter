@@ -40,7 +40,7 @@ export const MainLayout = () => {
                     </aside>
 
                     <main className="overflow-hidden">
-                        <section className="flex flex-col justify-between bg-gradient-to-tl from-backcolor to-white w-95v h-100v pt-11 pb-6 px-10">
+                        <section className="flex flex-col justify-between bg-gradient-to-tl bg-backcolor w-95v h-100v pt-11 pb-6 px-10">
                             <HeaderPage />
 
                             <Outlet />
