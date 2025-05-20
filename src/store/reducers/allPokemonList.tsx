@@ -36,8 +36,7 @@ const allPokemonListSlice = createSlice({
     initialState,
     reducers: {
         setList: (state, { payload }) => {
-            state.list.push(payload);
-            localStorage.setItem("pokelist", JSON.stringify(payload));
+            state.list = payload;
         },
         setLoading: (state, { payload }) => {
             state.loading = payload;
