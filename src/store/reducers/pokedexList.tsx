@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { LIMIT_CARDS, PokemonWithImages } from "../../constants/pokemon.constants";
+import { LIMIT_CARDS, PokeProps } from "../../constants/pokemon.constants";
 
 interface pokedexStateProps {
-    list: PokemonWithImages[],
+    list: PokeProps[],
     loading: boolean,
     offset: number,
     next: boolean,
