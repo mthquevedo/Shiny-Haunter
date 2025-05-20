@@ -1,54 +1,28 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { genericSubListItem } from "../../constants/pokemon.constants";
 
-interface WishlistItem {
-    name: string;
-    image: string;
-    date?: string;
-}
 interface WishlistStateProps {
-    wishlist: WishlistItem[];
-}
-
-const loadWishlist = (): WishlistItem[] => {
-    try {
-        const storedWishlist = localStorage.getItem("wishlist");
-
-        if (storedWishlist) {
-            return JSON.parse(storedWishlist);
-        } else {
-            localStorage.setItem("wishlist", JSON.stringify([]));
-            return [];
-        }
-    } catch (error) {
-        console.error("Erro ao carregar a wishlist do localStorage", error);
-        return [];
-    }
+    wishlist: genericSubListItem[];
+    view: "grid" | "list";
 }
 
 const initialState: WishlistStateProps = {
-    wishlist: loadWishlist(),
+    wishlist: JSON.parse(localStorage.getItem("wishlist") || "[]"),
+    view: "grid",
 };
 
 const wishlistSlice = createSlice({
     name: "wishlist",
     initialState,
     reducers: {
-        toggleWishlist: (state, action: PayloadAction<WishlistItem>) => {
-            const { name, image } = action.payload;
+        toggleWishlist: (state, action: PayloadAction<genericSubListItem>) => {
+            const index = state.wishlist.findIndex((item) => item.name === action.payload.name);
 
-            if (state.wishlist.some(item => item.name === name)) {
-                state.wishlist = state.wishlist.filter(item => item.name !== name);
+            if (index >= 0) {
+                state.wishlist.splice(index, 1);
             } else {
-                const today = new Date().toLocaleDateString('pt-BR');
-
-                state.wishlist.push({
-                    name,
-                    image,
-                    date: today
-                });
+                state.wishlist.push(action.payload);
             }
-
-            localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
         }
     }
 });
