@@ -1,0 +1,3 @@
+export function GenericCardList() {
+    return("")
+}
