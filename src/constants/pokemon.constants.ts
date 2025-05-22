@@ -12,9 +12,18 @@ export interface PokeProps {
 }
 
 export interface genericSubListItem {
-    key: number;
+    id: number;
     name: string;
     image: string;
     type: PokemonType[];
     date?: string;
+}
+
+export interface genericSubListProps {
+    list: genericSubListItem[];
+    view: "grid" | "list";
+}
+
+export interface genericPokemon {
+    pokemon: genericSubListItem;
 }
