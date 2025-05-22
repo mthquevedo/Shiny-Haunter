@@ -10,7 +10,7 @@ export default {
 		extend: {
 			colors: {
 				menuback: '#222222',
-				primary: '#2D3073',
+				primary: '#312c85',
 				backcolor: '#F2F2F2',
 				darkgray: '#323232',
 				menucyan: '#B2DCED',
@@ -79,6 +79,7 @@ export default {
 				"4v": "4.3vw",
 				"5v": "5vw",
 				"6v": "6vw",
+				"8v": "8vw",
 				"10v": "10vw",
 				"12v": "12vw",
 				"14v": "14vw",
