@@ -16,7 +16,7 @@ export function MenuItem({ text, icon: Icon, altText, to, ...props }: MenuItemPr
 
     return (
         <Link {...props} to={to}>
-            <div className={cn("flex flex-col items-center justify-center gap-1.5 w-16 h-16 border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95 transition duration-100 rounded-lg", { [ACTIVE_BG]: isActive })}>
+            <div className={cn("flex flex-col items-center justify-center gap-1.5 w-16 h-16 border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95 transition duration-75 rounded-lg", { [ACTIVE_BG]: isActive })}>
                 <Icon aria-label={altText} className={cn("h-auto w-7 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
 
                 <span className={cn("text-xs text-neutral-300 transition", { [ACTIVE_TEXT]: isActive })}>{text}</span>
