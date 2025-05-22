@@ -22,7 +22,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
 
                 <img
                     src={showDefault ? thumbnailDefault : thumbnailShiny}
-                    alt=""
+                    alt={`Imagem do pokémon ${name}`}
                     loading="lazy"
                     className="h-auto w-44 mt-1 ml-2 select-none transition-opacity duration-300"
                 />
@@ -47,6 +47,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
 
                     <WishButton
                         key={id}
+                        id={id}
                         name={name}
                         image={thumbnailShiny}
                         type={types}
