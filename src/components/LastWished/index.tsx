@@ -4,7 +4,7 @@ import warningImg from "../../assets/Opss.png";
 import { RootState } from "../../store";
 
 export function LastWished() {
-    const lastWished = useSelector((state: RootState) => state.wishlist.wishlist).slice(-3);
+    const lastWished = useSelector((state: RootState) => state.wishlist.list).slice(-3);
 
     return (
         <section className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-lg shadow">
