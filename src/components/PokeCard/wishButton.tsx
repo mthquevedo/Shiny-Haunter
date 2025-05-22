@@ -6,20 +6,20 @@ import { RootState } from "../../store";
 
 const ACTIVE_BUTTON = "bg-neutral-400 active:bg-neutral-400 hover:bg-neutral-500 hover:text-white";
 
-export function WishButton({ key, name, image, type }: genericSubListItem) {
+export function WishButton({ id, name, image, type }: genericSubListItem) {
     const { handleWishItem } = useWishList();
-    const isWished = useSelector((state: RootState) => state.wishlist.wishlist)
+    const isWished = useSelector((state: RootState) => state.wishlist.list)
         .some(item => item.name === name);
 
     const pokemon: genericSubListItem = {
-        key,
+        id,
         name,
         image,
         type,
         date: new Date().toLocaleDateString('pt-BR'),
     }
 
-    const handleToggle = () => {
+    const handleToggle = () => {        
         handleWishItem(pokemon)
     };
 
