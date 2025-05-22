@@ -1,15 +1,17 @@
-import { PaginationButtons } from "../../components/paginationButtons";
+import { PaginationButtons } from "../../components/PaginationButtons";
 import { PokeCardsArea } from "../../components/PokeCardsArea";
-import { IntroArea } from "../../components/introArea";
+import { IntroArea } from "../../components/IntroArea";
 
 export function Pokedex() {
     return (
         <>
-            <IntroArea
-                title="Pokédex"
-                description="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
-                hasSearch
-            />
+            <IntroArea.Root>
+                <IntroArea.Texts
+                    title="Pokédex"
+                    description="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
+                />
+                <IntroArea.SearchBar />
+            </IntroArea.Root>
 
             <section className="flex flex-col justify-around gap-5 w-full h-75v">
                 <PokeCardsArea />
