@@ -5,7 +5,7 @@ export const wishlistPersistenceMiddleware: Middleware = (storeAPI) => (next) =>
     const res = next(action);
 
     if (toggleWishlist.match(action)) {
-        const wishlist = storeAPI.getState().wishlist.wishlist;
+        const wishlist = storeAPI.getState().wishlist.list;
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
     }
 
