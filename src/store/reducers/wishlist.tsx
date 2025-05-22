@@ -1,13 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { genericSubListItem } from "../../constants/pokemon.constants";
+import { genericSubListItem, genericSubListProps } from "../../constants/pokemon.constants";
 
-interface WishlistStateProps {
-    wishlist: genericSubListItem[];
-    view: "grid" | "list";
+function loadList(): genericSubListItem[] {
+    try {
+        const storedList = localStorage.getItem("wishlist");
+
+        if (!storedList) {
+            localStorage.setItem("wishlist", JSON.stringify([]));
+            return [];
+        }
+
+        return JSON.parse(storedList);
+    } catch (error) {
+        console.error("Erro ao carregar a wishlist do localStorage", error);
+        return [];
+    }
 }
 
-const initialState: WishlistStateProps = {
-    wishlist: JSON.parse(localStorage.getItem("wishlist") || "[]"),
+const initialState: genericSubListProps = {
+    list: loadList(),
     view: "grid",
 };
 
@@ -16,12 +27,12 @@ const wishlistSlice = createSlice({
     initialState,
     reducers: {
         toggleWishlist: (state, action: PayloadAction<genericSubListItem>) => {
-            const index = state.wishlist.findIndex((item) => item.name === action.payload.name);
+            const index = state.list.findIndex((item) => item.name === action.payload.name);
 
             if (index >= 0) {
-                state.wishlist.splice(index, 1);
+                state.list.splice(index, 1);
             } else {
-                state.wishlist.push(action.payload);
+                state.list.push(action.payload);
             }
         }
     }
