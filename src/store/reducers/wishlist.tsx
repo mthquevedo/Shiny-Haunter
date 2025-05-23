@@ -34,9 +34,17 @@ const wishlistSlice = createSlice({
             } else {
                 state.list.push(action.payload);
             }
+        },
+        deleteWishItem: (state, { payload }) => {
+            const index = state.list.findIndex((item) => item.name === payload);
+
+            state.list.splice(index, 1);
         }
     }
 });
 
-export const { toggleWishlist } = wishlistSlice.actions;
+export const {
+    toggleWishlist,
+    deleteWishItem,
+} = wishlistSlice.actions;
 export default wishlistSlice.reducer;
