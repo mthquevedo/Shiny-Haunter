@@ -12,6 +12,7 @@ import { RootState } from "../store";
 
 export const MainLayout = () => {
     const isLoading = useSelector((state: RootState) => state.allPokemonList.loading);
+    const { hasWishNotification } = useSelector((state: RootState) => state.wishlist);
     const { t } = useTranslation();
 
     return (
@@ -27,7 +28,7 @@ export const MainLayout = () => {
                             <nav className="flex flex-col justify-center items-center px-5 mt-[1.8rem] gap-6 text-gray-50">
                                 <MenuItem icon={HiHome} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
                                 <MenuItem icon={MdCatchingPokemon} altText={"Ícone da Pokédex"} text={"Dex"} to={"pokedex"} />
-                                <MenuItem icon={IoMdListBox} altText={"Ícone da Lista de desejos"} text={"Desejos"} to={"listadedesejos"} />
+                                <MenuItem icon={IoMdListBox} altText={"Ícone da Lista de desejos"} text={"Desejos"} to={"listadedesejos"} notification={hasWishNotification} />
                                 <MenuItem icon={HiOutlineSparkles} altText={"Ícone dos Meus shinys"} text={"Shinys"} to={"shinys"} />
                             </nav>
                         </div>
