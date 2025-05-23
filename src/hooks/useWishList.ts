@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { genericSubListItem } from "../constants/pokemon.constants";
-import { toggleWishlist } from "../store/reducers/wishlist";
+import { toggleWishlist, deleteWishItem } from "../store/reducers/wishlist";
 
 export function useWishList() {
     const dispatch = useDispatch();
@@ -8,6 +8,12 @@ export function useWishList() {
     const handleWishItem = (pokemon: genericSubListItem) => {
         dispatch(toggleWishlist(pokemon));
     }
+    const deleteItem = (name: string) => {
+        dispatch(deleteWishItem(name));
+    }
 
-    return { handleWishItem };
+    return {
+        handleWishItem,
+        deleteItem,
+    };
 }
