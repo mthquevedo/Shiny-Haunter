@@ -1,6 +1,6 @@
+import { IntroArea } from "../../components/IntroArea";
 import { PaginationButtons } from "../../components/PaginationButtons";
 import { PokeCardsArea } from "../../components/PokeCardsArea";
-import { IntroArea } from "../../components/IntroArea";
 
 export function Pokedex() {
     return (
