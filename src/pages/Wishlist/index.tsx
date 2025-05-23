@@ -1,11 +1,21 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { GenericCardsArea } from "../../components/GenericCardsArea";
 import { IntroArea } from "../../components/IntroArea";
+import { useWishList } from "../../hooks/useWishList";
 import { RootState } from "../../store";
 
 export function Wishlist() {
     const { list, view } = useSelector((state: RootState) => state.wishlist);
-    
+    const { resetNotificationState } = useWishList();
+    const { hasWishNotification } = useSelector((state: RootState) => state.wishlist);
+
+    useEffect(() => {
+        if (hasWishNotification) {
+            resetNotificationState();
+        }
+    }, []);
+
     return (
         <>
             <IntroArea.Root>
