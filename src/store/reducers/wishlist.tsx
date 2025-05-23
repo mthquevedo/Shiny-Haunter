@@ -1,6 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { genericSubListItem, genericSubListProps } from "../../constants/pokemon.constants";
 
+interface WishStateProps extends genericSubListProps {
+    hasWishNotification: boolean;
+}
+
 function loadList(): genericSubListItem[] {
     try {
         const storedList = localStorage.getItem("wishlist");
@@ -17,9 +21,10 @@ function loadList(): genericSubListItem[] {
     }
 }
 
-const initialState: genericSubListProps = {
+const initialState: WishStateProps = {
     list: loadList(),
     view: "grid",
+    hasWishNotification: false,
 };
 
 const wishlistSlice = createSlice({
@@ -27,18 +32,21 @@ const wishlistSlice = createSlice({
     initialState,
     reducers: {
         toggleWishlist: (state, action: PayloadAction<genericSubListItem>) => {
-            const index = state.list.findIndex((item) => item.name === action.payload.name);
+            const alreadyExists = state.list.some(item => item.name === action.payload.name);
 
-            if (index >= 0) {
-                state.list.splice(index, 1);
+            if (alreadyExists) {
+                state.list = state.list.filter(item => item.name !== action.payload.name);
             } else {
-                state.list.push(action.payload);
+                state.list = [...state.list, action.payload];
+                state.hasWishNotification = true;
             }
+            
         },
         deleteWishItem: (state, { payload }) => {
-            const index = state.list.findIndex((item) => item.name === payload);
-
-            state.list.splice(index, 1);
+            state.list = state.list.filter(item => item.name !== payload);
+        },
+        resetNotification: (state) => {
+            state.hasWishNotification = false;
         }
     }
 });
@@ -46,5 +54,6 @@ const wishlistSlice = createSlice({
 export const {
     toggleWishlist,
     deleteWishItem,
+    resetNotification,
 } = wishlistSlice.actions;
 export default wishlistSlice.reducer;
