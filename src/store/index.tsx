@@ -4,6 +4,7 @@ import catchlistSlice from "./reducers/catchlist";
 import pokedexListSlice from "./reducers/pokedexList";
 import searchPokedexSlice from "./reducers/searchPokedex";
 import wishlistSlice from "./reducers/wishlist";
+import userPreferencesSlice from "./reducers/userPreferences";
 import { wishlistPersistenceMiddleware } from "./middleware/wishlistPersistence";
 
 const store = configureStore({
@@ -12,7 +13,8 @@ const store = configureStore({
         catchlist: catchlistSlice,
         allPokemonList: allPokemonListSlice,
         searchPokedex: searchPokedexSlice,
-        pokedexList: pokedexListSlice
+        pokedexList: pokedexListSlice,
+        userPreferences: userPreferencesSlice,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(wishlistPersistenceMiddleware),
