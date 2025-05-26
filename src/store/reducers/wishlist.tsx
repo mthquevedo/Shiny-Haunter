@@ -23,7 +23,6 @@ function loadList(): genericSubListItem[] {
 
 const initialState: WishStateProps = {
     list: loadList(),
-    view: "grid",
     hasWishNotification: false,
 };
 
