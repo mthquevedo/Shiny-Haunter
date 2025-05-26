@@ -21,8 +21,9 @@ export interface genericSubListItem {
 
 export interface genericSubListProps {
     list: genericSubListItem[];
-    view: "grid" | "list";
 }
+
+export type ViewType = "grid" | "list";
 
 export interface genericPokemon {
     pokemon: genericSubListItem;
