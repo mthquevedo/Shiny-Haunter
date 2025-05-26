@@ -11,15 +11,14 @@ interface CatchlistStateProps {
 
 const loadCatchlist = (): CatchlistItem[] => {
     try {
-        const storedCatchlist = localStorage.getItem("catchlist");
+        const storedList = localStorage.getItem("catchlist");
 
-        if (storedCatchlist) {
-            return JSON.parse(storedCatchlist);
-        } else {
+        if (!storedList) {
             localStorage.setItem("catchlist", JSON.stringify([]));
             return [];
         }
 
+        return JSON.parse(storedList);
     } catch (error) {
         console.error("Erro ao carregar a catchlist do localStorage", error);
         return [];
