@@ -12,7 +12,7 @@ export function LastWished() {
                 <>
                     <header className="flex items-center justify-between mb-1">
                         <h2 className="font-medium text-darkgray">Adicionados recentemente a lista de desejos</h2>
-                        <Link to="listadedesejos" className="py-1 px-2 font-medium text-xs text-zinc-800 rounded-md border border-zinc-300  hover:bg-gray-200 transition hover:shadow-sm ">
+                        <Link to="listadedesejos" className="py-1 px-2 font-medium text-xs text-zinc-800 rounded-md border border-zinc-300 hover:bg-gray-200 transition hover:shadow-sm">
                             <p>Ver todos</p>
                         </Link>
                     </header>
