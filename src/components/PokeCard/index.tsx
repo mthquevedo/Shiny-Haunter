@@ -12,8 +12,8 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
     const [showDefault, setShowDefault] = useState(false);
 
     return (
-        <article key={id} className="flex flex-col bg-white w-12v rounded-2xl shadow-md overflow-hidden">
-            <section className={cn("flex flex-col justify-center items-center w-full h-48 relative overflow-hidden rounded-xl", bannerTypeColor[types?.[0].type.name || ""])}>
+        <article key={id} className="flex flex-col bg-white w-12v rounded-lg shadow-md overflow-hidden">
+            <section className={cn("flex flex-col justify-center items-center w-full h-48 relative overflow-hidden rounded-lg", bannerTypeColor[types?.[0].type.name || ""])}>
                 <div className="absolute top-1 w-full px-2 flex items-center justify-between">
                     <TypeShelf types={types} />
 
