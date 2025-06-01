@@ -1,4 +1,4 @@
-import { LuTrash2 } from "react-icons/lu";
+import { IoClose } from "react-icons/io5";
 import { useWishList } from "../../hooks/useWishList";
 import { CardTooltip } from "../Tooltips/CardTooltip";
 
@@ -12,10 +12,10 @@ export function DeleteButton({ name }: DeleteButtoProps) {
     return (
         <CardTooltip content="Remover" side="top">
             <button
-                className={"flex justify-center items-center text-xl bg-neutral-400 rounded-full shadow-sm p-1 hover:bg-red-500 active:bg-red-600 active:scale-95 text-white transition"}
+                className={"flex justify-center items-center bg-neutral-200 text-neutral-600 rounded-lg p-1 mr-1.5 transition active:scale-95 hover:bg-neutral-300 hover:shadow-sm "}
                 onClick={() => deleteItem(name)}
             >
-                <LuTrash2 className="" />
+                <IoClose className="text-lg"/>
             </button>
         </CardTooltip>
     )
