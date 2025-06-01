@@ -33,13 +33,13 @@ export function HomePage() {
                 <p className="font-bold text-sm mb-3 text-darkgray">Notas de atualização</p>
 
                 <div className="flex items-center justify-between gap-5">
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
-                    <div className="bg-zinc-300 w-64 h-14 rounded-lg"></div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
+                    <div className="flex items-center justify-center bg-zinc-300 w-64 h-14 rounded-lg">Em breve</div>
                 </div>
             </div>
         </>
