@@ -1,13 +1,14 @@
 import { genericSubListItem } from "../../constants/pokemon.constants";
-import { GenericCardGrid } from "./GenericCardGrid";
-import { GenericCardList } from "./GenericCardList";
+import { GenericCardGrid } from "./genericCardGrid";
+import { GenericCardList } from "./genericCardList";
 
 interface GenericCardProps {
     pokemon: genericSubListItem;
     view: "grid" | "list",
+    hasCatchButton?: boolean;
 }
 
-export function GenericCard({ pokemon, view }: GenericCardProps) {
+export function GenericCard({ pokemon, view, hasCatchButton }: GenericCardProps) {
     const isGridView = view === "grid";
 
     return (
@@ -16,10 +17,13 @@ export function GenericCard({ pokemon, view }: GenericCardProps) {
                 <GenericCardGrid
                     key={pokemon.id}
                     pokemon={pokemon}
+                    hasCatchButton={hasCatchButton}
                 />
                 :
                 <GenericCardList
                     key={pokemon.id}
+                    pokemon={pokemon}
+                    hasCatchButton={hasCatchButton}
                 />
             }
         </>
