@@ -1,34 +1,43 @@
 import { genericPokemon } from "../../constants/pokemon.constants";
 import { cn } from "../../lib/cn";
 import { bannerTypeColor } from "../../utils/pokemon.utils";
-import { CatchButton } from "../PokeCard/catchButton";
 import { TypeShelf } from "../PokeCard/typeShelf";
-import { DeleteButton } from "./deleteButton";
+import { DeleteButton } from "./GenericButtons/deleteButton";
+import { GenericCatchButton } from "./GenericButtons/genericCatchButton";
 
-export function GenericCardGrid({ pokemon }: genericPokemon) {
+interface GenericCardGrid extends genericPokemon {
+    hasCatchButton?: boolean;
+}
+
+export function GenericCardGrid({ pokemon, hasCatchButton }: GenericCardGrid) {    
     return (
         <article
             key={pokemon.id}
-            className={cn("flex flex-col items-center border border-neutral-400 w-[9.625rem] h-22v rounded-lg py-2 px-2 overflow-hidden transition hover:border-neutral-500 hover:shadow-lg", bannerTypeColor[pokemon.type[0].type.name])}
+            className="flex flex-col bg-white w-[9.625rem] h-fit rounded-lg overflow-hidden shadow-md"
         >
-            <header className="flex w-full items-center justify-between">
-                <CatchButton />
+            <section
+                className={cn("flex flex-col items-center justify-between pt-1 relative overflow-hidden", bannerTypeColor[pokemon.types[0].type.name])}
+            >
+                <header className="flex w-full items-center justify-between absolute top-0.5">
+                    <span className="scale-[0.8]">
+                        <TypeShelf types={pokemon.types} />
+                    </span>
 
-                <DeleteButton name={pokemon.name} />
-            </header>
+                    <DeleteButton name={pokemon.name} />
+                </header>
 
-            <img
-                src={pokemon.image}
-                alt={`Imagem do pokémon ${pokemon.name}`}
-                loading="lazy"
-                className="w-24"
-            />
+                <img
+                    src={pokemon.image}
+                    alt={`Imagem do pokémon ${pokemon.name}`}
+                    loading="lazy"
+                    className="w-28 mt-3 mb-0.5"
+                />
+            </section>
 
-            <footer className="flex flex-col gap-0 w-full items-center justify-center">
-                <span className="scale-[0.8]">
-                    <TypeShelf types={pokemon.type} />
-                </span>
-                <h3 className="font-medium m-0 p-0 text-neutral-700 mt-0.5">{pokemon.name}</h3>
+            <footer className="flex flex-col w-full items-start justify-center gap-1 py-1 px-2">
+                <h3 className="font-medium text-neutral-700">{pokemon.name}</h3>
+
+                {hasCatchButton && <GenericCatchButton pokemon={pokemon}/>}
             </footer>
         </article>
     )
