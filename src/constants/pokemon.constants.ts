@@ -15,7 +15,7 @@ export interface genericSubListItem {
     id: number;
     name: string;
     image: string;
-    type: PokemonType[];
+    types: PokemonType[];
     date?: string;
 }
 
