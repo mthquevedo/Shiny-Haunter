@@ -10,6 +10,8 @@ export function nameValidation(name: string) {
     return pokeName ? pokeName : "???";
 }
 
-export function typeValidation(type: PokemonType[] = []) {
-    return type.length > 0 ? type : defaultType;
+export function typeValidation(type: PokemonType[]) {
+    const validType = type.length > 0 ? type : defaultType
+
+    return validType;
 }
