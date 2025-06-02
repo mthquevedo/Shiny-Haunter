@@ -1,6 +1,20 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { GenericCardsArea } from "../../components/GenericCardsArea";
 import { IntroArea } from "../../components/IntroArea";
+import { useCatchList } from "../../hooks/useCatchList";
+import { RootState } from "../../store";
 
 export function Shinys() {
+    const { resetNotificationState } = useCatchList();
+    const { list, hasCatchNotification } = useSelector((state: RootState) => state.catchlist);
+
+    useEffect(() => {
+        if (hasCatchNotification) {
+            resetNotificationState();
+        }
+    }, [])    
+
     return (
         <>
             <IntroArea.Root>
@@ -11,8 +25,10 @@ export function Shinys() {
                 <IntroArea.ViewButton />
             </IntroArea.Root>
 
-            <section className="flex flex-col justify-around gap-5 w-full h-75v">
-
+            <section className="flex flex-col w-full h-75v">
+                <GenericCardsArea
+                    list={list}
+                />
             </section>
         </>
     )
