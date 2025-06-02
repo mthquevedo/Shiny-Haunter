@@ -5,7 +5,9 @@ import pokedexListSlice from "./reducers/pokedexList";
 import searchPokedexSlice from "./reducers/searchPokedex";
 import wishlistSlice from "./reducers/wishlist";
 import userPreferencesSlice from "./reducers/userPreferences";
+import { catchlistPersistenceMiddleware } from "./middleware/catchlistPersistence";
 import { wishlistPersistenceMiddleware } from "./middleware/wishlistPersistence";
+import { userPreferencesPersistences } from "./middleware/userPreferencesPersistences";
 
 const store = configureStore({
     reducer: {
@@ -17,7 +19,11 @@ const store = configureStore({
         userPreferences: userPreferencesSlice,
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(wishlistPersistenceMiddleware),
+        getDefaultMiddleware().concat(
+            wishlistPersistenceMiddleware,
+            catchlistPersistenceMiddleware,
+            userPreferencesPersistences
+        ),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
