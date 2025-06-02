@@ -4,11 +4,15 @@ import { genericSubListProps } from "../../constants/pokemon.constants";
 import { RootState } from "../../store";
 import { GenericCard } from "../GenericCard";
 
-export function GenericCardsArea({ list }: genericSubListProps) {
+interface GenericCardsAreaProps extends genericSubListProps {
+    hasCatchButton?: boolean;
+}
+
+export function GenericCardsArea({ list, hasCatchButton }: GenericCardsAreaProps) {
     const { view } = useSelector((state: RootState) => state.userPreferences);
 
     return (
-        <ScrollArea.Root className="w-full h-fit max-h-full overflow-hidden">
+        <ScrollArea.Root className="w-full h-100v  max-h-full overflow-hidden">
             <ScrollArea.Viewport className="size-full">
                 <div className="flex items-start justify-start mt-4 flex-wrap gap-x-[1.2rem] gap-y-4">
                     {list.map(pokemon =>
@@ -16,6 +20,7 @@ export function GenericCardsArea({ list }: genericSubListProps) {
                             key={pokemon.id}
                             pokemon={pokemon}
                             view={view}
+                            hasCatchButton={hasCatchButton}
                         />
                     )}
                 </div >
