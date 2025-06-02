@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MdCompare } from "react-icons/md";
-import { PokeProps } from "../../constants/pokemon.constants";
+import { genericSubListItem, PokeProps } from "../../constants/pokemon.constants";
 import { cn } from "../../lib/cn";
 import { bannerTypeColor, formatIdBelowTen } from "../../utils/pokemon.utils";
 import { CardTooltip } from "../Tooltips/CardTooltip";
@@ -11,13 +11,21 @@ import { WishButton } from "./wishButton";
 export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: PokeProps) {
     const [showDefault, setShowDefault] = useState(false);
 
+    const pokemonProfile: genericSubListItem = {
+        id,
+        name,
+        image: thumbnailShiny,
+        types,
+        date: new Date().toLocaleDateString('pt-BR'),
+    }
+    
     return (
         <article key={id} className="flex flex-col bg-white w-12v rounded-lg shadow-md overflow-hidden">
-            <section className={cn("flex flex-col justify-center items-center w-full h-48 relative overflow-hidden rounded-lg", bannerTypeColor[types?.[0].type.name || ""])}>
+            <section className={cn("flex flex-col justify-center items-center w-full h-48 relative overflow-hidden", bannerTypeColor[types[0].type.name])}>
                 <div className="absolute top-1 w-full px-2 flex items-center justify-between">
                     <TypeShelf types={types} />
 
-                    <CatchButton name={name} thumbnailShiny={thumbnailShiny} />
+                    <CatchButton pokemon={pokemonProfile} />
                 </div>
 
                 <img
@@ -45,13 +53,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                         </button>
                     </CardTooltip>
 
-                    <WishButton
-                        key={id}
-                        id={id}
-                        name={name}
-                        image={thumbnailShiny}
-                        type={types}
-                    />
+                    <WishButton pokemon={pokemonProfile} />
                 </div>
             </footer>
         </article>
