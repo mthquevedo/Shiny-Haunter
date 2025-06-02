@@ -13,7 +13,7 @@ const ACTIVE_TEXT = "font-medium";
 const ACTIVE_ICON = "text-neutral-50";
 
 export function MenuItem({ text, icon: Icon, altText, to, notification, ...props }: MenuItemProps) {
-    const isActive = useMatch(to.toString())
+    const isActive = useMatch(to.toString());
 
     return (
         <Link {...props} to={to}>
