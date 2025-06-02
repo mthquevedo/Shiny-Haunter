@@ -4,8 +4,7 @@ import warningImg from "../../assets/Opss.png";
 import { RootState } from "../../store";
 
 export function LastCatched() {
-    const catchlist = useSelector((state: RootState) => state.catchlist.catchlist);
-    const lastCatched = catchlist.slice(-3)
+    const lastCatched = useSelector((state: RootState) => state.catchlist.list).slice(-3);
 
     return (
         <div className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-lg shadow">
