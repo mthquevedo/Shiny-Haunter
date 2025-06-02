@@ -1,15 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { genericSubListItem, genericSubListProps } from "../../constants/pokemon.constants";
 
-interface CatchlistItem {
-    name: string;
-    image: string;
-    date?: string;
-}
-interface CatchlistStateProps {
-    catchlist: CatchlistItem[];
+interface CatchlistStateProps extends genericSubListProps {
+    hasCatchNotification: boolean;
 }
 
-const loadCatchlist = (): CatchlistItem[] => {
+function loadList(): genericSubListItem[] {
     try {
         const storedList = localStorage.getItem("catchlist");
 
@@ -26,32 +22,36 @@ const loadCatchlist = (): CatchlistItem[] => {
 }
 
 const initialState: CatchlistStateProps = {
-    catchlist: loadCatchlist(),
+    list: loadList(),
+    hasCatchNotification: false,
 };
 
 const catchlistSlice = createSlice({
     name: "catchlist",
     initialState,
     reducers: {
-        toggleCatchlist: (state, action: PayloadAction<CatchlistItem>) => {
-            const { name, image } = action.payload;
+        toggleCatchlist: (state, action: PayloadAction<genericSubListItem>) => {
+            const alreadyExists = state.list.some(item => item.name === action.payload.name);
 
-            if (state.catchlist.some(item => item.name === name)) {
-                state.catchlist = state.catchlist.filter(item => item.name !== name);
+            if (alreadyExists) {
+                state.list = state.list.filter(item => item.name !== action.payload.name);
             } else {
-                const today = new Date().toLocaleDateString('pt-BR');
-
-                state.catchlist.push({
-                    name,
-                    image,
-                    date: today
-                });
+                state.list = [...state.list, action.payload];
+                state.hasCatchNotification = true;
             }
-
-            localStorage.setItem("catchlist", JSON.stringify(state.catchlist));
+        },
+        deleteCatchItem: (state, { payload }) => {
+            state.list = state.list.filter(item => item.name !== payload);
+        },
+        resetNotification: (state) => {
+            state.hasCatchNotification = false;
         }
     }
 });
 
-export const { toggleCatchlist } = catchlistSlice.actions;
+export const {
+    toggleCatchlist,
+    deleteCatchItem,
+    resetNotification,
+} = catchlistSlice.actions;
 export default catchlistSlice.reducer;
