@@ -28,6 +28,7 @@ export function Wishlist() {
             <section className="flex flex-col w-full h-75v">
                 <GenericCardsArea
                     list={list}
+                    hasCatchButton
                 />
             </section>
         </>
