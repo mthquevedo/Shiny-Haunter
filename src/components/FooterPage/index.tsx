@@ -8,7 +8,7 @@ export function FooterPage() {
             {isHomePage && (
                 <p className="font-medium mt-3">*Projeto sem fins lucratrivos.</p>
             )}
-            <p className="flex-1 text-right font-bold">Criador por <a href="https://github.com/mthquevedo" target="_blank" className="text-primary">@Matheus Quevedo</a></p>
+            <p className="flex-1 text-right font-bold">Criador por <a href="https://github.com/mthquevedo" target="_blank" className="text-primary hover:text-indigo-800">@Matheus Quevedo</a></p>
         </div>
     );
 }
