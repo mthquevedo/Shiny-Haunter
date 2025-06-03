@@ -7,7 +7,7 @@ export function LastCatched() {
     const lastCatched = useSelector((state: RootState) => state.catchlist.list).slice(-3);
 
     return (
-        <div className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-lg shadow">
+        <div className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-xl shadow-md">
             {lastCatched[0] ?
                 <>
                     <header className="flex items-center justify-between mb-1">
@@ -42,8 +42,8 @@ export function LastCatched() {
                 :
                 <div className="flex flex-col gap-1 items-center justify-center h-full">
                     <img src={warningImg} alt="Ícone de aviso" className="w-28 pb-2 opacity-80" />
-                    <p className="text-primary font-medium text-lg">Opss!</p>
-                    <p className="text-darkgray text-sm"> Você ainda não capturou nenhum pokémon.</p>
+                    <p className="text-primary text-xl font-semibold mb-1">Sua Pokébola está vazia!</p>
+                    <p className="text-gray-500 text-sm">Capture seus shinies e veja eles aqui!</p>
                 </div>
             }
         </div>
