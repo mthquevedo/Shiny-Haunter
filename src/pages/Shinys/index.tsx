@@ -4,6 +4,7 @@ import { GenericCardsArea } from "../../components/GenericCardsArea";
 import { IntroArea } from "../../components/IntroArea";
 import { useCatchList } from "../../hooks/useCatchList";
 import { RootState } from "../../store";
+import { EmptyListError } from "../../components/emptyListError";
 
 export function Shinys() {
     const { resetNotificationState } = useCatchList();
@@ -13,22 +14,28 @@ export function Shinys() {
         if (hasCatchNotification) {
             resetNotificationState();
         }
-    }, [])    
+    }, [])
 
     return (
         <>
             <IntroArea.Root>
                 <IntroArea.Texts
                     title="Meus Shinys"
-                    description="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
+                    description="Revise aqui os Pokémon que você já capturou e acompanhe o progresso da sua jornada como Mestre Pokémon."
                 />
                 <IntroArea.ViewButton />
             </IntroArea.Root>
 
             <section className="flex flex-col w-full h-75v">
-                <GenericCardsArea
-                    list={list}
-                />
+                {list.length > 0 ?
+                    <GenericCardsArea
+                        list={list}
+                    />
+                    :
+                    <EmptyListError
+                        warning="Você ainda não registrou nenhuma captura. Que tal começar sua busca pelos shinies lendários?"
+                    />
+                }
             </section>
         </>
     )
