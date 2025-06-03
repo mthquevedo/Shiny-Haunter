@@ -7,7 +7,7 @@ export function LastWished() {
     const lastWished = useSelector((state: RootState) => state.wishlist.list).slice(-3);
 
     return (
-        <section className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-lg shadow">
+        <section className="flex flex-col justify-between bg-white w-43v h-28v px-5 py-4 rounded-xl shadow-md">
             {lastWished[0] ?
                 <>
                     <header className="flex items-center justify-between mb-1">
@@ -46,8 +46,8 @@ export function LastWished() {
                 :
                 <div className="flex flex-col gap-1 items-center justify-center h-full">
                     <img src={warningImg} alt="Ícone de aviso" className="w-28 pb-2 opacity-80" />
-                    <p className="text-primary font-medium text-lg">Opss!</p>
-                    <p className="text-darkgray text-sm">Você ainda não adicionou nenhum pokémon na lista de desejos.</p>
+                    <p className="text-primary text-xl font-semibold mb-1">Nenhum shiny na lista...</p>
+                    <p className="text-gray-500 text-sm">Que tal adicionar aqueles que você mais quer encontrar?</p>
                 </div>
             }
         </section>
