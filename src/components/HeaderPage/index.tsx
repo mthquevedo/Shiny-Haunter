@@ -1,10 +1,14 @@
 import { Select } from "radix-ui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export function HeaderPage() {
     const [value, setValue] = useState("Idioma");
+
+    // useEffect(() => {
+
+    // }, [value])
 
     return (
         <div className="flex gap-4 items-center justify-between">
@@ -13,7 +17,7 @@ export function HeaderPage() {
             </div>
             <div className="flex gap-4 items-center justify-between">
                 <Select.Root value={value} onValueChange={setValue}>
-                    <Select.Trigger className="flex items-center justify-between gap-2 text-primary bg-white text-xs font-medium px-4 py-1 w-32 h-9 rounded-lg border-neutral-400 border focus:outline-none cursor-pointer">
+                    <Select.Trigger className="flex items-center justify-between gap-2 text-darkgray bg-white text-xs font-medium px-4 py-1 w-32 h-9 rounded-lg border-neutral-400 border focus:outline-none cursor-pointer">
                         <Select.Value>
                             {value}
                         </Select.Value>
@@ -36,16 +40,16 @@ export function HeaderPage() {
                                         <Select.ItemIndicator />
                                     </Select.Item>
                                     <Select.Separator className="h-px my-1 bg-slate-300" />
-                                    <Select.Item value="Inglês" disabled className="cursor-no-drop text-neutral-400">
+                                    <Select.Item value="Espanhol" disabled className="cursor-no-drop text-neutral-400">
                                         <Select.ItemText>
-                                            Inglês
+                                            Espanhol
                                         </Select.ItemText>
                                         <Select.ItemIndicator />
                                     </Select.Item>
                                     <Select.Separator className="h-px my-1 bg-slate-300" />
-                                    <Select.Item value="Espanhol" disabled className="cursor-no-drop text-neutral-400">
+                                    <Select.Item value="Inglês" disabled className="cursor-no-drop text-neutral-400">
                                         <Select.ItemText>
-                                            Espanhol
+                                            Inglês
                                         </Select.ItemText>
                                         <Select.ItemIndicator />
                                     </Select.Item>
