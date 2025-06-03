@@ -8,7 +8,7 @@ export function Pokedex() {
             <IntroArea.Root>
                 <IntroArea.Texts
                     title="Pokédex"
-                    description="Adicione os pokémon às listas de desejos ou capturados, caso prefira, busque pelo nome específico na barra de pesquisa."
+                    description="Explore sua Pokédex para marcar os Pokémon já capturados ou os shinies que você quer caçar."
                 />
                 <IntroArea.SearchBar />
             </IntroArea.Root>
