@@ -40,7 +40,7 @@ export function IntroAreaSearchBar() {
             <Select
                 isMulti
                 options={sugestionsList[0] ? sugestionsList : []}
-                placeholder="Busque pelo nome do pokémon"
+                placeholder="Digite o nome do Pokémon"
                 onInputChange={(e) => { dispatch(setValue(e)) }}
                 onChange={handleSearchList}
                 delimiter="3"
