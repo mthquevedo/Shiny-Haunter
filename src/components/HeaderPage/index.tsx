@@ -1,7 +1,8 @@
 import { Select } from "radix-ui";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineQuestionMark } from "react-icons/md";
 
 export function HeaderPage() {
     const [value, setValue] = useState("Idioma");
@@ -11,13 +12,13 @@ export function HeaderPage() {
     // }, [value])
 
     return (
-        <div className="flex gap-4 items-center justify-between">
-            <div className="text-primary font-bold text-2xl">
-                <p>Shiny Haunter</p>
-            </div>
-            <div className="flex gap-4 items-center justify-between">
+        <header className="flex items-center justify-between h-[4%] mb-6 md:mb-7">
+            <h1 className="text-primary font-bold text-xl md:text-2xl">
+                Shiny Haunter
+            </h1>
+            <div className="flex gap-2 md:gap-3 items-center justify-between">
                 <Select.Root value={value} onValueChange={setValue}>
-                    <Select.Trigger className="flex items-center justify-between gap-2 text-darkgray bg-white text-xs font-medium px-4 py-1 w-32 h-9 rounded-lg border-neutral-400 border focus:outline-none cursor-pointer">
+                    <Select.Trigger className="flex items-center justify-between gap-2 text-darkgray bg-white text-xs font-medium px-2 py-1 w-28 lg:w-32 h-8 md:h-9 rounded-lg border-neutral-400 border focus:outline-none cursor-pointer">
                         <Select.Value>
                             {value}
                         </Select.Value>
@@ -29,7 +30,7 @@ export function HeaderPage() {
                     <Select.Portal>
                         <Select.Content
                             position="popper"
-                            className="overflow-hidden w-32 bg-white shadow-md rounded-lg text-sm mt-1"
+                            className="overflow-hidden w-24 lg:w-32 bg-white shadow-md rounded-lg text-xs mt-1"
                         >
                             <Select.Viewport className="p-2">
                                 <Select.Group>
@@ -59,11 +60,14 @@ export function HeaderPage() {
                     </Select.Portal>
                 </Select.Root>
 
-                <a href="https://github.com/mthquevedo/Shiny-Haunter/issues" target="_blank" className="bg-darkgray hover:bg-stone-700 rounded-lg px-4 py-1 h-9 flex items-center justify-center gap-2 shadow">
+                <a href="https://github.com/mthquevedo/Shiny-Haunter/issues" target="_blank" className="flex lg:hidden items-center justify-center gap-2  bg-darkgray hover:bg-stone-700 rounded-lg p-2 md:h-9 shadow">
+                    <MdOutlineQuestionMark className="fill-white md:text-lg" />
+                </a>
+                <a href="https://github.com/mthquevedo/Shiny-Haunter/issues" target="_blank" className="hidden lg:flex items-center justify-center gap-2 w-[50%] bg-darkgray hover:bg-stone-700 rounded-lg px-4 py-1 h-9  shadow">
                     <p className="text-white text-xs font-medium">Sugestões?</p>
                     <IoLogoGithub className="fill-white w-6 h-6" />
                 </a>
             </div>
-        </div>
+        </header>
     );
 }
