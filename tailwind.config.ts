@@ -66,7 +66,7 @@ export default {
 			},
 			height: {
 				"5v": "5vh",
-				"7v": "7vh",
+				"7v": "7dvh",
 				"8v": "8vh",
 				"9v": "9vh",
 				"10v": "10vh",
@@ -119,9 +119,10 @@ export default {
 				"90v": "90vw",
 				"91v": "91vw",
 				"92v": "92vw",
-				"93v": "93vw",
+				"93v": "93dvw",
 				"94v": "94vw",
 				"95v": "95vw",
+				"96v": "96vw",
 				"100v": "100vw",
 			},
 			animation: {
