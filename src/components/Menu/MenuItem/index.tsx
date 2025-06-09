@@ -16,12 +16,12 @@ export function MenuItem({ text, icon: Icon, altText, to, notification, ...props
     const isActive = useMatch(to.toString());
 
     return (
-        <Link {...props} to={to}>
+        <Link {...props} to={to} className="md:w-full">
             {/* Menu inferior */}
-            <div className="flex md:hidden flex-col items-center justify-center gap-1 active:scale-95 transition duration-0 relative">
-                <Icon aria-label={altText} className={cn("h-auto w-6 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
+            <div className="flex md:hidden flex-col items-center justify-center gap-px active:scale-95 transition duration-0 relative">
+                <Icon aria-label={altText} className={cn("h-auto w-5 xsm:w-6 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
 
-                <span className={cn("text-xs text-neutral-400 transition", { [ACTIVE_TEXT]: isActive })}>{text}</span>
+                <span className={cn("text-[0.625rem] xsm:text-xs text-neutral-400 transition", { [ACTIVE_TEXT]: isActive })}>{text}</span>
 
                 {notification && (
                     <span className="absolute -top-1 -right-1">
@@ -34,10 +34,10 @@ export function MenuItem({ text, icon: Icon, altText, to, notification, ...props
             </div>
 
             {/* Menu lateral */}
-            <div className={cn("hidden md:flex flex-col items-center justify-center gap-1.5 w-14 lg:w-16 h-14 lg:h-16 border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95 transition duration-75 rounded-lg relative", { [ACTIVE_BG]: isActive })}>
-                <Icon aria-label={altText} className={cn("h-auto w-6 lg:w-7 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
+            <div className={cn("hidden md:flex flex-col items-center justify-center gap-1 h-[3.75rem] py-1 lg:h-14 xl:h-[3.5rem] border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95 transition duration-75 rounded-lg relative", { [ACTIVE_BG]: isActive })}>
+                <Icon aria-label={altText} className={cn("h-auto w-[49%] lg:w-7 xl:w-6 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
 
-                <span className={cn("text-xs text-neutral-300 transition", { [ACTIVE_TEXT]: isActive })}>{text}</span>
+                <span className={cn("text-xs lg:text-[0.7rem] xl:text-[0.75rem] text-neutral-300 transition", { [ACTIVE_TEXT]: isActive })}>{text}</span>
 
                 {notification && (
                     <span className="absolute -top-1 -right-1">

@@ -12,12 +12,12 @@ interface lastPokemonBoardprops {
 
 export function LastPokemonBoard({ list, to, tittle, warningDescription, warningTittle }: lastPokemonBoardprops) {
     return (
-        <section className="flex flex-col justify-start bg-white w-full lg:w-43v h-[46%] lg:h-28v px-4 md:px-5 py-3 md:py-4 rounded-xl shadow-md overflow-hidden">
+        <section className="flex flex-col justify-start  bg-white w-full lg:w-43v 2xl:w-[49%] h-[46%] min-h-fit lg:h-28v 2xl:h-[80%] px-4 md:px-5 py-2 md:py-4 rounded-xl shadow-md overflow-hidden">
             {list[0] ?
                 <>
-                    <header className="flex items-center justify-between pb-2 md:pb-4">
-                        <h2 className="font-medium text-darkgray text-sm md:text-base">{tittle}</h2>
-                        <Link to={to} className="py-1 px-2 font-medium text-[0.6rem] md:text-xs text-zinc-800 bg-gray-200 rounded-md hover:bg-gray-300 transition hover:shadow-sm">
+                    <header className="flex items-center justify-between pb-2 md:pb-4 lg:pb-3">
+                        <h2 className="font-medium text-darkgray text-xs xsm:text-sm md:text-base">{tittle}</h2>
+                        <Link to={to} className="py-1 px-2 font-medium text-[0.5rem] xsm:text-[0.6rem] md:text-xs text-zinc-800 bg-gray-200 rounded-md hover:bg-gray-300 transition hover:shadow-sm">
                             <p>Ver todos</p>
                         </Link>
                     </header>
@@ -27,17 +27,17 @@ export function LastPokemonBoard({ list, to, tittle, warningDescription, warning
                             return (
                                 <li
                                     key={item.name}
-                                    className="flex items-center justify-between bg-indigo-50 my-1.5 first:mt-0 last:mb-0 md:my-3 px-2 md:px-4 rounded-md text-darkgray h-[2.2rem] xsm:h-[2.6rem] xsx:h-[3rem] md:h-[3.2rem] xl:h-[3.7rem]"
+                                    className="flex items-center justify-between bg-indigo-50 my-1.5 first:mt-0 last:mb-0 md:my-3 px-2 md:px-4 lg:px-3 rounded-md text-darkgray h-[1.68rem] xsm:h-[2.4rem] xsx:h-[2.8rem] md:h-[3.2rem] lg:h-[3rem] xl:h-[3rem] 2xl:h-[3.2rem]"
                                 >
-                                    <div className="flex gap-4 items-center h-full">
+                                    <div className="flex gap-3 xsm:gap-4 items-center h-full">
                                         <img src={item.image} alt={`Imagem do pokémon ${item.name}`} className="h-[90%] md:h-[100%] w-auto" />
 
-                                        <p className="font-medium text-xs xsm:text-sm">{item.name}</p>
+                                        <p className="font-medium text-[0.65rem] xsm:text-sm">{item.name}</p>
                                     </div>
 
                                     <div className="flex flex-col md:gap-1 text-right w-fit text-nowrap">
-                                        <p className="text-[0.65rem] xsm:text-[0.7rem] md:text-xs font-medium">Adicionado em:</p>
-                                        <time className="text-[0.65rem] xsm:text-[0.7rem] md:text-sm">{item.date}</time>
+                                        <p className="text-[0.5rem] xsm:text-[0.65rem] md:text-xs lg:text-xs">Adicionado em:</p>
+                                        <time className="text-[0.6rem] xsm:text-[0.7rem] md:text-sm lg:text-xs font-medium">{item.date}</time>
                                     </div>
                                 </li>
                             )
