@@ -1,6 +1,6 @@
 import { PokemonType } from "pokenode-ts";
 
-export const LIMIT_CARDS = 14;
+export const LIMIT_CARDS = 18;
 
 export interface PokeProps {
     id: number;
