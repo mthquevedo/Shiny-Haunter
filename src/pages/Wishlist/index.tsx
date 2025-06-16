@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { GenericCardsArea } from "../../components/GenericCardsArea";
-import { IntroArea } from "../../components/IntroArea";
 import { useWishList } from "../../hooks/useWishList";
 import { RootState } from "../../store";
 import { EmptyListError } from "../../components/emptyListError";
+import { IntroArea } from "../../components/introArea";
 
 export function Wishlist() {
     const { resetNotificationState } = useWishList();

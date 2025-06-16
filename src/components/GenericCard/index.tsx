@@ -1,6 +1,6 @@
 import { genericSubListItem } from "../../constants/pokemon.constants";
-import { GenericCardGrid } from "./genericCardGrid";
-import { GenericCardList } from "./genericCardList";
+import { GenericCardGrid } from "./GenericCardGrid";
+import { GenericCardList } from "./GenericCardList";
 
 interface GenericCardProps {
     pokemon: genericSubListItem;
