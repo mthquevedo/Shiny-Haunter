@@ -22,7 +22,7 @@ export function PokeCardsArea() {
     }, []);
 
     return (
-        <div className="w-full h-full flex items-start justify-start mt-4 flex-wrap gap-5">
+        <div className="flex items-start justify-center flex-wrap w-full 2xl:h-[39rem] gap-5 lg:gap-x-[1.28rem] lg:gap-y-[1.1rem] xl:gap-x-[1.65rem] xl:gap-y-[1rem] 2xl:gap-y-[2rem] pb-4 xl:pb-5 overflow-hidden">
             {loading ?
                 <LoadingCards quantity={cardsQuantity} />
                 :

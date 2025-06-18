@@ -7,10 +7,8 @@ interface TypeProps {
 
 export function TypeFlag({ type }: TypeProps) {
     return (
-        <div className={cn("flex items-center gap-1 p-1 rounded-full", typeColor[type])}>
-            <span className="w-4 h-4 rounded-full flex justify-center items-center">
-                <img src={getPokemonTypeSVG(type)} alt="" className="w-3 h-auto" />
-            </span>
+        <div className={cn("flex items-center justify-center p-1 rounded-full size-[1.2rem] xsm:size-[1.2rem] xsx:size-[1.3rem] md:size-6 lg:size-[1rem] 2xl:size-[1.2rem] ", typeColor[type])}>
+            <img src={getPokemonTypeSVG(type)} alt="" className="w-[95%] h-auto" />
         </div>
     );
 }
