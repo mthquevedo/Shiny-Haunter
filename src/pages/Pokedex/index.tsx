@@ -1,7 +1,7 @@
 import { ScrollArea } from "radix-ui";
-import { IntroArea } from "../../components/IntroArea";
-import { PaginationButtons } from "../../components/PaginationButtons";
 import { PokeCardsArea } from "../../components/PokeCardsArea";
+import { IntroArea } from "../../components/introArea";
+import { PaginationButtons } from "../../components/paginationButtons";
 
 export function Pokedex() {
     return (
