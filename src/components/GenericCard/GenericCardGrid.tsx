@@ -1,7 +1,7 @@
 import { genericPokemon } from "../../constants/pokemon.constants";
 import { cn } from "../../lib/cn";
 import { bannerTypeColor } from "../../utils/pokemon.utils";
-import { TypeShelf } from "../PokeCard/typeShelf";
+import { TypeShelf } from "../PokeCard/CardItems/typeShelf";
 import { DeleteButton } from "./GenericButtons/deleteButton";
 import { GenericCatchButton } from "./GenericButtons/genericCatchButton";
 
