@@ -12,7 +12,7 @@ export function HeaderPage() {
     // }, [value])
 
     return (
-        <header className="flex items-center justify-between h-[4%] mb-2 md:mb-7">
+        <header className="flex items-center justify-between h-[4%] mb-4 lg:mb-8 xl:mb-4 2xl:mb-8">
             <h1 className="text-primary font-bold text-xl md:text-2xl">
                 Shiny Haunter
             </h1>
@@ -30,7 +30,7 @@ export function HeaderPage() {
                     <Select.Portal>
                         <Select.Content
                             position="popper"
-                            className="overflow-hidden w-24 lg:w-32 bg-white shadow-md rounded-lg text-xs mt-1"
+                            className="overflow-hidden w-20 xsm:w-24 md:w-28 lg:w-32 bg-white shadow-md rounded-lg text-xs mt-1"
                         >
                             <Select.Viewport className="p-2">
                                 <Select.Group>
