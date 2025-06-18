@@ -36,7 +36,7 @@ export function IntroAreaSearchBar() {
     }, [debouncedSearchValue, handleSugestionsList]);
 
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between lg:justify-end gap-3 w-full lg:w-[50%] h-[2.4rem] mt-1 xsm:mt-2 md:mt-3">
             <Select
                 isMulti
                 options={sugestionsList[0] ? sugestionsList : []}
@@ -46,7 +46,7 @@ export function IntroAreaSearchBar() {
                 delimiter="3"
                 components={{ MenuList: CustomMenuList }}
                 noOptionsMessage={() => null}
-                className="text-sm w-25v h-full overflow-y-hidden"
+                className="text-xs md:text-sm lg:text-xs w-full lg:w-[85%] h-full overflow-y-hidden"
                 menuPortalTarget={document.body}
                 menuPosition="fixed"
                 styles={{
