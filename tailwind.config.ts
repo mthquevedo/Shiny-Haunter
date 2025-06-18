@@ -61,9 +61,6 @@ export default {
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
 			},
-			fontSize: {
-				xxs: '0.688rem',
-			},
 			height: {
 				"5v": "5vh",
 				"7v": "7dvh",
