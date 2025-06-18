@@ -1,11 +1,11 @@
-import { ScrollArea } from "radix-ui";
 import { IntroArea } from "../../components/IntroArea";
 import { PaginationButtons } from "../../components/PaginationButtons";
 import { PokeCardsArea } from "../../components/PokeCardsArea";
+import { HiddenScrollBar } from "../../components/hiddenScrollBar";
 
 export function Pokedex() {
     return (
-        <>
+        <section className="flex flex-col items-center justify-start gap-2 lg:gap-4 xl:gap-3 2xl:gap-8 h-[91%]">
             <IntroArea.Root>
                 <IntroArea.Texts
                     title="Pokédex"
@@ -14,23 +14,15 @@ export function Pokedex() {
                 <IntroArea.SearchBar />
             </IntroArea.Root>
 
-            <section className="flex flex-col w-full h-[75%] xl:h-[80%]">
-                <ScrollArea.Root className="size-full">
-                    <ScrollArea.Viewport className="size-full">
+            <section className="flex w-full h-[86%] xsm:h-[93%] md:h-[91%] lg:h-[90%] xl:h-[91%]">
+                <HiddenScrollBar>
+                    <div className="flex flex-col items-center justify-center gap-1 md:gap-2 lg:gap-1 2xl:gap-5 size-full mb-4 xsm:mb-6 lg:mb-0">
                         <PokeCardsArea />
 
                         <PaginationButtons />
-                    </ScrollArea.Viewport>
-                    <ScrollArea.Scrollbar
-                        className="hidden"
-                        orientation="vertical"
-                    >
-                        <ScrollArea.Thumb className="relative hidden rounded-full bg-neutral-500 before:absolute before:left-1/2 before:top-1/2 before:size-full before:min-h-10 before:min-w-10 before:-translate-x-1/2 before:-translate-y-1/2" />
-                    </ScrollArea.Scrollbar>
-                    <ScrollArea.Corner className="bg-black" />
-                </ScrollArea.Root >
+                    </div>
+                </HiddenScrollBar>
             </section>
-
-        </>
+        </section>
     );
 }
