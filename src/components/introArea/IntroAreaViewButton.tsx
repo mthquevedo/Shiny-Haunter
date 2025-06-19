@@ -14,21 +14,21 @@ export function IntroAreaViewButton() {
     const { changeView } = usePreferences();
 
     return (
-        <section>
-            <p className="hidden lg:inline-block text-xs mb-1">Visualizar por:</p>
+        <section className="w-full lg:w-fit">
+            <p className="text-right text-[0.625rem] font-medium md:text-base mb-0.5 md:mb-1 mt-1 xsm:mt-1.5 md:mt-0 text-darkgray">Visualizar por:</p>
 
             <div className="flex items-center justify-end gap-2">
                 <button
-                    className={cn("flex items-center justify-center w-9 h-9 hover:shadow-md text-neutral-500 bg-neutral-300 hover:text-neutral-700 active:scale-95 transition duration-100 rounded-lg", { [ACTIVE_BUTTON]: isGridView })}
+                    className={cn("flex items-center justify-center size-7 md:size-9 hover:shadow-md text-neutral-500 bg-neutral-300 hover:text-neutral-700 active:scale-95 transition duration-100 rounded-md md:rounded-lg", { [ACTIVE_BUTTON]: isGridView })}
                     onClick={() => changeView("grid")}
                 >
-                    <BsFillGridFill className="text-lg" />
+                    <BsFillGridFill className="text-sm md:text-lg" />
                 </button>
                 <button
-                    className={cn("flex items-center justify-center w-9 h-9 hover:shadow-md text-neutral-500 bg-neutral-300 hover:text-neutral-700 active:scale-95 transition duration-100 rounded-lg", { [ACTIVE_BUTTON]: isListView })}
+                    className={cn("flex items-center justify-center  size-7 md:size-9 hover:shadow-md text-neutral-500 bg-neutral-300 hover:text-neutral-700 active:scale-95 transition duration-100 rounded-md md:rounded-lg", { [ACTIVE_BUTTON]: isListView })}
                     onClick={() => changeView("list")}
                 >
-                    <FaList className="text-lg" />
+                    <FaList className="text-sm md:text-lg" />
                 </button>
             </div>
         </section>
