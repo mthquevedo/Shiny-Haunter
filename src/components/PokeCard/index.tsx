@@ -86,9 +86,9 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                 </section>
 
                 <footer className="flex flex-col justify-between gap-1.5 xsm:gap-1 md:gap-1 px-2 md:px-3 lg:px-2 pb-1 md:pb-2 lg:pb-1.5 w-full">
-                    <div className="flex justify-between items-center text-sm md:text-lg lg:text-xs 2xl:text-base mt-1">
-                        <p className="text-neutral-800 font-bold">{name}</p>
-                        <p className="select-all font-semibold text-neutral-500">
+                    <div className="flex justify-between items-center text-sm md:text-lg lg:text-xs 2xl:text-base font-semibold mt-1">
+                        <p className="text-neutral-800">{name}</p>
+                        <p className="select-all text-neutral-500">
                             #{formatIdBelowTen(id)}
                         </p>
                     </div>
@@ -96,7 +96,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
                         <CardTooltip content="Comparar" side="top">
                             <button
                                 onClick={() => setShowDefault(!showDefault)}
-                                className="flex justify-center items-center bg-neutral-300 rounded-md shadow-sm p-1 w-8 md:w-10 lg:w-7 text-neutral-700 hover:bg-neutral-400 hover:text-neutral-800 hover:border-neutral-400 active:bg-neutral-400 transition"
+                                className="flex justify-center items-center rounded-md shadow-sm p-1.5 text-neutral-700  bg-neutral-300 hover:bg-neutral-500 hover:text-white active:scale-95 transition"
                             >
                                 <MdCompare className="text-[1rem] md:text-lg lg:text-sm" />
                             </button>
