@@ -13,7 +13,7 @@ export function DeleteButton({ name }: DeleteButtoProps) {
     const CatchDelete = useCatchList().deleteItem;
     const wishListUrl = useMatch("/listadedesejos");
     const CatchListUrl = useMatch("/shinys");
-    
+
     const handleDelete = (name: string) => {
         if (wishListUrl) {
             WishDelete(name)
@@ -25,10 +25,10 @@ export function DeleteButton({ name }: DeleteButtoProps) {
     return (
         <CardTooltip content="Remover" side="top">
             <button
-                className={"flex justify-center items-center bg-neutral-300 text-neutral-600 rounded-lg p-0.5 mr-1.5 transition active:scale-95 hover:bg-neutral-200 hover:shadow-sm "}
+                className={"flex justify-center items-center bg-neutral-300 text-neutral-600 rounded-lg p-0.5 xsx:p-1 transition active:scale-95 hover:bg-neutral-200 hover:shadow-sm "}
                 onClick={() => handleDelete(name)}
             >
-                <IoClose className="text-lg" />
+                <IoClose className="text-[1.1rem] md:text-xl lg:text-sm 2xl:text-base" />
             </button>
         </CardTooltip>
     )

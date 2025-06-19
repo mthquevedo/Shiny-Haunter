@@ -12,7 +12,7 @@ interface lastPokemonBoardprops {
 
 export function LastPokemonBoard({ list, to, tittle, warningDescription, warningTittle }: lastPokemonBoardprops) {
     return (
-        <section className="flex flex-col justify-start  bg-white w-full lg:w-[48%] xl:w-[48.5%] 2xl:w-[49%] h-[46%] min-h-fit lg:h-28v 2xl:h-[80%] px-4 md:px-5 py-2 md:py-4 rounded-xl shadow-md overflow-hidden">
+        <section className="flex flex-col justify-start bg-white w-full lg:w-[48%] xl:w-[48.5%] 2xl:w-[49%] h-[10.6rem xsm:h-[14rem] xsx:h-[15.5rem] md:h-[19.5rem] lg:h-[18.5rem] 2xl:h-[21.8rem] px-4 md:px-5 py-2 md:py-4 rounded-xl shadow-md overflow-hidden">
             {list[0] ?
                 <>
                     <header className="flex items-center justify-between pb-2 md:pb-4 lg:pb-3">
@@ -45,10 +45,10 @@ export function LastPokemonBoard({ list, to, tittle, warningDescription, warning
                     </ul>
                 </>
                 :
-                <div className="flex flex-col gap-1 items-center justify-center text-center h-full">
-                    <img src={warningImg} alt="Ícone de aviso" className="h-[65%] md:h-[65%] lg:h-[55%] pb-1 md:pb-2 opacity-80" />
+                <div className="flex flex-col gap-1 items-center justify-center text-center size-full py-1">
+                    <img src={warningImg} alt="Ícone de aviso" className="h-[5.5rem] xsm:h-[7.5rem] md:h-[11rem] lg:h-[6.5rem] 2xl:h-[9rem] pb-1 md:pb-2 opacity-80" />
                     <p className="text-primary md:text-xl font-semibold">{warningTittle}</p>
-                    <p className="text-gray-500 text-xs md:text-sm">{warningDescription}</p>
+                    <p className="text-gray-500 text-xs xsm:text-sm md:text-base lg:text-sm">{warningDescription}</p>
                 </div>
             }
         </section>

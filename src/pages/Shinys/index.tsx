@@ -17,16 +17,16 @@ export function Shinys() {
     }, [])
 
     return (
-        <>
+         <section className="flex flex-col items-center justify-start gap-2 lg:gap-3 xl:gap-3 2xl:gap-6 h-[91%]">
             <IntroArea.Root>
                 <IntroArea.Texts
                     title="Meus Shinys"
-                    description="Revise aqui os Pokémon que você já capturou e acompanhe o progresso da sua jornada como Mestre Pokémon."
+                    description="Revise os Pokémon que você já capturou e acompanhe o progresso da sua jornada como Mestre Pokémon."
                 />
                 <IntroArea.ViewButton />
             </IntroArea.Root>
 
-            <section className="flex flex-col w-full h-75v">
+             <section className="flex w-full h-[86%] xsm:h-[93%] md:h-[88%] lg:h-[87%] xl:h-[91%]">
                 {list.length > 0 ?
                     <GenericCardsArea
                         list={list}
@@ -37,6 +37,6 @@ export function Shinys() {
                     />
                 }
             </section>
-        </>
+        </section>
     )
 }

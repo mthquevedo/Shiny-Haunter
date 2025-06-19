@@ -17,10 +17,10 @@ export function GenericCatchButton({ pokemon }: GenericCatchButtonProps) {
 
     return (
         <button
-            className="flex items-center justify-center w-full text-xs text-white font-medium bg-blue-500 rounded-lg py-1.5 px-1 mb-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 active:scale-[0.98] transition"
+            className="flex items-center justify-center w-full  bg-blue-500 rounded-lg py-1.5 px-1 hover:bg-blue-400 hover:shadow-sm active:bg-blue-600 active:scale-[0.98] transition"
             onClick={() => handleToggleCatchItem()}
         >
-            <p>Capturar</p>
+            <p className="text-xs text-white font-medium">Capturar</p>
         </button>
     )
 }
