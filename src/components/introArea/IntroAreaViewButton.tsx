@@ -7,7 +7,7 @@ export function IntroAreaViewButton() {
 
     return (
         <section>
-            <p className="text-xs font-medium mb-1">Visualização:</p>
+            <p className="hidden lg:inline-block text-xs mb-1">Visualizar por:</p>
             <div className="flex items-center justify-end gap-2">
                 <button
                     className="flex items-center justify-center w-9 h-9 rounded-lg transition active:scale-95 duration-100 hover:shadow-md bg-primary hover:bg-indigo-700"
