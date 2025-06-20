@@ -9,6 +9,7 @@ export default {
 	theme: {
 		extend: {
 			screens: {
+				x93: '393px',
 				xsm: '400px',
 				xsx: '480px',
 			},
