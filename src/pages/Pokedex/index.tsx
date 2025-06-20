@@ -14,7 +14,7 @@ export function Pokedex() {
                 <IntroArea.SearchBar />
             </IntroArea.Root>
 
-            <section className="flex w-full h-[86%] xsm:h-[93%] md:h-[91%] lg:h-[90%] xl:h-[91%]">
+            <section className="flex w-full h-[86%] xsm:h-[93%] md:h-[91%] lg:h-[90%] xl:h-[91%] pb-2 md:pb-0">
                 <HiddenScrollBar>
                     <div className="flex flex-col items-center justify-center gap-1 md:gap-2 lg:gap-1 2xl:gap-5 size-full mb-4 xsm:mb-6 lg:mb-0">
                         <PokeCardsArea />

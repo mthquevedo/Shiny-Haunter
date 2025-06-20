@@ -26,7 +26,7 @@ export function Shinys() {
                 <IntroArea.ViewButton />
             </IntroArea.Root>
 
-             <section className="flex w-full h-[86%] xsm:h-[93%] md:h-[88%] lg:h-[87%] xl:h-[91%]">
+             <section className="flex w-full h-[86%] xsm:h-[93%] md:h-[88%] lg:h-[87%] xl:h-[91%] pb-2 md:pb-0">
                 {list.length > 0 ?
                     <GenericCardsArea
                         list={list}
