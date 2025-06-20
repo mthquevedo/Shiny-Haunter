@@ -13,7 +13,7 @@ export function GenericCardGrid({ pokemon, hasCatchButton }: GenericCardGrid) {
     return (
         <article
             key={pokemon.id}
-            className="flex flex-col bg-white w-[47.03%] xsm:w-[47%] xsx:w-[47.64%] md:w-[31.1%] lg:w-[9.9rem] xl:w-[10.7rem] 2xl:w-[12.6rem] h-fit max-h-[12rem] xsm:max-h-[12.5rem] lg:h-fit rounded-lg overflow-hidden shadow-md"
+            className="flex flex-col bg-white w-[46%] x93:w-[47.03%] xsm:w-[47%] xsx:w-[47.64%] md:w-[31.1%] lg:w-[9.9rem] xl:w-[10.7rem] 2xl:w-[12.6rem] h-fit max-h-[12rem] xsm:max-h-[12.5rem] lg:h-fit rounded-lg overflow-hidden shadow-md"
         >
             <section
                 className={cn("flex flex-col items-center justify-between min-h-fit max-h-[65%] pt-1 relative overflow-hidden", bannerTypeColor[pokemon.types[0].type.name])}

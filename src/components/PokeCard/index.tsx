@@ -69,7 +69,7 @@ export function PokeCard({ id, name, thumbnailDefault, thumbnailShiny, types }: 
             </article>
 
             {/* Telas com largura menor que 1536px */}
-            <article key={id} className="flex 2xl:hidden flex-col bg-white w-[47.03%] xsm:w-[47%] xsx:w-[47.64%] md:w-[31.1%] lg:w-[14.7%] xl:w-[14.7%] h-[10.3rem] xsm:h-[10.8rem] md:h-[12rem] lg:h-[9.2rem] border border-neutral-200 rounded-lg shadow-lg overflow-hidden">
+            <article key={id} className="flex 2xl:hidden flex-col bg-white w-[46%] x93:w-[47.03%] xsm:w-[47%] xsx:w-[47.64%] md:w-[31.1%] lg:w-[14.7%] xl:w-[14.7%] h-[10.3rem] xsm:h-[10.8rem] md:h-[12rem] lg:h-[9.2rem] border border-neutral-200 rounded-lg shadow-lg overflow-hidden">
                 <section className={cn("flex flex-col justify-center items-center w-full h-[6.5rem] xsm:h-[6.8rem] md:h-[7.4rem] lg:h-[6rem] 2xl:h-[7.6rem] relative overflow-hidden", bannerTypeColor[types[0].type.name])}>
                     <div className="flex items-center justify-between w-full absolute top-1.5 lg:top-1 px-2">
                         <TypeShelf types={types} />
