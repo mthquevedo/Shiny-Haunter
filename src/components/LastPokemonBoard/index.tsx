@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import warningImg from "../../assets/Opss.png";
 import { genericSubListItem } from "../../constants/pokemon.constants";
 
 interface lastPokemonBoardprops {
@@ -46,7 +45,7 @@ export function LastPokemonBoard({ list, to, tittle, warningDescription, warning
                 </>
                 :
                 <div className="flex flex-col gap-1 items-center justify-center text-center size-full py-1">
-                    <img src={warningImg} alt="Ícone de aviso" className="h-[5.5rem] xsm:h-[7.5rem] md:h-[11rem] lg:h-[6.5rem] 2xl:h-[9rem] pb-1 md:pb-2 opacity-80" />
+                    <img src="/assets/Opss.png" alt="Ícone de aviso" className="h-[5.5rem] xsm:h-[7.5rem] md:h-[11rem] lg:h-[6.5rem] 2xl:h-[9rem] pb-1 md:pb-2 opacity-80" />
                     <p className="text-primary md:text-xl font-semibold">{warningTittle}</p>
                     <p className="text-gray-500 text-xs xsm:text-sm md:text-base lg:text-sm">{warningDescription}</p>
                 </div>

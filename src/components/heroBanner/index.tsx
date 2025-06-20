@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function HeroBanner() {
     return (
-        <div className="flex flex-col justify-center gap-px xsm:gap-2 md:gap-5 lg:gap-3 2xl:gap-5 bg-[url('src/assets/Home_banner_degrade.png')] bg-left xl:bg-center bg-cover w-full h-[9rem] xsm:h-[12rem] md:h-[18rem] lg:h-[16rem] 2xl:h-[20rem] rounded-xl px-4 md:px-6 truncate shadow-md">
+        <div className="flex flex-col justify-center gap-px xsm:gap-2 md:gap-5 lg:gap-3 2xl:gap-5 bg-[url('assets/Home_banner_degrade.png')] bg-left xl:bg-center bg-cover w-full h-[9rem] xsm:h-[12rem] md:h-[18rem] lg:h-[16rem] 2xl:h-[20rem] rounded-xl px-4 md:px-6 truncate shadow-md">
             <div className="text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-zinc-100 font-bold">
                 <p>Uma ferramenta para</p>
                 <p>todos os treinadores!</p>

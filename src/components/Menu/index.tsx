@@ -27,7 +27,7 @@ export function Menu() {
             {/* Menu lateral */}
             <aside className="hidden md:flex flex-col items-center justify-between bg-menuback w-10v max-w-11v lg:w-7v xl:w-6v 2xl:w-4v h-100v py-6 px-2 2xl:px-[0.625rem] border-r border-neutral-500 overflow-hidden overflow-y-hidden">
                 <div className="flex flex-col items-center gap-7 lg:gap-6 w-full">
-                    <img className="h-auto w-[90%] rounded-lg" src="src/assets/logo.jpg" alt="Logotipo" />
+                    <img className="h-auto w-[90%] rounded-lg" src="assets/logo.jpg" alt="Logotipo" />
 
                     <nav className="flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-6 w-full text-gray-50">
                         <MenuItem icon={HiHome} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
