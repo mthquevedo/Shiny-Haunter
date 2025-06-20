@@ -58,6 +58,9 @@ export default {
 				waterback: '#ecf6ff',
 				cardTooltipBg: '#4d4d4d',
 			},
+			backgroundImage: {
+				'hero-banner': "url('/assets/Home_banner_degrade.png')",
+			},
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
 			},
