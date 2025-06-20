@@ -11,7 +11,7 @@ interface lastPokemonBoardprops {
 
 export function LastPokemonBoard({ list, to, tittle, warningDescription, warningTittle }: lastPokemonBoardprops) {
     return (
-        <section className="flex flex-col justify-start bg-white w-full lg:w-[48%] xl:w-[48.5%] 2xl:w-[49%] h-[10.6rem xsm:h-[14rem] xsx:h-[15.5rem] md:h-[19.5rem] lg:h-[18.5rem] 2xl:h-[21.8rem] px-4 md:px-5 py-2 md:py-4 rounded-xl shadow-md overflow-hidden">
+        <section className="flex flex-col justify-start bg-white w-full lg:w-[48%] xl:w-[48.5%] 2xl:w-[49%] h-[10.6rem] xsm:h-[14rem] xsx:h-[15.5rem] md:h-[19.5rem] lg:h-[18.5rem] 2xl:h-[21.8rem] px-4 md:px-5 py-2 md:py-4 rounded-xl shadow-md overflow-hidden">
             {list[0] ?
                 <>
                     <header className="flex items-center justify-between pb-2 md:pb-4 lg:pb-3">
