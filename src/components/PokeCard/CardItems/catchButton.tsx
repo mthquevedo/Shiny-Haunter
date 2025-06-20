@@ -24,7 +24,7 @@ export function CatchButton({ pokemon }: CatchButtonProps) {
     return (
         <CardTooltip content="Capturar" side="top">
             <button
-                className={cn("flex justify-center items-center text-neutral-700 bg-neutral-300 rounded-lg shadow-sm p-1 2xl:p-1.5 hover:bg-red-500 hover:text-white active:bg-red-600 md:active:scale-95 transition", { [ACTIVE_BUTTON]: isCatched })}
+                className={cn("flex justify-center items-center text-neutral-700 bg-neutral-300 rounded-lg shadow-sm p-1 2xl:p-1.5 hover:bg-red-500 hover:text-white md:active:scale-95 transition", { [ACTIVE_BUTTON]: isCatched })}
                 onClick={handleToggleCatchItem}
             >
                 <MdCatchingPokemon className="text-[1.1rem] md:text-xl lg:text-sm 2xl:text-base" />
