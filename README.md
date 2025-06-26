@@ -12,7 +12,7 @@ Esse projeto foi desenvolvido para ser uma ferramenta que auxilia os jogadores d
 
 ## Highlights técnicos
 - Arquitetura modular, evitando o uso de acoplamento indevido;
-- Uso de Vite como bundler, o que possibilidade hot reload em tempo de desenvolvimento e build otimizado;
+- Uso de Vite como bundler, o que possibilita hot reload em tempo de desenvolvimento e build otimizado;
 - Alto volume de dados via API Rest refinados por um método serializer, o que mantém a performance em cenários com alta demanda de informações;
 - Com Redux Toolkit e React Query, implementei boas práticas de gerenciamento de estado global, além de gerenciamento de cache e dados assíncronos, com foco em performance e UX;
 - Requisições HTTP com cache inteligente pela combinação de axios + axios-cache-interceptor.
