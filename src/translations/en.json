@@ -1,0 +1,46 @@
+{
+    "sidebar":{
+        "home": "Home"
+    },
+    "lang": {
+        "ptBr": "Portuguese",
+        "en": "English",
+        "es": "Spanish"
+    },
+    "home": {
+        "tool_for": "A tool for",
+        "all_trainers": "all trainers!",
+        "organize_collection": "Organize your collection and choose the",
+        "next_to_hunt": "next ones to hunt in one place!",
+        "start_now": "Start now!",
+        "last_wished_title": "Last wished Pokémon",
+        "no_shiny_in_list": "No shiny in the list...",
+        "add_favorites": "How about adding those you want to find the most?",
+        "last_catched_title": "Last caught Pokémon",
+        "pokeball_empty": "Your Pokéball is empty!",
+        "catch_and_see": "Catch your shinies and see them here!"
+    },
+    "shinys": {
+        "my_shinys": "My Shinies",
+        "review_captured": "Review here the Pokémon you have already caught and track your journey as a Pokémon Master.",
+        "no_captures_warning": "You haven't registered any catches yet. How about starting your hunt for legendary shinies?"
+    },
+    "pokedex": {
+        "title": "Pokédex",
+        "description": "Explore your Pokédex to mark the Pokémon you've already caught or the shinies you want to hunt."
+    },
+    "wishlist": {
+        "title": "Wishlist",
+        "description": "Create your wishlist with the shinies you dream of finding and get ready for the next big catch.",
+        "empty_warning": "No Pokémon has been marked... yet! Explore the Pokédex and build your list of desired shinies."
+    },
+    "menu": {
+        "dex": "Dex",
+        "wishlist": "Wishlist",
+        "shinys": "Shinys",
+        "home_icon_alt": "Home icon",
+        "dex_icon_alt": "Pokédex icon",
+        "wishlist_icon_alt": "Wishlist icon",
+        "shinys_icon_alt": "My shinies icon"
+    }
+}

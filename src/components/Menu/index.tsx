@@ -5,7 +5,6 @@ import { MdCatchingPokemon } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { MenuItem } from "./MenuItem";
-// import { t } from "i18next";
 
 export function Menu() {
     const { hasWishNotification } = useSelector((state: RootState) => state.wishlist);
@@ -17,10 +16,10 @@ export function Menu() {
             {/* Menu inferior */}
             <aside className="flex md:hidden justify-center items-center bg-menuback w-full h-8v xsm:h-7v py-2 px-9 overflow-hidden">
                 <nav className="flex items-center justify-between w-full">
-                    <MenuItem icon={HiHome} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
-                    <MenuItem icon={MdCatchingPokemon} altText={"Ícone da Pokédex"} text={"Dex"} to={"pokedex"} />
-                    <MenuItem icon={IoMdListBox} altText={"Ícone da Lista de desejos"} text={"Desejos"} to={"listadedesejos"} notification={hasWishNotification} />
-                    <MenuItem icon={HiOutlineSparkles} altText={"Ícone dos Meus shinys"} text={"Shinys"} to={"shinys"} notification={hasCatchNotification} />
+                    <MenuItem icon={HiHome} altText={t("menu.home_icon_alt")} text={t("sidebar.home")} to={"/"} />
+                    <MenuItem icon={MdCatchingPokemon} altText={t("menu.dex_icon_alt")} text={t("menu.dex")} to={"pokedex"} />
+                    <MenuItem icon={IoMdListBox} altText={t("menu.wishlist_icon_alt")} text={t("menu.wishlist")} to={"listadedesejos"} notification={hasWishNotification} />
+                    <MenuItem icon={HiOutlineSparkles} altText={t("menu.shinys_icon_alt")} text={t("menu.shinys")} to={"shinys"} notification={hasCatchNotification} />
                 </nav>
             </aside>
 
@@ -30,10 +29,10 @@ export function Menu() {
                     <img className="h-auto w-[90%] rounded-lg" src="assets/logo.jpg" alt="Logotipo" />
 
                     <nav className="flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-6 w-full text-gray-50">
-                        <MenuItem icon={HiHome} altText={"Ícone do Início"} text={t("sidebar.home")} to={"/"} />
-                        <MenuItem icon={MdCatchingPokemon} altText={"Ícone da Pokédex"} text={"Dex"} to={"pokedex"} />
-                        <MenuItem icon={IoMdListBox} altText={"Ícone da Lista de desejos"} text={"Desejos"} to={"listadedesejos"} notification={hasWishNotification} />
-                        <MenuItem icon={HiOutlineSparkles} altText={"Ícone dos Meus shinys"} text={"Shinys"} to={"shinys"} notification={hasCatchNotification} />
+                        <MenuItem icon={HiHome} altText={t("menu.home_icon_alt")} text={t("sidebar.home")} to={"/"} />
+                        <MenuItem icon={MdCatchingPokemon} altText={t("menu.dex_icon_alt")} text={t("menu.dex")} to={"pokedex"} />
+                        <MenuItem icon={IoMdListBox} altText={t("menu.wishlist_icon_alt")} text={t("menu.wishlist")} to={"listadedesejos"} notification={hasWishNotification} />
+                        <MenuItem icon={HiOutlineSparkles} altText={t("menu.shinys_icon_alt")} text={t("menu.shinys")} to={"shinys"} notification={hasCatchNotification} />
                     </nav>
                 </div>
 

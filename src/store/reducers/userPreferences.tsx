@@ -1,15 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ViewType } from "../../constants/pokemon.constants";
+import { LanguagesSupported } from "../../constants/i18n.constants";
+import { ViewMode } from "../../constants/app.constants";
 
 interface userPreferencesProps {
     lang: string;
-    view: ViewType;
+    view: ViewMode;
 }
 
 function loadPreferences(): userPreferencesProps {
     const defaultSettings: userPreferencesProps = {
-        lang: "pt-br",
-        view: "grid",
+        lang: LanguagesSupported.BRAZILIAN_PORTUGUESE,
+        view: ViewMode.GRID,
     };
 
     try {
@@ -38,9 +39,12 @@ const userPreferencesSlice = createSlice({
     reducers: {
         changeViewMode: (state, { payload }) => {
             state.view = payload;
+        },
+        setLang: (state, { payload }) => {
+            state.lang = payload;
         }
     }
 });
 
-export const { changeViewMode } = userPreferencesSlice.actions;
+export const { changeViewMode, setLang } = userPreferencesSlice.actions;
 export default userPreferencesSlice.reducer;

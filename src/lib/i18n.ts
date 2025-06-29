@@ -1,22 +1,18 @@
 import i18n from 'i18next';
-import enUs from '../translations/en-us.json'
-import ptBr from '../translations/pt-br.json'
 import { initReactI18next} from 'react-i18next';
-
+import translations from '../translations';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { LanguagesSupported } from '../constants/i18n.constants';
 // don't want to use this?
 // have a look at the Quick start guide 
 // for passing in lng and translations on init
 
-const resources = {
-    en:{
-      translation: enUs, 
-    },
-    pt:{
-      translation: ptBr,
-    }
-}
+const resources = Object.entries(translations).reduce((acc, [lang, translation]) => {
+  acc[lang] = {translation};
+  return acc;
+}, {} as Record<string, any>);
+
 
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
@@ -32,7 +28,7 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     resources,
-    fallbackLng: 'en',
+    fallbackLng: LanguagesSupported.ENGLISH,
     debug: true,
 
     // react:{

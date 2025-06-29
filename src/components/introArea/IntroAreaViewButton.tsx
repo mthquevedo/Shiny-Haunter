@@ -2,6 +2,7 @@ import { BsFillGridFill } from "react-icons/bs";
 import { FaList } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { usePreferences } from "../../hooks/usePreferences";
+import { ViewMode } from "../../constants/app.constants";
 import { cn } from "../../lib/cn";
 import { RootState } from "../../store";
 
@@ -20,13 +21,13 @@ export function IntroAreaViewButton() {
             <div className="flex items-center justify-end gap-2">
                 <button
                     className={cn("flex items-center justify-center size-7 md:size-9 lg:size-7 2xl:size-8 hover:shadow-md text-neutral-500 bg-neutral-300 hover:text-neutral-700 active:scale-95 transition duration-100 rounded-md md:rounded-lg", { [ACTIVE_BUTTON]: isGridView })}
-                    onClick={() => changeView("grid")}
+                    onClick={() => changeView(ViewMode.GRID)}
                 >
                     <BsFillGridFill className="text-sm md:text-lg lg:text-sm" />
                 </button>
                 <button
                     className={cn("flex items-center justify-center  size-7 md:size-9 lg:size-7 2xl:size-8 hover:shadow-md text-neutral-500 bg-neutral-300 hover:text-neutral-700 active:scale-95 transition duration-100 rounded-md md:rounded-lg", { [ACTIVE_BUTTON]: isListView })}
-                    onClick={() => changeView("list")}
+                    onClick={() => changeView(ViewMode.LIST)}
                 >
                     <FaList className="text-sm md:text-lg lg:text-sm" />
                 </button>

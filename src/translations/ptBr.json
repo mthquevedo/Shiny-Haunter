@@ -1,0 +1,46 @@
+{
+    "sidebar":{
+        "home": "Início"
+    },
+    "lang": {
+        "ptBr": "Português",
+        "en": "Inglês",
+        "es": "Espanhol"
+    },
+    "home": {
+        "tool_for": "Uma ferramenta para",
+        "all_trainers": "todos os treinadores!",
+        "organize_collection": "Organize sua coleção e escolha os",
+        "next_to_hunt": "próximos para caçar em um só lugar!",
+        "start_now": "Comece agora!",
+        "last_wished_title": "Últimos pokémon desejados",
+        "no_shiny_in_list": "Nenhum shiny na lista...",
+        "add_favorites": "Que tal adicionar aqueles que você mais quer encontrar?",
+        "last_catched_title": "Últimos pokémon capturados",
+        "pokeball_empty": "Sua Pokébola está vazia!",
+        "catch_and_see": "Capture seus shinies e veja eles aqui!"
+    },
+    "shinys": {
+        "my_shinys": "Meus Shinys",
+        "review_captured": "Revise aqui os Pokémon que você já capturou e acompanhe o progresso da sua jornada como Mestre Pokémon.",
+        "no_captures_warning": "Você ainda não registrou nenhuma captura. Que tal começar sua busca pelos shinies lendários?"
+    },
+    "pokedex": {
+        "title": "Pokédex",
+        "description": "Explore sua Pokédex para marcar os Pokémon já capturados ou os shinies que você quer caçar."
+    },
+    "wishlist": {
+        "title": "Lista de desejos",
+        "description": "Crie sua lista de desejos com os shinies que você sonha encontrar e se prepare para a próxima grande captura.",
+        "empty_warning": "Nenhum Pokémon foi marcado... ainda! Explore a Pokédex e monte sua lista de shinies desejados."
+    },
+    "menu": {
+        "dex": "Dex",
+        "wishlist": "Desejos",
+        "shinys": "Shinys",
+        "home_icon_alt": "Ícone do Início",
+        "dex_icon_alt": "Ícone da Pokédex",
+        "wishlist_icon_alt": "Ícone da Lista de desejos",
+        "shinys_icon_alt": "Ícone dos Meus shinys"
+    }
+}
