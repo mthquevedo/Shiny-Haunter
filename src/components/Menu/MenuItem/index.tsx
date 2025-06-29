@@ -34,7 +34,7 @@ export function MenuItem({ text, icon: Icon, altText, to, notification, ...props
             </div>
 
             {/* Menu lateral */}
-            <div className={cn("hidden md:flex flex-col items-center justify-center gap-1 h-[3.75rem] py-1 lg:h-14 xl:h-[3.5rem] border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95 transition duration-75 rounded-lg relative", { [ACTIVE_BG]: isActive })}>
+            <div className={cn("hidden md:flex flex-col items-center justify-center gap-1 h-[3.75rem] py-1 lg:h-14 xl:h-[3.5rem] 2xl:h-[3.7rem] border-2 border-menuback hover:bg-neutral-400/30 hover:shadow-lg active:scale-95 transition duration-75 rounded-lg relative", { [ACTIVE_BG]: isActive })}>
                 <Icon aria-label={altText} className={cn("h-auto w-[49%] lg:w-7 xl:w-6 text-neutral-400", { [ACTIVE_ICON]: isActive })} />
 
                 <span className={cn("text-xs lg:text-[0.7rem] xl:text-[0.75rem] text-neutral-300 transition", { [ACTIVE_TEXT]: isActive })}>{text}</span>

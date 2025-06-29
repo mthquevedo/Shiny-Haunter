@@ -1,7 +1,7 @@
 import { ClassValue } from "clsx";
 import { PokemonType } from "pokenode-ts";
 
-const SVG_PATH = "./src/assets/typesIcons/";
+const SVG_PATH = "assets/typesIcons/";
 
 export function getPokemonTypeSVG(type: string) {
     return SVG_PATH + type + ".svg";

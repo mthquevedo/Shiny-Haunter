@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import warningImg from "../../assets/Opss.png";
 
 interface EmptyListErrorProps {
     warning: string;
@@ -7,10 +6,10 @@ interface EmptyListErrorProps {
 
 export function EmptyListError({ warning }: EmptyListErrorProps) {
     return (
-        <section className="flex items-center justify-center h-full">
-            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-xl shadow-lg w-[25%]">
+        <section className="flex items-center justify-center size-full">
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-xl shadow-lg w-[85%] lg:w-[55%] xl:w-[50%] 2xl:w-[35%]">
                 <img
-                    src={warningImg}
+                    src="/assets/Opss.png"
                     alt="Ícone de aviso"
                     className="w-32 opacity-70 mb-4"
                 />
