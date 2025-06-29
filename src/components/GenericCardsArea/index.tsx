@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
 import { genericSubListProps } from "../../constants/pokemon.constants";
-import { RootState } from "../../store";
 import { GenericCard } from "../GenericCard";
 import { HiddenScrollBar } from "../hiddenScrollBar";
+import { selectView } from "../../store/selectors/user-preferences.selectors";
 
 interface GenericCardsAreaProps extends genericSubListProps {
     hasCatchButton?: boolean;
 }
 
 export function GenericCardsArea({ list, hasCatchButton }: GenericCardsAreaProps) {
-    const { view } = useSelector((state: RootState) => state.userPreferences);
+    const view = useSelector(selectView);
 
     return (
         <HiddenScrollBar>

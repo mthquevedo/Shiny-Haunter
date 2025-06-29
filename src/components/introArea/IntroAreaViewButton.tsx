@@ -4,14 +4,14 @@ import { useSelector } from "react-redux";
 import { usePreferences } from "../../hooks/usePreferences";
 import { ViewMode } from "../../constants/app.constants";
 import { cn } from "../../lib/cn";
-import { RootState } from "../../store";
+import { selectView } from "../../store/selectors/user-preferences.selectors";
 
 const ACTIVE_BUTTON = "bg-primary text-white hover:text-white hover:bg-indigo-800";
 
 export function IntroAreaViewButton() {
-    const currentView = useSelector((state: RootState) => state.userPreferences.view);
-    const isGridView = currentView === "grid";
-    const isListView = currentView === "list";
+    const currentView = useSelector(selectView);
+    const isGridView = currentView === ViewMode.GRID;
+    const isListView = currentView === ViewMode.LIST;
     const { changeView } = usePreferences();
 
     return (
