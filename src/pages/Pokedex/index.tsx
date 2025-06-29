@@ -1,15 +1,17 @@
-import { IntroArea } from "../../components/IntroArea";
-import { PaginationButtons } from "../../components/PaginationButtons";
+import { IntroArea } from "../../components/introArea";
+import { PaginationButtons } from "../../components/paginationButtons";
 import { PokeCardsArea } from "../../components/PokeCardsArea";
+import { useTranslation } from "react-i18next";
 import { HiddenScrollBar } from "../../components/hiddenScrollBar";
 
 export function Pokedex() {
+    const { t } = useTranslation();
     return (
         <section className="flex flex-col items-center justify-start gap-2 lg:gap-4 xl:gap-3 2xl:gap-8 h-[91%]">
             <IntroArea.Root>
                 <IntroArea.Texts
-                    title="Pokédex"
-                    description="Explore sua Pokédex para marcar os Pokémon já capturados ou os shinies que você quer caçar."
+                    title={t('pokedex.title')}
+                    description={t('pokedex.description')}
                 />
                 <IntroArea.SearchBar />
             </IntroArea.Root>

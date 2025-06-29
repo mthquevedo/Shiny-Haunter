@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { GenericCardsArea } from "../../components/GenericCardsArea";
-import { IntroArea } from "../../components/IntroArea";
 import { useCatchList } from "../../hooks/useCatchList";
 import { RootState } from "../../store";
 import { EmptyListError } from "../../components/emptyListError";
+import { IntroArea } from "../../components/introArea";
+import { useTranslation } from "react-i18next";
 
 export function Shinys() {
+    const { t } = useTranslation();
     const { resetNotificationState } = useCatchList();
     const { list, hasCatchNotification } = useSelector((state: RootState) => state.catchlist);
 
@@ -14,14 +16,14 @@ export function Shinys() {
         if (hasCatchNotification) {
             resetNotificationState();
         }
-    }, [])
+    }, [hasCatchNotification, resetNotificationState])
 
     return (
          <section className="flex flex-col items-center justify-start gap-2 lg:gap-3 xl:gap-3 2xl:gap-6 h-[91%]">
             <IntroArea.Root>
                 <IntroArea.Texts
-                    title="Meus Shinys"
-                    description="Revise os Pokémon que você já capturou e acompanhe o progresso da sua jornada como Mestre Pokémon."
+                    title={t('shinys.my_shinys')}
+                    description={t('shinys.review_captured')}
                 />
                 <IntroArea.ViewButton />
             </IntroArea.Root>
@@ -33,7 +35,7 @@ export function Shinys() {
                     />
                     :
                     <EmptyListError
-                        warning="Você ainda não registrou nenhuma captura. Que tal começar sua busca pelos shinies lendários?"
+                        warning={t('shinys.no_captures_warning')}
                     />
                 }
             </section>

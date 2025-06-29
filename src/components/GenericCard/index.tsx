@@ -1,15 +1,16 @@
+import { ViewMode } from "../../constants/app.constants";
 import { genericSubListItem } from "../../constants/pokemon.constants";
 import { GenericCardGrid } from "./genericCardGrid";
 import { GenericCardList } from "./genericCardList";
 
 interface GenericCardProps {
     pokemon: genericSubListItem;
-    view: "grid" | "list",
+    view: ViewMode,
     hasCatchButton?: boolean;
 }
 
 export function GenericCard({ pokemon, view, hasCatchButton }: GenericCardProps) {
-    const isGridView = view === "grid";
+    const isGridView = view === ViewMode.GRID;
 
     return (
         <>

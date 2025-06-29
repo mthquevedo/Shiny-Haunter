@@ -1,26 +1,43 @@
 import { Select } from "radix-ui";
-import { useState } from "react";
+import { useMemo } from "react";
 import { IoLogoGithub } from "react-icons/io";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { MdOutlineQuestionMark } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdOutlineQuestionMark } from "react-icons/md";
+import { useHeader } from "./header.hook";
 
 export function HeaderPage() {
-    const [value, setValue] = useState("Idioma");
+    const {title, selectProps, currentSelectedValue, selectOptions} = useHeader();
 
-    // useEffect(() => {
-
-    // }, [value])
+    const selectOptionsComponent = useMemo(() => {
+        return selectOptions.map((option, index) => (
+            <>
+            <Select.Item
+                key={option.lang}
+                value={option.lang}
+                className="cursor-pointer text-neutral-700 focus:outline-none p-px rounded-sm hover:bg-neutral-100"
+            >
+                <Select.ItemText>
+                    {option.label}
+                </Select.ItemText>
+                <Select.ItemIndicator />
+            </Select.Item>
+            {index < selectOptions.length - 1 && (
+                <Select.Separator className="h-px my-1 bg-slate-300" />
+            )}
+            </>
+            
+        ));
+    }, [selectOptions]);
 
     return (
         <header className="flex items-center justify-between h-[4%] mb-4 lg:mb-8 xl:mb-4 2xl:mb-8">
             <h1 className="text-primary font-bold text-xl md:text-2xl">
-                Shiny Haunter
+                {title}
             </h1>
             <div className="flex gap-2 md:gap-3 items-center justify-between h-7 md:h-9">
-                <Select.Root value={value} onValueChange={setValue}>
+                <Select.Root {...selectProps}>
                     <Select.Trigger className="flex items-center justify-between gap-1 md:gap-2 text-darkgray bg-white text-[0.625rem] md:text-xs font-medium px-2 py-1 w-20 xsm:w-24 md:w-28 lg:w-32 h-full rounded-lg border-neutral-400 border focus:outline-none cursor-pointer">
                         <Select.Value>
-                            {value}
+                            {currentSelectedValue}
                         </Select.Value>
                         <Select.Icon>
                             <MdOutlineKeyboardArrowDown className="text-[0.625rem] xsm:text-lg md:text-xl" />
@@ -33,27 +50,8 @@ export function HeaderPage() {
                             className="overflow-hidden w-20 xsm:w-24 md:w-28 lg:w-32 bg-white shadow-md rounded-lg text-xs mt-1"
                         >
                             <Select.Viewport className="p-2">
-                                <Select.Group>
-                                    <Select.Item value="Português" className="cursor-pointer text-neutral-700 focus:outline-none p-px rounded-sm hover:bg-neutral-100">
-                                        <Select.ItemText>
-                                            Português
-                                        </Select.ItemText>
-                                        <Select.ItemIndicator />
-                                    </Select.Item>
-                                    <Select.Separator className="h-px my-1 bg-slate-300" />
-                                    <Select.Item value="Espanhol" disabled className="cursor-no-drop text-neutral-400">
-                                        <Select.ItemText>
-                                            Espanhol
-                                        </Select.ItemText>
-                                        <Select.ItemIndicator />
-                                    </Select.Item>
-                                    <Select.Separator className="h-px my-1 bg-slate-300" />
-                                    <Select.Item value="Inglês" disabled className="cursor-no-drop text-neutral-400">
-                                        <Select.ItemText>
-                                            Inglês
-                                        </Select.ItemText>
-                                        <Select.ItemIndicator />
-                                    </Select.Item>
+                                <Select.Group >
+                                    {selectOptionsComponent}
                                 </Select.Group>
                             </Select.Viewport>
                         </Select.Content>
